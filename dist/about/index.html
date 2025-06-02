@@ -165,13 +165,6 @@
     }
   </style>
   <style>
-    .contact-bottom-glow {
-      position: relative;
-      box-shadow: 0 10px 50px -10px rgba(132, 0, 255, 0.5); /* Only top */
-      z-index: 3;
-    }
-  </style>
-  <style>
     .outlined-text {
       color: white;
       text-shadow:
@@ -225,7 +218,7 @@
   <!-- Mobile Dropdown Menu -->
   <div class="md:hidden">
     <div id="mobile-menu" class="absolute top-full left-0 w-full bg-white/80 backdrop-blur-sm text-center px-6 py-4 shadow-lg dropdown-enter transition-all duration-300 ease-out z-40 hidden rounded-br-3xl rounded-tr-3xl">
-      <a href="#" class="block px-1 py-2 text-gray-900 bg-white/100 rounded-3xl mb-2 hover:bg-cyan-600 hover:text-white transition duration-250 border border-gray-500">Home</a>
+      <a href="home/" class="block px-1 py-2 text-gray-900 bg-white/100 rounded-3xl mb-2 hover:bg-cyan-600 hover:text-white transition duration-250 border border-gray-500">Home</a>
       <a href="portfolio/" class="block px-1 py-2 text-gray-900 bg-white/30 rounded-3xl mb-2 hover:bg-cyan-600 hover:text-white transition duration-250 border border-gray-500">Portfolio</a>
       <a href="testimonials/" class="block px-1 py-2 text-gray-900 bg-white/30 rounded-3xl mb-2 hover:bg-cyan-600 hover:text-white transition duration-250 border border-gray-500">Testimonials</a>
       <a href="about/" class="block px-1 py-2 text-gray-900 bg-white/30 rounded-3xl hover:bg-cyan-600 hover:text-white transition duration-250 border border-gray-500">About Us</a>
@@ -235,7 +228,7 @@
   <!-- Desktop Nav Links -->
   <div class="hidden md:flex justify-center mt-0 mb-0">
     <div class="nav-wrapper flex space-x-4 shadow-lg px-6 py-4 rounded-full bg-white/10 backdrop-blur-sm">
-      <a href="#" class="bg-white text-gray-900 px-4 py-1 rounded-full shadow-lg transition-transform duration-300 hover:scale-110 hover:glow-pulse-button">Home</a>
+      <a href="home/" class="bg-white text-gray-900 px-4 py-1 rounded-full shadow-lg transition-transform duration-300 hover:scale-110 hover:glow-pulse-button">Home</a>
       <a href="portfolio/" class="bg-white text-gray-900 px-4 py-1 rounded-full shadow-lg transition-transform duration-300 hover:scale-110 hover:glow-pulse-button">Portfolio</a>
       <a href="testimonials/" class="bg-white text-gray-900 px-4 py-1 rounded-full shadow-lg transition-transform duration-300 hover:scale-110 hover:glow-pulse-button">Testimonials</a>
       <a href="about/" class="bg-white text-gray-900 px-4 py-1 rounded-full shadow-lg transition-transform duration-300 hover:scale-110 hover:glow-pulse-button">About Us</a>
@@ -244,62 +237,38 @@
     <div class=" h-2 bg-gradient-to-r from-slate-700 to-indigo-950"></div>
 </nav>
 
-
-  <!-- Hero Section -->
-  <section class="bg-gradient-to-r from-indigo-950 to-slate-700 text-white text-center py-20 hero-bottom-glow">
-    <h1 class="text-3xl md:text-5xl italic mb-4 text-shadow-lg">Creativity Without Limits</h1>
-    <p class="text-lg md:text-xl mb-8 text-shadow-lg">Professional video production for every occasion.</p>
-    <a href="#contact" class= "border glow-pulse-contact hover:glow-pulse-button bg-white text-gray-900 px-9 py-4 rounded-full shadow-lg hover:bg-blue-400 hover:text-white transition duration-300 hover:shadow-[0_0_10px_2px_rgba(100,155,255,1)]">Contact Us</a>
-  </section>
-
-  <!-- Services Section -->
-  <section id="services" class="py-16 bg-slate-950 relative z-15 p-2 services-bottom-glow">
-    <div class="container mx-auto text-center">
-      <h2 class="text-3xl font-bold mt-0 mb-8 glow-pulse-text-services text-white">Our Services</h2>
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="bg-blue-950 p-6 rounded-3xl shadow-lg hover:shadow-[0_0_20px_2px_rgba(100,20,255,1)] transition duration-200 border hover:border-gray-200 transition duration-200">
-          <img src="https://cdn.sanity.io/images/r115idoc/production/3293c8139d836a5b0307aefc8c74955984ffda39-3240x2160.png?w=3840&q=75&fit=clip&auto=format" alt="Weddings" class="mb-4 rounded-2xl">
-          <h3 class="text-xl font-semibold mb-2 text-white">Weddings</h3>
-          <p class="text-gray-200">Elegant and emotional cinematic wedding films tailored to your special day.</p>
-        </div>
-        <div class="bg-blue-950 p-6 rounded-3xl shadow-lg hover:shadow-[0_0_20px_2px_rgba(100,20,255,1)] transition duration-200 border hover:border-gray-200 transition duration-200">
-          <img src="https://cdn.sanity.io/images/r115idoc/production/3293c8139d836a5b0307aefc8c74955984ffda39-3240x2160.png?w=3840&q=75&fit=clip&auto=format" alt="Stage Productions" class="mb-4 rounded-2xl">
-          <h3 class="text-xl font-semibold mb-2 text-white">Stage Productions</h3>
-          <p class="text-gray-200">Professional multi-camera captures for live shows, concerts, and plays.</p>
-        </div>
-        <div class="bg-blue-950 p-6 rounded-3xl shadow-lg hover:shadow-[0_0_20px_2px_rgba(100,20,255,1)] transition duration-200 border hover:border-gray-200 transition duration-200">
-          <img src="https://cdn.sanity.io/images/r115idoc/production/3293c8139d836a5b0307aefc8c74955984ffda39-3240x2160.png?w=3840&q=75&fit=clip&auto=format" alt="Video Editing" class="mb-4 rounded-2xl">
-          <h3 class="text-xl font-semibold mb-2 text-white">Video Editing</h3>
-          <p class="text-gray-200">Send us your footage — we’ll turn it into a polished, compelling story.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Testimonials Section -->
-  <section id="testimonials" class="py-16 bg-gradient-to-r from-indigo-950 to-slate-700 client-bottom-glow">
-    <div class="container mx-auto text-center">
-      <h2 class="text-3xl font-bold mb-8 glow-pulse-text-clients text-white">What Our Clients Say</h2>
-      <div class="grid md:grid-cols-2 gap-8">
-        <div class="bg-slate-600 p-6 rounded-3xl shadow hover:shadow-[0_0_20px_2px_rgba(100,20,255,1)] transition duration-200 border hover:border-gray-200 transition duration-200">
-          <p class="italic text-white">"The video was exactly what we wanted — cinematic, emotional, and perfect. Highly recommend Drew."</p>
-          <p class="mt-4 font-semibold text-gray-200">– Amanda L.</p>
-        </div>
-        <div class="bg-slate-600 p-6 rounded-3xl shadow hover:shadow-[0_0_20px_2px_rgba(100,20,255,1)] transition duration-200 border hover:border-gray-200 transition duration-200">
-          <p class="italic text-white">"Drew handled our real estate tour with total professionalism. Quick turnaround, too!"</p>
-          <p class="mt-4 font-semibold text-gray-200">– Brandon T.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-      <!-- Contact Section -->
-<section id="contact" class="py-12 bg-slate-950 relative z-5 client-bottom-glow">
+<!-- About Us Section -->
+<section class="py-5 scroll-py-48 bg-gradient-to-r from-indigo-950 to-slate-700 hero-bottom-glow relative z-20">
   <div class="container mx-auto px-4">
-    <div class="flex flex-col lg:flex-row gap-14 justify-center items-start">
+    <h2 class="text-5xl font-bold text-center mb-0 text-white glow-pulse-text-touch">About Us</h2>
+</section>
+
+<!-- Black Background -->
+<section id="Real Estate" class="py-0 bg-slate-950 relative z-10 ">
+    <div class="container mx-auto text-center">
+
+    <!-- About Section -->
+    <div class="flex items-center justify-center px-6 py-16">
+  <div class="max-w-4xl w-full bg-blue-950 backdrop-blur-md p-10 rounded-3xl border border-white/20 shadow-[0_0_30px_5px_rgba(100,200,255,0.15)] hover:shadow-[0_0_20px_2px_rgba(100,20,255,1)] transition duration-300 hover:border-gray-300">
+    <p class="text-lg text-gray-300 leading-relaxed">
+      At <span class="text-white font-semibold">Zero Limit Productions</span>, we believe in turning visions into compelling stories through the power of video. Whether you're launching a brand, celebrating a milestone, or promoting a cause — we create visually striking, professionally edited content that captures your moment with style and emotion.
+    </p>
+    <p class="mt-6 text-lg text-gray-300 leading-relaxed">
+      With a team of passionate creatives, cutting-edge tools, and a commitment to excellence, we handle everything from short-form social content to full-scale commercial production. Every frame we produce reflects our obsession with quality and innovation.
+    </p>
+    <p class="mt-6 text-lg text-gray-300 leading-relaxed">
+      Thank you for visiting our site — let’s make something unforgettable.
+    </p>
+  </div>
+</section>
+
+    <!-- Contact Section -->
+<section id="Contact" class="py-5 bg-slate-950 relative z-5 client-bottom-glow">
+  <div class="container mx-auto px-4">
+    <div class="flex flex-col lg:flex-row gap-20 justify-center items-start">
       
       <!-- Contact Form -->
-      <div class="w-full lg:w-1/2 bg-blue-950 backdrop-blur-sm rounded-3xl shadow-lg border border-white/20 hover:border-gray-200 transition duration-300 p-8 hover:shadow-[0_0_20px_2px_rgba(100,20,255,1)]">
+      <div class="w-full lg:w-1/2 bg-blue-950/80 backdrop-blur-sm rounded-3xl shadow-lg border border-white/20 hover:border-gray-200 transition duration-300 p-8 hover:shadow-[0_0_20px_2px_rgba(100,20,255,1)]">
         <h2 class="text-3xl font-bold mb-8 text-white glow-pulse-text-touch text-center">Get in Touch</h2>
         <form id="contact-form" method="POST" class="space-y-4">
           <input type="hidden" name="_captcha" value="false" />
@@ -314,43 +283,43 @@
       </div>
 
       <!-- Contact Info Box -->
-<div class="w-full lg:w-1/2 bg-blue-950 backdrop-blur-sm rounded-3xl shadow-lg border border-white/20 hover:border-gray-200 transition duration-300 p-8 hover:shadow-[0_0_20px_2px_rgba(100,20,255,1)]">
+<div class="w-full lg:w-1/2 bg-blue-950/80 backdrop-blur-sm rounded-3xl shadow-lg border border-white/20 hover:border-gray-200 transition duration-300 p-8 hover:shadow-[0_0_20px_2px_rgba(100,20,255,1)]">
   <h2 class="text-3xl md:text-3xl font-bold mb-6 text-center text-white glow-pulse-text-touch">Contact Info</h2>
 
-    <div class="space-y-4 text-lg text-white/90">
-      <p class="flex items-center gap-3">
-        <img src="/icons/phone.png" alt="Phone" class="w-6 h-6" />
-        (123) 456-7890
-      </p>
-      <p class="flex items-center gap-3">
-        <img src="/icons/email.png" alt="Email" class="w-6 h-6" />
-        contact@zerolimitproductions.com
-      </p>
-      <p class="flex items-center gap-3">
-        <img src="/icons/youtube.png" alt="YouTube" class="w-6 h-6" />
-        <a href="#" class="text-cyan-400 hover:underline">youtube.com/ZeroLimitProductions</a>
-      </p>
-      <p class="flex items-center gap-3">
-        <img src="/icons/instagram.png" alt="Instagram" class="w-6 h-6" />
-        <a href="#" class="text-cyan-400 hover:underline">@ZeroLimitProductions</a>
-      </p>
-      <p class="flex items-center gap-3">
-        <img src="/icons/linkedin.png" alt="LinkedIn" class="w-6 h-6" />
-        <a href="#" class="text-cyan-400 hover:underline">linkedin.com/company/zerolimitproductions</a>
-      </p>
+  <div class="space-y-4 text-lg text-white/90">
+    <div class="flex">
+      <span class="w-24 font-semibold">Phone: </span>
+      <span>(123) 456-7890</span>
+    </div>
+    <div class="flex">
+      <span class="w-24 font-semibold">Email: </span>
+      <span>contact@zerolimitproductions.com</span>
+    </div>
+    <div class="flex">
+      <span class="w-24 font-semibold">YouTube: </span>
+      <a href="#" class="text-cyan-400 hover:underline">youtube.com/ZeroLimitProductions</a>
+    </div>
+    <div class="flex">
+      <span class="w-24 font-semibold">Instagram: </span>
+      <a href="#" class="text-cyan-400 hover:underline">@ZeroLimitProductions</a>
+    </div>
+    <div class="flex">
+      <span class="w-24 font-semibold">LinkedIn: </span>
+      <a href="#" class="text-cyan-400 hover:underline">linkedin.com/company/zerolimitproductions</a>
     </div>
   </div>
 </div>
       
     </div>
   </div>
+  <div class=" h-20 bg-slate-950"></div>
 </section>
 
-  <!-- Footer -->
-  <footer class="shadow-[0_-4px_6px_rgba(0,0,0,0.3)] bg-gradient-to-r from-indigo-950 to-slate-700 text-gray-500 text-center py-4 relative z=0">
+         <!-- Footer -->
+<footer class="shadow-[0_-4px_6px_rgba(0,0,0,0.3)] bg-gradient-to-r from-indigo-950 to-slate-700 text-gray-500 text-center py-4 relative z=0">
     &copy; 2025 Zero Limit Productions — Drew McKay
-  </footer>
-  <script>
+</footer>
+ <script>
     const toggle = document.getElementById('menu-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
 
@@ -413,5 +382,58 @@
         menuToggle.classList.toggle('open');
       });
   </script>
+  <script>
+    // Carousel 1
+    (function() {
+        const images1 = document.querySelectorAll('#carousel1 img');
+        let current1 = 0;
+
+        function showImage1(index) {
+        images1.forEach((img, i) => {
+            img.style.opacity = i === index ? '1' : '0';
+        });
+        }
+
+        window.nextImage1 = function() {
+        current1 = (current1 + 1) % images1.length;
+        showImage1(current1);
+        };
+
+        window.prevImage1 = function() {
+        current1 = (current1 - 1 + images1.length) % images1.length;
+        showImage1(current1);
+        };
+
+        setInterval(() => {
+        window.nextImage1();
+        }, 5000);
+    })();
+
+    // Carousel 2
+    (function() {
+        const images2 = document.querySelectorAll('#carousel2 img');
+        let current2 = 0;
+
+        function showImage2(index) {
+        images2.forEach((img, i) => {
+            img.style.opacity = i === index ? '1' : '0';
+        });
+        }
+
+        window.nextImage2 = function() {
+        current2 = (current2 + 1) % images2.length;
+        showImage2(current2);
+        };
+
+        window.prevImage2 = function() {
+        current2 = (current2 - 1 + images2.length) % images2.length;
+        showImage2(current2);
+        };
+
+        setInterval(() => {
+        window.nextImage2();
+        }, 5000);
+    })();
+    </script>
 </body>
 </html>
