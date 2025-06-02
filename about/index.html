@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Zero Limit Productions</title>
+  <link href="/dist/style.css" rel="stylesheet">
+  <!-- Eurostile Font -->
+  <style>
+    @font-face {
+      font-family: 'Eurostile';
+      src: url('/fonts/Eurostile.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+    .logo-text {
+      font-family: 'Eurostile', sans-serif;
+    }
+  </style>
+  <!-- Dropdown Animation Styles -->
+  <style>
+    .dropdown-enter {
+      opacity: 0;
+      transform: translateY(-15px);
+    }
+
+    .dropdown-enter-active {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 300ms ease-out, transform 300ms ease-out;
+    }
+
+    .dropdown-exit {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .dropdown-exit-active {
+      opacity: 0;
+      transform: translateY(-15px);
+      transition: opacity 200ms ease-in, transform 200ms ease-in;
+    }
+      @media (max-width: 767px) {
+      #mobile-menu {
+        position: fixed;      /* overlay entire viewport */
+        top: 3.5rem;          /* below navbar approx (adjust if needed) */
+        left: 0;
+        width: 40vw;          /* smaller than full width */
+        max-width: 280px;
+        background: rgba(255 255 255 / 0.1);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        border-radius: 0 3=rem 3rem;
+        z-index: 9999;
+      }
+
+      #mobile-menu a {
+        background-color: rgba(255, 255, 255, 0.9) !important;
+        border-radius: 1.5rem !important;
+        width: auto !important;
+        max-width: 100%;
+        margin-left: 0 !important;
+      }
+    }
+  </style>
+  <style>
+    /* Glow for text (like "Services") */
+    @keyframes textGlowPulse {
+      0%, 100% {
+        text-shadow: 0 0 8px rgba(151, 40, 255, 0.6), 0 0 15px rgba(241, 174, 255, 0.4);
+      }
+      50% {
+        text-shadow: 0 0 12px rgba(146, 29, 255, 0.7), 0 0 25px rgba(241, 174, 255, 0.5);
+      }
+    }
+
+    .glow-pulse-text-services {
+      animation: textGlowPulse 2s ease-in-out infinite;
+    }
+  </style>
+  <style>
+    /* Glow for text (like "Services") */
+    @keyframes text2GlowPulse {
+      0%, 100% {
+        text-shadow: 0 0 8px rgba(0, 210, 238, 0.6), 0 0 15px rgba(55, 0, 255, 0.4);
+      }
+      50% {
+        text-shadow: 0 0 12px rgba(0, 210, 238, 0.7), 0 0 25px rgba(38, 0, 255, 0.5);
+      }
+    }
+
+    .glow-pulse-text-clients {
+      animation: text2GlowPulse 2s ease-in-out infinite;
+    }
+  </style>
+  <style>
+    /* Glow for text (like "Get In Touch") */
+    @keyframes text3GlowPulse {
+      0%, 100% {
+        text-shadow: 0 0 8px rgba(0, 210, 238, 0.6), 0 0 15px rgba(55, 0, 255, 0.4);
+      }
+      50% {
+        text-shadow: 0 0 12px rgba(0, 210, 238, 0.7), 0 0 25px rgba(38, 0, 255, 0.5);
+      }
+    }
+
+    .glow-pulse-text-touch {
+      animation: text3GlowPulse 2s ease-in-out infinite;
+    }
+  </style>
+  <style>
+    @keyframes buttonGlowPulse {
+      0%, 100% {
+        box-shadow: 0 0 8px rgba(0, 238, 255, 0.37);
+      }
+      50% {
+        box-shadow: 0 0 16px rgba(0, 210, 238, 0.8);
+      }
+    }
+
+    .hover\:glow-pulse-button:hover {
+      animation: buttonGlowPulse 1.5s ease-in-out infinite;
+    }
+  </style>
+  <style>
+    @keyframes button2GlowPulse {
+      0%, 100% {
+        box-shadow: 0 0 8px rgba(255, 0, 0, 0.37);
+        border: 2px solid rgba(255, 0, 0, 0);
+      }
+      50% {
+        box-shadow: 0 0 16px rgba(238, 0, 0, 0.5);
+        border: 1px solid rgba(255, 0, 0, 1);
+      }
+    }
+
+    .glow-pulse-contact {
+      animation: button2GlowPulse 3s ease-in-out infinite;
+    }
+
+     /* Stop animation when button is hovered */
+    .group:hover .glow-pulse-contact {
+      animation: none;
+    }
+  </style>
+  <style>
+    .hero-bottom-glow {
+      position: relative;
+      box-shadow: 0 20px 50px -10px rgba(132, 0, 255, 0.5); /* Only bottom */
+      z-index: 20;
+    }
+  </style>
+  <style>
+    .client-bottom-glow {
+      position: relative;
+      box-shadow: 0 10px 50px -10px rgba(132, 0, 255, 0.5); /* Only top */
+      z-index: 5;
+    }
+  </style>
+  <style>
+    .services-bottom-glow {
+      position: relative;
+      box-shadow: 0 20px 50px -10px rgba(132, 0, 255, 0.5); /* Only bottom */
+      z-index: 15;
+    }
+  </style>
+  <style>
+    .outlined-text {
+      color: white;
+      text-shadow:
+        -1px -1px 0 gray,
+        1px -1px 0 gray,
+        -1px 1px 0 gray,
+        1px 1px 0 gray;
+    }
+  </style>
+  <style>
+          /* Base line styles already in your classes */
+
+    #menu-toggle.open .line:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 9px);
+      }
+
+      #menu-toggle.open .line:nth-child(2) {
+        opacity: 0;
+      }
+
+      #menu-toggle.open .line:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -9px);
+      }
+  </style>
+</head>
+<body class="bg-slate-900 text-gray-800 font-sans">
+
+<!-- Non-sticky desktop logo -->
+<div class="hidden md:block w-full bg-gradient-to-r from-slate-700 to-indigo-950 text-center py-2">
+  <div class="text-6xl text-white logo-text">Zero Limit Productions</div>
+</div>
+
+<!-- Sticky Navbar -->
+<nav class="sticky top-0 z-30 bg-gradient-to-r from-slate-700 to-indigo-950 shadow-lg">
+  <!-- Navbar Container -->
+  <div class="container mx-auto flex items-center justify-between md:justify-center px-4 mb-2">
+    
+    <!-- Hamburger (Mobile Only) -->
+    <button id="menu-toggle" class="md:hidden flex flex-col justify-between w-8 h-6 focus:outline-none z-50 mt-4" aria-label="Toggle menu">
+      <span class="line w-full h-1 bg-white rounded transition-transform duration-300 origin-center"></span>
+      <span class="line w-full h-1 bg-white rounded transition-opacity duration-300"></span>
+      <span class="line w-full h-1 bg-white rounded transition-transform duration-300 origin-center"></span>
+    </button>
+
+    <!-- Logo for Mobile Only -->
+    <div class="logo-text text-3xl md:hidden mt-4 text-white text-center w-full">
+      Zero Limit Productions
+    </div>
+  </div>
+
+  <!-- Mobile Dropdown Menu -->
+  <div class="md:hidden">
+    <div id="mobile-menu" class="absolute top-full left-0 w-full bg-white/80 backdrop-blur-sm text-center px-6 py-4 shadow-lg dropdown-enter transition-all duration-300 ease-out z-40 hidden rounded-br-3xl rounded-tr-3xl">
+      <a href="../#" class="block px-1 py-2 text-gray-900 bg-white/100 rounded-3xl mb-2 hover:bg-cyan-600 hover:text-white transition duration-250 border border-gray-500">Home</a>
+      <a href="../portfolio/" class="block px-1 py-2 text-gray-900 bg-white/30 rounded-3xl mb-2 hover:bg-cyan-600 hover:text-white transition duration-250 border border-gray-500">Portfolio</a>
+      <a href="../testimonials/" class="block px-1 py-2 text-gray-900 bg-white/30 rounded-3xl mb-2 hover:bg-cyan-600 hover:text-white transition duration-250 border border-gray-500">Testimonials</a>
+      <a href="../about/" class="block px-1 py-2 text-gray-900 bg-white/30 rounded-3xl hover:bg-cyan-600 hover:text-white transition duration-250 border border-gray-500">About Us</a>
+    </div>
+  </div>
+
+  <!-- Desktop Nav Links -->
+  <div class="hidden md:flex justify-center mt-0 mb-0">
+    <div class="nav-wrapper flex space-x-4 shadow-lg px-6 py-4 rounded-full bg-white/10 backdrop-blur-sm">
+      <a href="../#" class="bg-white text-gray-900 px-4 py-1 rounded-full shadow-lg transition-transform duration-300 hover:scale-110 hover:glow-pulse-button">Home</a>
+      <a href="../portfolio/" class="bg-white text-gray-900 px-4 py-1 rounded-full shadow-lg transition-transform duration-300 hover:scale-110 hover:glow-pulse-button">Portfolio</a>
+      <a href="../testimonials/" class="bg-white text-gray-900 px-4 py-1 rounded-full shadow-lg transition-transform duration-300 hover:scale-110 hover:glow-pulse-button">Testimonials</a>
+      <a href="../about/" class="bg-white text-gray-900 px-4 py-1 rounded-full shadow-lg transition-transform duration-300 hover:scale-110 hover:glow-pulse-button">About Us</a>
+    </div>
+  </div>
+    <div class=" h-2 bg-gradient-to-r from-slate-700 to-indigo-950"></div>
+</nav>
+
+<!-- About Us Section -->
+<section class="py-5 scroll-py-48 bg-gradient-to-r from-indigo-950 to-slate-700 hero-bottom-glow relative z-20">
+  <div class="container mx-auto px-4">
+    <h2 class="text-5xl font-bold text-center mb-0 text-white glow-pulse-text-touch">About Us</h2>
+</section>
+
+<!-- Black Background -->
+<section id="Real Estate" class="py-0 bg-slate-950 relative z-10 ">
+    <div class="container mx-auto text-center">
+
+    <!-- About Section -->
+    <div class="flex items-center justify-center px-6 py-16">
+  <div class="max-w-4xl w-full bg-blue-950 backdrop-blur-md p-10 rounded-3xl border border-white/20 shadow-[0_0_30px_5px_rgba(100,200,255,0.15)] hover:shadow-[0_0_20px_2px_rgba(100,20,255,1)] transition duration-300 hover:border-gray-300">
+    <p class="text-lg text-gray-300 leading-relaxed">
+      At <span class="text-white font-semibold">Zero Limit Productions</span>, we believe in turning visions into compelling stories through the power of video. Whether you're launching a brand, celebrating a milestone, or promoting a cause — we create visually striking, professionally edited content that captures your moment with style and emotion.
+    </p>
+    <p class="mt-6 text-lg text-gray-300 leading-relaxed">
+      With a team of passionate creatives, cutting-edge tools, and a commitment to excellence, we handle everything from short-form social content to full-scale commercial production. Every frame we produce reflects our obsession with quality and innovation.
+    </p>
+    <p class="mt-6 text-lg text-gray-300 leading-relaxed">
+      Thank you for visiting our site — let’s make something unforgettable.
+    </p>
+  </div>
+</section>
+
+    <!-- Contact Section -->
+<section id="Contact" class="py-5 bg-slate-950 relative z-5 client-bottom-glow">
+  <div class="container mx-auto px-4">
+    <div class="flex flex-col lg:flex-row gap-20 justify-center items-start">
+      
+      <!-- Contact Form -->
+      <div class="w-full lg:w-1/2 bg-blue-950/80 backdrop-blur-sm rounded-3xl shadow-lg border border-white/20 hover:border-gray-200 transition duration-300 p-8 hover:shadow-[0_0_20px_2px_rgba(100,20,255,1)]">
+        <h2 class="text-3xl font-bold mb-8 text-white glow-pulse-text-touch text-center">Get in Touch</h2>
+        <form id="contact-form" method="POST" class="space-y-4">
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="text" name="name" placeholder="Your Name" required class="w-full p-3 rounded-xl border border-gray-300 bg-slate-700 text-slate-100" />
+          <input type="email" name="email" placeholder="Your Email" required class="w-full p-3 rounded-xl border border-gray-300 bg-slate-700 text-slate-100" />
+          <textarea name="message" rows="5" placeholder="Your Message" required class="w-full p-3 rounded-xl border border-gray-300 bg-slate-700 text-slate-100"></textarea>
+          <button type="submit" class="mx-auto block bg-red-500 text-white px-6 py-3 rounded-full shadow hover:bg-red-600 transition duration-300 border border-red-400 hover:border-white">Send Message</button>
+        </form>
+        <div id="form-success" class="hidden text-green-400 font-semibold mt-4 text-center text-shadow-lg">
+          Thank you! Your message has been sent.
+        </div>
+      </div>
+
+      <!-- Contact Info Box -->
+<div class="w-full lg:w-1/2 bg-blue-950/80 backdrop-blur-sm rounded-3xl shadow-lg border border-white/20 hover:border-gray-200 transition duration-300 p-8 hover:shadow-[0_0_20px_2px_rgba(100,20,255,1)]">
+  <h2 class="text-3xl md:text-3xl font-bold mb-6 text-center text-white glow-pulse-text-touch">Contact Info</h2>
+
+  <div class="space-y-4 text-lg text-white/90">
+    <div class="flex">
+      <span class="w-24 font-semibold">Phone: </span>
+      <span>(123) 456-7890</span>
+    </div>
+    <div class="flex">
+      <span class="w-24 font-semibold">Email: </span>
+      <span>contact@zerolimitproductions.com</span>
+    </div>
+    <div class="flex">
+      <span class="w-24 font-semibold">YouTube: </span>
+      <a href="#" class="text-cyan-400 hover:underline">youtube.com/ZeroLimitProductions</a>
+    </div>
+    <div class="flex">
+      <span class="w-24 font-semibold">Instagram: </span>
+      <a href="#" class="text-cyan-400 hover:underline">@ZeroLimitProductions</a>
+    </div>
+    <div class="flex">
+      <span class="w-24 font-semibold">LinkedIn: </span>
+      <a href="#" class="text-cyan-400 hover:underline">linkedin.com/company/zerolimitproductions</a>
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+  <div class=" h-20 bg-slate-950"></div>
+</section>
+
+         <!-- Footer -->
+<footer class="shadow-[0_-4px_6px_rgba(0,0,0,0.3)] bg-gradient-to-r from-indigo-950 to-slate-700 text-gray-500 text-center py-4 relative z=0">
+    &copy; 2025 Zero Limit Productions — Drew McKay
+</footer>
+ <script>
+    const toggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    toggle.addEventListener('click', () => {
+
+
+      if (mobileMenu.classList.contains('hidden')) {
+        // Show menu with animation
+        mobileMenu.classList.remove('hidden');
+        mobileMenu.classList.add('dropdown-enter');
+        requestAnimationFrame(() => {
+          mobileMenu.classList.add('dropdown-enter-active');
+        });
+        setTimeout(() => {
+          mobileMenu.classList.remove('dropdown-enter', 'dropdown-enter-active');
+        }, 300);
+      } else {
+        // Hide menu with animation
+        mobileMenu.classList.add('dropdown-exit');
+        mobileMenu.classList.add('dropdown-exit-active');
+        setTimeout(() => {
+          mobileMenu.classList.remove('dropdown-exit', 'dropdown-exit-active');
+          mobileMenu.classList.add('hidden');
+        }, 200);
+      }
+    });
+  </script>
+  <script>
+    const form = document.getElementById('contact-form');
+    const successMessage = document.getElementById('form-success');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+      
+      try {
+        const response = await fetch('https://formsubmit.co/zerolimitvideo@gmail.com', {
+          method: 'POST',
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+
+        if (response.ok) {
+          form.reset();
+          successMessage.classList.remove('hidden');
+        } else {
+          alert('Oops! Something went wrong. Please try again.');
+        }
+      } catch (error) {
+        alert('Oops! Something went wrong. Please try again.');
+      }
+    });
+  </script>
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+      menuToggle.addEventListener('click', () => {
+        menuToggle.classList.toggle('open');
+      });
+  </script>
+  <script>
+    // Carousel 1
+    (function() {
+        const images1 = document.querySelectorAll('#carousel1 img');
+        let current1 = 0;
+
+        function showImage1(index) {
+        images1.forEach((img, i) => {
+            img.style.opacity = i === index ? '1' : '0';
+        });
+        }
+
+        window.nextImage1 = function() {
+        current1 = (current1 + 1) % images1.length;
+        showImage1(current1);
+        };
+
+        window.prevImage1 = function() {
+        current1 = (current1 - 1 + images1.length) % images1.length;
+        showImage1(current1);
+        };
+
+        setInterval(() => {
+        window.nextImage1();
+        }, 5000);
+    })();
+
+    // Carousel 2
+    (function() {
+        const images2 = document.querySelectorAll('#carousel2 img');
+        let current2 = 0;
+
+        function showImage2(index) {
+        images2.forEach((img, i) => {
+            img.style.opacity = i === index ? '1' : '0';
+        });
+        }
+
+        window.nextImage2 = function() {
+        current2 = (current2 + 1) % images2.length;
+        showImage2(current2);
+        };
+
+        window.prevImage2 = function() {
+        current2 = (current2 - 1 + images2.length) % images2.length;
+        showImage2(current2);
+        };
+
+        setInterval(() => {
+        window.nextImage2();
+        }, 5000);
+    })();
+    </script>
+</body>
+</html>
