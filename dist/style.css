@@ -389,6 +389,9 @@
   .bg-blue-950 {
     background-color: var(--color-blue-950);
   }
+  .bg-gray-900 {
+    background-color: var(--color-gray-900);
+  }
   .bg-red-500 {
     background-color: var(--color-red-500);
   }
