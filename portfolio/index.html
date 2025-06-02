@@ -165,13 +165,6 @@
     }
   </style>
   <style>
-    .contact-bottom-glow {
-      position: relative;
-      box-shadow: 0 10px 50px -10px rgba(132, 0, 255, 0.5); /* Only top */
-      z-index: 3;
-    }
-  </style>
-  <style>
     .outlined-text {
       color: white;
       text-shadow:
@@ -244,113 +237,123 @@
     <div class=" h-2 bg-gradient-to-r from-slate-700 to-indigo-950"></div>
 </nav>
 
-
-  <!-- Hero Section -->
-  <section class="bg-gradient-to-r from-indigo-950 to-slate-700 text-white text-center py-20 hero-bottom-glow">
-    <h1 class="text-3xl md:text-5xl italic mb-4 text-shadow-lg">Creativity Without Limits</h1>
-    <p class="text-lg md:text-xl mb-8 text-shadow-lg">Professional video production for every occasion.</p>
-    <a href="#contact" class= "border glow-pulse-contact hover:glow-pulse-button bg-white text-gray-900 px-9 py-4 rounded-full shadow-lg hover:bg-blue-400 hover:text-white transition duration-300 hover:shadow-[0_0_10px_2px_rgba(100,155,255,1)]">Contact Us</a>
-  </section>
-
-  <!-- Services Section -->
-  <section id="services" class="py-16 bg-slate-950 relative z-15 p-2 services-bottom-glow">
-    <div class="container mx-auto text-center">
-      <h2 class="text-3xl font-bold mt-0 mb-8 glow-pulse-text-services text-white">Our Services</h2>
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="bg-blue-950 p-6 rounded-3xl shadow-lg hover:shadow-[0_0_20px_2px_rgba(100,20,255,1)] transition duration-200 border hover:border-gray-200 transition duration-200">
-          <img src="https://cdn.sanity.io/images/r115idoc/production/3293c8139d836a5b0307aefc8c74955984ffda39-3240x2160.png?w=3840&q=75&fit=clip&auto=format" alt="Weddings" class="mb-4 rounded-2xl">
-          <h3 class="text-xl font-semibold mb-2 text-white">Weddings</h3>
-          <p class="text-gray-200">Elegant and emotional cinematic wedding films tailored to your special day.</p>
-        </div>
-        <div class="bg-blue-950 p-6 rounded-3xl shadow-lg hover:shadow-[0_0_20px_2px_rgba(100,20,255,1)] transition duration-200 border hover:border-gray-200 transition duration-200">
-          <img src="https://cdn.sanity.io/images/r115idoc/production/3293c8139d836a5b0307aefc8c74955984ffda39-3240x2160.png?w=3840&q=75&fit=clip&auto=format" alt="Stage Productions" class="mb-4 rounded-2xl">
-          <h3 class="text-xl font-semibold mb-2 text-white">Stage Productions</h3>
-          <p class="text-gray-200">Professional multi-camera captures for live shows, concerts, and plays.</p>
-        </div>
-        <div class="bg-blue-950 p-6 rounded-3xl shadow-lg hover:shadow-[0_0_20px_2px_rgba(100,20,255,1)] transition duration-200 border hover:border-gray-200 transition duration-200">
-          <img src="https://cdn.sanity.io/images/r115idoc/production/3293c8139d836a5b0307aefc8c74955984ffda39-3240x2160.png?w=3840&q=75&fit=clip&auto=format" alt="Video Editing" class="mb-4 rounded-2xl">
-          <h3 class="text-xl font-semibold mb-2 text-white">Video Editing</h3>
-          <p class="text-gray-200">Send us your footage — we’ll turn it into a polished, compelling story.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Testimonials Section -->
-  <section id="testimonials" class="py-16 bg-gradient-to-r from-indigo-950 to-slate-700 client-bottom-glow">
-    <div class="container mx-auto text-center">
-      <h2 class="text-3xl font-bold mb-8 glow-pulse-text-clients text-white">What Our Clients Say</h2>
-      <div class="grid md:grid-cols-2 gap-8">
-        <div class="bg-slate-600 p-6 rounded-3xl shadow hover:shadow-[0_0_20px_2px_rgba(100,20,255,1)] transition duration-200 border hover:border-gray-200 transition duration-200">
-          <p class="italic text-white">"The video was exactly what we wanted — cinematic, emotional, and perfect. Highly recommend Drew."</p>
-          <p class="mt-4 font-semibold text-gray-200">– Amanda L.</p>
-        </div>
-        <div class="bg-slate-600 p-6 rounded-3xl shadow hover:shadow-[0_0_20px_2px_rgba(100,20,255,1)] transition duration-200 border hover:border-gray-200 transition duration-200">
-          <p class="italic text-white">"Drew handled our real estate tour with total professionalism. Quick turnaround, too!"</p>
-          <p class="mt-4 font-semibold text-gray-200">– Brandon T.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-      <!-- Contact Section -->
-<section id="contact" class="py-12 bg-slate-950 relative z-5 client-bottom-glow">
+<!-- Portfolio Section -->
+<section class="py-15 bg-gradient-to-r from-indigo-950 to-slate-700 services-bottom-glow relative z-20">
   <div class="container mx-auto px-4">
-    <div class="flex flex-col lg:flex-row gap-14 justify-center items-start">
-      
-      <!-- Contact Form -->
-      <div class="w-full lg:w-1/2 bg-blue-950 backdrop-blur-sm rounded-3xl shadow-lg border border-white/20 hover:border-gray-200 transition duration-300 p-8 hover:shadow-[0_0_20px_2px_rgba(100,20,255,1)]">
-        <h2 class="text-3xl font-bold mb-8 text-white glow-pulse-text-touch text-center">Get in Touch</h2>
-        <form id="contact-form" method="POST" class="space-y-4">
-          <input type="hidden" name="_captcha" value="false" />
-          <input type="text" name="name" placeholder="Your Name" required class="w-full p-3 rounded-xl border border-gray-300 bg-slate-700 text-slate-100" />
-          <input type="email" name="email" placeholder="Your Email" required class="w-full p-3 rounded-xl border border-gray-300 bg-slate-700 text-slate-100" />
-          <textarea name="message" rows="5" placeholder="Your Message" required class="w-full p-3 rounded-xl border border-gray-300 bg-slate-700 text-slate-100"></textarea>
-          <button type="submit" class="mx-auto block bg-red-500 text-white px-6 py-3 rounded-full shadow hover:bg-red-600 transition duration-300 border border-red-400 hover:border-white">Send Message</button>
-        </form>
-        <div id="form-success" class="hidden text-green-400 font-semibold mt-4 text-center text-shadow-lg">
-          Thank you! Your message has been sent.
+    <h2 class="text-5xl font-bold text-center mb-0 text-white glow-pulse-text-touch">Our Work</h2>
+</section>
+
+<!-- Top Portfolio -->
+<section id="Real Estate" class="py-12 bg-slate-950 relative z-10">
+    <div class="container mx-auto text-center">
+      <h2 class="text-3xl font-bold mt-0 mb-8 glow-pulse-text-services text-white">Top</h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <!-- Video Embed Card -->   <!-- Duplicate as needed -->
+      <div class="bg-blue-950 p-4 rounded-3xl shadow-lg border border-gray-700 hover:shadow-[0_0_20px_2px_rgba(100,20,255,1)] transition duration-200 hover:border-gray-300 transition duration-300">
+        <div class="aspect-w-16 aspect-h-9">
+          <iframe class="rounded-xl w-full h-full" src="https://www.youtube.com/embed/Iq3OtNsfD6w" title="YouTube video" frameborder="0" allowfullscreen></iframe>
         </div>
+        <h3 class="text-xl font-semibold mt-4 text-white text-shadow-lg">Project Title</h3>
+        <p class="text-gray-300">Brief description of the project goes here.</p>
       </div>
 
-      <!-- Contact Info Box -->
-<div class="w-full lg:w-1/2 bg-blue-950 backdrop-blur-sm rounded-3xl shadow-lg border border-white/20 hover:border-gray-200 transition duration-300 p-8 hover:shadow-[0_0_20px_2px_rgba(100,20,255,1)]">
-  <h2 class="text-3xl md:text-3xl font-bold mb-6 text-center text-white glow-pulse-text-touch">Contact Info</h2>
+      <div class="bg-blue-950 p-4 rounded-3xl shadow-lg border border-gray-700 hover:shadow-[0_0_20px_2px_rgba(100,20,255,1)] transition duration-200 hover:border-gray-300 transition duration-300">
+        <div class="aspect-w-16 aspect-h-9">
+          <iframe class="rounded-xl w-full h-full" src="https://www.youtube.com/embed/YOUR_VIDEO_ID_2" title="YouTube video" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <h3 class="text-xl font-semibold mt-4 text-white text-shadow-lg">Another Project</h3>
+        <p class="text-gray-300">Short description for this one too.</p>
+      </div>
 
-    <div class="space-y-4 text-lg text-white/90">
-      <p class="flex items-center gap-3">
-        <img src="/icons/phone.png" alt="Phone" class="w-6 h-6" />
-        (123) 456-7890
-      </p>
-      <p class="flex items-center gap-3">
-        <img src="/icons/email.png" alt="Email" class="w-6 h-6" />
-        contact@zerolimitproductions.com
-      </p>
-      <p class="flex items-center gap-3">
-        <img src="/icons/youtube.png" alt="YouTube" class="w-6 h-6" />
-        <a href="#" class="text-cyan-400 hover:underline">youtube.com/ZeroLimitProductions</a>
-      </p>
-      <p class="flex items-center gap-3">
-        <img src="/icons/instagram.png" alt="Instagram" class="w-6 h-6" />
-        <a href="#" class="text-cyan-400 hover:underline">@ZeroLimitProductions</a>
-      </p>
-      <p class="flex items-center gap-3">
-        <img src="/icons/linkedin.png" alt="LinkedIn" class="w-6 h-6" />
-        <a href="#" class="text-cyan-400 hover:underline">linkedin.com/company/zerolimitproductions</a>
-      </p>
+      <div class="bg-blue-950 p-4 rounded-3xl shadow-lg border border-gray-700 hover:shadow-[0_0_20px_2px_rgba(100,20,255,1)] transition duration-200 hover:border-gray-300 transition duration-300">
+        <div class="aspect-w-16 aspect-h-9">
+          <iframe class="rounded-xl w-full h-full" src="https://www.youtube.com/embed/YOUR_VIDEO_ID_2" title="YouTube video" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <h3 class="text-xl font-semibold mt-4 text-white text-shadow-lg">Another Project</h3>
+        <p class="text-gray-300">Short description for this one too.</p>
+      </div>
     </div>
-  </div>
-</div>
-      
+</section>
+
+<!-- Middle Portfolio -->
+<section id="services" class="py-0 bg-slate-950 relative z-15 p-2">
+    <div class="container mx-auto text-center">
+      <h2 class="text-3xl font-bold mt-0 mb-8 glow-pulse-text-services text-white">Middle</h2>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="bg-blue-950 p-4 rounded-3xl shadow-lg border border-gray-700 hover:shadow-[0_0_20px_2px_rgba(100,20,255,1)] transition duration-200 hover:border-gray-300 transition duration-300">
+        <div class="aspect-w-16 aspect-h-9">
+          <iframe class="rounded-xl w-full h-full" src="https://www.youtube.com/embed/YOUR_VIDEO_ID_2" title="YouTube video" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <h3 class="text-xl font-semibold mt-4 text-white text-shadow-lg">Another Project</h3>
+        <p class="text-gray-300">Short description for this one too.</p>
+      </div>
+
+     <!-- First Carousel -->
+     <div class="w-full aspect-video rounded-3xl shadow-lg overflow-hidden relative bg-blue-950 p-4 border border-gray-700 hover:shadow-[0_0_20px_2px_rgba(100,20,255,1)] transition duration-300 hover:border-gray-300">
+        <div id="carousel1" class="w-full h-full relative rounded-3xl">
+            <img src="https://media.istockphoto.com/id/1949882446/vector/teal-orange-grainy-background-banner-noise-texture-glowing-color-gradient-vibrant-dark.jpg?s=612x612&w=0&k=20&c=jsSZREbmeJc2h5IHF2xZi4lx7syOI7jSow0E_wr7fcY=" class="w-full h-full object-cover absolute transition-opacity duration-700 opacity-100 rounded-2xl" />
+            <img src="https://t4.ftcdn.net/jpg/02/67/40/21/360_F_267402109_jZvsqRQUvSxohAOmcUt549jlapqoRHM0.jpg" class="w-full h-full object-cover absolute transition-opacity duration-700 opacity-0 rounded-2xl" />
+            <img src="https://res.cloudinary.com/zenbusiness/q_auto,w_794/v1/logaster/logaster-2022-06-liniar-gradient.jpg" class="w-full h-full object-cover absolute transition-opacity duration-700 opacity-0 rounded-2xl" />
+        </div>
+
+        <!-- Navigation Arrows -->
+        <button onclick="prevImage1()" class="absolute left-5 top-1/2 transform -translate-y-1/2 bg-black/70 text-white font-bold px-3 py-2 rounded-full z-10">
+            ‹
+        </button>
+        <button onclick="nextImage1()" class="absolute right-5 top-1/2 transform -translate-y-1/2 bg-black/70 text-white font-bold px-3 py-2 rounded-full z-10">
+            ›
+        </button>
+        </div>
     </div>
+        <!-- Spacer -->
+        <div class="h-12 bg-slate-950"></div>
   </div>
 </section>
 
-  <!-- Footer -->
+    <!-- Bottom Portfolio -->
+<section id="services" class="py-0 bg-slate-950 relative z-15 p-2 client-bottom-glow">
+    <div class="container mx-auto text-center">
+      <h2 class="text-3xl font-bold mt-0 mb-8 glow-pulse-text-services text-white">Bottom</h2>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="bg-blue-950 p-4 rounded-3xl shadow-lg border border-gray-700 hover:shadow-[0_0_20px_2px_rgba(100,20,255,1)] transition duration-200 hover:border-gray-300 transition duration-300">
+        <div class="aspect-w-16 aspect-h-16">
+          <iframe class="rounded-xl w-full h-full" src="https://www.youtube.com/embed/YOUR_VIDEO_ID_2" title="YouTube video" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <h3 class="text-xl font-semibold mt-4 text-white text-shadow-lg">Another Project</h3>
+        <p class="text-gray-300">Short description for this one too.</p>
+      </div>
+
+       <!-- Second Carousel -->
+        <div class="w-full aspect-video rounded-3xl shadow-lg overflow-hidden relative bg-blue-950 p-4 border border-gray-700 hover:shadow-[0_0_20px_2px_rgba(100,20,255,1)] transition duration-300 hover:border-gray-300 mt-0">
+        <div id="carousel2" class="w-full h-full relative rounded-3xl">
+            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover absolute transition-opacity duration-700 opacity-100 rounded-2xl" />
+            <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover absolute transition-opacity duration-700 opacity-0 rounded-2xl" />
+            <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover absolute transition-opacity duration-700 opacity-0 rounded-2xl" />
+        </div>
+
+        <!-- Navigation Arrows -->
+        <button onclick="prevImage2()" class="absolute left-5 top-1/2 transform -translate-y-1/2 bg-black/70 text-white font-bold px-3 py-2 rounded-full z-10">
+            ‹
+        </button>
+        <button onclick="nextImage2()" class="absolute right-5 top-1/2 transform -translate-y-1/2 bg-black/70 text-white font-bold px-3 py-2 rounded-full z-10">
+            ›
+        </button>
+    </div>
+
+    </div>
+      </div>
+    <div class=" h-20 bg-slate-950"></div>
+  </div>
+</section>
+
+ <!-- Footer -->
   <footer class="shadow-[0_-4px_6px_rgba(0,0,0,0.3)] bg-gradient-to-r from-indigo-950 to-slate-700 text-gray-500 text-center py-4 relative z=0">
     &copy; 2025 Zero Limit Productions — Drew McKay
   </footer>
-  <script>
+ <script>
     const toggle = document.getElementById('menu-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
 
@@ -413,5 +416,58 @@
         menuToggle.classList.toggle('open');
       });
   </script>
+  <script>
+    // Carousel 1
+    (function() {
+        const images1 = document.querySelectorAll('#carousel1 img');
+        let current1 = 0;
+
+        function showImage1(index) {
+        images1.forEach((img, i) => {
+            img.style.opacity = i === index ? '1' : '0';
+        });
+        }
+
+        window.nextImage1 = function() {
+        current1 = (current1 + 1) % images1.length;
+        showImage1(current1);
+        };
+
+        window.prevImage1 = function() {
+        current1 = (current1 - 1 + images1.length) % images1.length;
+        showImage1(current1);
+        };
+
+        setInterval(() => {
+        window.nextImage1();
+        }, 5000);
+    })();
+
+    // Carousel 2
+    (function() {
+        const images2 = document.querySelectorAll('#carousel2 img');
+        let current2 = 0;
+
+        function showImage2(index) {
+        images2.forEach((img, i) => {
+            img.style.opacity = i === index ? '1' : '0';
+        });
+        }
+
+        window.nextImage2 = function() {
+        current2 = (current2 + 1) % images2.length;
+        showImage2(current2);
+        };
+
+        window.prevImage2 = function() {
+        current2 = (current2 - 1 + images2.length) % images2.length;
+        showImage2(current2);
+        };
+
+        setInterval(() => {
+        window.nextImage2();
+        }, 5000);
+    })();
+    </script>
 </body>
 </html>
