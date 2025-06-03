@@ -165,13 +165,6 @@
     }
   </style>
   <style>
-    .contact-bottom-glow {
-      position: relative;
-      box-shadow: 0 10px 50px -10px rgba(132, 0, 255, 0.5); /* Only top */
-      z-index: 3;
-    }
-  </style>
-  <style>
     .outlined-text {
       color: white;
       text-shadow:
@@ -219,7 +212,7 @@
   </div>
 
   <!-- Logo positioned halfway between left and center -->
-  <img src="../images/mylogo.png" alt="Logo"
+  <img src="/images/mylogo.png" alt="Logo"
        class="absolute top-1/2 justify-left transform -translate-y-1/2 h-20 w-auto" />
 </div>
 
@@ -230,8 +223,8 @@
     
       <!-- Fade-in Logo Inside Navbar (Desktop only) -->
     <div id="fade-logo"
-         class="hidden md:flex items-center opacity-0 absolute left-5.25 top-4.5 transition-opacity duration-700 scale-100 ease-out ">
-      <img src="../images/mylogo.png" alt="Logo" class="h-10 w-auto mr-2">
+         class="hidden md:flex items-center opacity-0 absolute left-5.25 top-4.5 transition-opacity duration-700 ease-out ">
+      <img src="/images/mylogo.png" alt="Logo" class="h-10 w-auto mr-2">
       <span class="text-white text-2xl logo-text">Zero Limit Productions</span>
     </div>
 
@@ -271,76 +264,38 @@
 </nav>
 
 
-  <!-- Hero Section with Background Logo -->
-<section class="relative bg-gradient-to-r from-indigo-950 to-slate-700 text-white text-center py-20 hero-bottom-glow overflow-hidden">
-
-  <!-- Background Logo Image -->
-  <img src="../images/mylogo.png" alt="Logo Background"
-    class="absolute inset-0 w-full h-full object-contain opacity-15 z-0 pointer-events-none mx-auto scale-140" />
-
-  <!-- Foreground Content -->
-  <div class="relative z-10">
-    <h1 class="text-3xl md:text-5xl italic mb-4 text-shadow-lg">Creativity Without Limits</h1>
-    <p class="text-lg md:text-xl mb-8 text-shadow-lg">Professional video production for every occasion.</p>
-    <a href="#contact"
-      class="border glow-pulse-contact hover:glow-pulse-button bg-white text-gray-900 px-9 py-4 rounded-full shadow-lg hover:bg-blue-400 hover:text-white transition duration-300 hover:shadow-[0_0_10px_2px_rgba(100,155,255,1)]">
-      Contact Us
-    </a>
-  </div>
-</section>
-
-  <!-- Services Section -->
-  <section id="services" class="py-16 bg-slate-950 relative z-15 p-2 services-bottom-glow">
-    <div class="container mx-auto text-center">
-      <h2 class="text-3xl font-bold mt-0 mb-8 glow-pulse-text-services text-white">Our Services</h2>
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="bg-blue-950 p-6 rounded-3xl shadow-lg hover:shadow-[0_0_20px_2px_rgba(100,20,255,1)] transition duration-200 border hover:border-gray-200 transition duration-200">
-          <img src="/images/events.png" alt="Weddings" class="border border-gray-500 shadow-[0_0_20px_2px_rgba(100,100,255,0.5)] mb-4 rounded-2xl">
-          <h3 class="text-xl font-semibold mb-2 text-white">Reliving the Moment</h3>
-          <p class="text-gray-200">We immortalize your most important memories through film - Weddings, mission homecomings, and more.</p>
-        </div>
-        <div class="bg-blue-950 p-6 rounded-3xl shadow-lg hover:shadow-[0_0_20px_2px_rgba(100,20,255,1)] transition duration-200 border hover:border-gray-200 transition duration-200 ">
-          <img src="/images/stageproduction.png" alt="Stage Productions" class="mb-4 rounded-2xl shadow-[0_0_20px_2px_rgba(100,100,255,0.5)] border border-gray-500">
-          <h3 class="text-xl font-semibold mb-2 text-white">Stage Productions</h3>
-          <p class="text-gray-200">Professional multi-camera captures for musicals, live shows, concerts, and plays.</p>
-        </div>
-        <div class="bg-blue-950 p-6 rounded-3xl shadow-lg hover:shadow-[0_0_20px_2px_rgba(100,20,255,1)] transition duration-200 border hover:border-gray-200 transition duration-200">
-          <img src="/images/realestate.png" alt="Video Editing" class="mb-4 rounded-2xl shadow-[0_0_20px_2px_rgba(100,100,255,0.5)] border border-gray-500">
-          <h3 class="text-xl font-semibold mb-2 text-white">Real Estate</h3>
-          <p class="text-gray-200">Showcase properties with stunning photos and videos that help listings stand out and sell faster.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-<!-- Testimonials Section -->
-<section id="testimonials" class="relative py-16 bg-gradient-to-r from-indigo-950 to-slate-700 client-bottom-glow overflow-hidden">
-  <!-- Background Logo Image -->
-  <img src="/images/mylogo.png" alt="Logo Background"
-       class="absolute top-1/2 left-1/2 w-[800px] max-w-none transform -translate-x-1/2 -translate-y-1/2 opacity-10 z-0 pointer-events-none scale-60" />
-
-  <div class="relative z-10 container mx-auto text-center">
-    <h2 class="text-3xl font-bold mb-8 glow-pulse-text-clients text-white">What Our Clients Say</h2>
-    <div class="grid md:grid-cols-2 gap-8">
-      <div class="bg-slate-600/80 p-6 rounded-3xl shadow hover:shadow-[0_0_20px_2px_rgba(100,20,255,1)] transition duration-200 border hover:border-gray-200">
-        <p class="italic text-white">"Drew. These are GORGEOUS! I am so so impressed with the shots and editing- this is such an incredible talent."</p>
-        <p class="mt-4 font-semibold text-gray-200">– Linze Struiksma, Theatre Director</p>
-      </div>
-      <div class="bg-slate-600/80 p-6 rounded-3xl shadow hover:shadow-[0_0_20px_2px_rgba(100,20,255,1)] transition duration-200 border hover:border-gray-200">
-        <p class="italic text-white">"Drew McKay is one of those guys that’s a rare find. He knows exactly what he’s doing and he knows how to tell a story using his editing skills. I highly recommend him!"</p>
-        <p class="mt-4 font-semibold text-gray-200">– Ernie Harker, Professional Speaker</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-      <!-- Contact Section -->
-<section id="contact" class="py-12 bg-slate-950 relative z-5 contact-bottom-glow">
+<!-- About Us Section -->
+<section class="py-5 scroll-py-48 bg-gradient-to-r from-indigo-950 to-slate-700 hero-bottom-glow relative z-20">
   <div class="container mx-auto px-4">
-    <div class="flex flex-col lg:flex-row gap-14 justify-center items-start">
+    <h2 class="text-5xl font-bold text-center mb-0 text-white glow-pulse-text-touch">About Us</h2>
+</section>
+
+<!-- Black Background -->
+<section id="Real Estate" class="py-0 bg-slate-950 relative z-10 ">
+    <div class="container mx-auto text-center">
+
+    <!-- About Section -->
+    <div class="flex items-center justify-center px-6 py-16">
+  <div class="max-w-4xl w-full bg-blue-950 backdrop-blur-md p-10 rounded-3xl border border-white/20 shadow-[0_0_30px_5px_rgba(100,200,255,0.15)] hover:shadow-[0_0_20px_2px_rgba(100,20,255,1)] transition duration-300 hover:border-gray-300">
+    <p class="text-lg text-gray-300 leading-relaxed">
+      At <span class="text-white font-semibold">Zero Limit Productions</span>, we believe in turning visions into compelling stories through the power of video. Whether you're launching a brand, celebrating a milestone, or promoting a cause — we create visually striking, professionally edited content that captures your moment with style and emotion.
+    </p>
+    <p class="mt-6 text-lg text-gray-300 leading-relaxed">
+      With a team of passionate creatives, cutting-edge tools, and a commitment to excellence, we handle everything from short-form social content to full-scale commercial production. Every frame we produce reflects our obsession with quality and innovation.
+    </p>
+    <p class="mt-6 text-lg text-gray-300 leading-relaxed">
+      Thank you for visiting our site — let’s make something unforgettable.
+    </p>
+  </div>
+</section>
+
+    <!-- Contact Section -->
+<section id="Contact" class="py-5 bg-slate-950 relative z-5 client-bottom-glow">
+  <div class="container mx-auto px-4">
+    <div class="flex flex-col lg:flex-row gap-20 justify-center items-start">
       
       <!-- Contact Form -->
-      <div class="w-full lg:w-1/2 bg-blue-950 backdrop-blur-sm rounded-3xl shadow-lg border border-white/20 hover:border-gray-200 transition duration-300 p-8 hover:shadow-[0_0_20px_2px_rgba(100,20,255,1)]">
+      <div class="w-full lg:w-1/2 bg-blue-950/80 backdrop-blur-sm rounded-3xl shadow-lg border border-white/20 hover:border-gray-200 transition duration-300 p-8 hover:shadow-[0_0_20px_2px_rgba(100,20,255,1)]">
         <h2 class="text-3xl font-bold mb-8 text-white glow-pulse-text-touch text-center">Get in Touch</h2>
         <form id="contact-form" method="POST" class="space-y-4">
           <input type="hidden" name="_captcha" value="false" />
@@ -355,10 +310,10 @@
       </div>
 
       <!-- Contact Info Box -->
-<div class="w-full lg:w-1/2 bg-blue-950 backdrop-blur-sm rounded-3xl shadow-lg border border-white/20 hover:border-gray-200 transition duration-300 p-8 hover:shadow-[0_0_20px_2px_rgba(100,20,255,1)]">
+<div class="w-full lg:w-1/2 bg-blue-950/80 backdrop-blur-sm rounded-3xl shadow-lg border border-white/20 hover:border-gray-200 transition duration-300 p-8 hover:shadow-[0_0_20px_2px_rgba(100,20,255,1)]">
   <h2 class="text-3xl md:text-3xl font-bold mb-6 text-center text-white glow-pulse-text-touch">Contact Info</h2>
 
-    <div class="space-y-4 text-lg text-white/90">
+   <div class="space-y-4 text-lg text-white/90">
       <p class="flex items-center gap-3">
         <img src="/icons/phone.png" alt="Phone" class="w-6 h-6" />
         (801) 882-7258
@@ -385,13 +340,14 @@
       
     </div>
   </div>
+  <div class=" h-20 bg-slate-950"></div>
 </section>
 
-  <!-- Footer -->
-  <footer class="shadow-[0_-4px_6px_rgba(0,0,0,0.3)] bg-gradient-to-r from-indigo-950 to-slate-700 text-gray-500 text-center py-4 relative z=0">
+         <!-- Footer -->
+<footer class="shadow-[0_-4px_6px_rgba(0,0,0,0.3)] bg-gradient-to-r from-indigo-950 to-slate-700 text-gray-500 text-center py-4 relative z=0">
     &copy; 2025 Zero Limit Productions — Drew McKay
-  </footer>
-  <script>
+</footer>
+ <script>
     const toggle = document.getElementById('menu-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
 
@@ -455,6 +411,59 @@
       });
   </script>
   <script>
+    // Carousel 1
+    (function() {
+        const images1 = document.querySelectorAll('#carousel1 img');
+        let current1 = 0;
+
+        function showImage1(index) {
+        images1.forEach((img, i) => {
+            img.style.opacity = i === index ? '1' : '0';
+        });
+        }
+
+        window.nextImage1 = function() {
+        current1 = (current1 + 1) % images1.length;
+        showImage1(current1);
+        };
+
+        window.prevImage1 = function() {
+        current1 = (current1 - 1 + images1.length) % images1.length;
+        showImage1(current1);
+        };
+
+        setInterval(() => {
+        window.nextImage1();
+        }, 5000);
+    })();
+
+    // Carousel 2
+    (function() {
+        const images2 = document.querySelectorAll('#carousel2 img');
+        let current2 = 0;
+
+        function showImage2(index) {
+        images2.forEach((img, i) => {
+            img.style.opacity = i === index ? '1' : '0';
+        });
+        }
+
+        window.nextImage2 = function() {
+        current2 = (current2 + 1) % images2.length;
+        showImage2(current2);
+        };
+
+        window.prevImage2 = function() {
+        current2 = (current2 - 1 + images2.length) % images2.length;
+        showImage2(current2);
+        };
+
+        setInterval(() => {
+        window.nextImage2();
+        }, 5000);
+    })();
+    </script>
+    <script>
     const fadeLogo = document.getElementById('fade-logo');
 
     window.addEventListener('scroll', () => {
