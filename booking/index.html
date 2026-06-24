@@ -102,7 +102,7 @@
     <header class="sticky top-0 z-50 bg-[#FAF6F0]/90 backdrop-blur-md border-b border-stone-200 shadow-xs">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 h-20 grid grid-cols-2 md:grid-cols-3 items-center relative">
             
-                       <!-- BRANDING LOGO & TITLE HEADER AREA -->
+            <!-- BRANDING LOGO & TITLE HEADER AREA -->
             <div class="flex justify-start">
                 <a href="../" class="flex items-center gap-3 text-xs sm:text-sm font-bold tracking-[0.25em] text-[#181F22]">
                     <img src="../images/zlplogo.png" alt="Zero Limit Productions Identity Logo" class="w-6 h-6 object-contain block flex-shrink-0">
@@ -271,7 +271,7 @@
                             <i class="fa-solid fa-eye text-[10px] text-stone-400"></i> Business & Commercial Track
                         </h3>
                         <p class="text-[11px] text-stone-500 font-light leading-relaxed">
-                            High-impact commercial clips, social media reels, promotional material, and real estate updates structured cleanly to connect with consumers and level up your brand presence.
+                            High-impact commercial clips, social media reels, and promotional material structured cleanly to connect with consumers and level up your brand presence.
                         </p>
                     </div>
                 </div>
@@ -443,7 +443,6 @@
                 </div>
 
                 <div class="space-y-4 order-4 md:order-4">
-                    <!-- ALSO PLACED LOGO HERE FOR CONSISTENCY -->
                     <p class="font-bold text-white tracking-[0.25em] text-xs uppercase flex items-center gap-2">
                         <img src="/images/zlplogo.png" alt="" class="w-4 h-4 object-contain brightness-0 invert">
                         <span>ZERO LIMIT<span class="text-stone-400 font-light"> PRODUCTIONS</span></span>
@@ -618,21 +617,19 @@
         });
 
         document.querySelectorAll('a[href="#booking-form-anchor"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault(); // Prevents the abrupt native top-snap
-        
-        const targetSection = document.getElementById('booking-form-anchor');
-        if (targetSection) {
-            targetSection.scrollIntoView({
-                behavior: 'smooth',
-                block: 'center' // <--- This forces perfect vertical centering
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetSection = document.getElementById('booking-form-anchor');
+                if (targetSection) {
+                    targetSection.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'center'
+                    });
+                    history.pushState(null, null, '#booking-form-anchor');
+                }
             });
-            
-            // Optional: Update the URL hash without jumping the page
-            history.pushState(null, null, '#booking-form-anchor');
-        }
-    });
-});
+        });
     </script>
 
 </body>
