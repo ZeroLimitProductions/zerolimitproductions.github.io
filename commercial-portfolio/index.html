@@ -27,7 +27,7 @@
     <meta name="twitter:image" content="../images/cover.png">
 
     <!-- Favicon Configuration -->
-    <link rel="icon" type="image/png" href="../images/favicon.png">
+    <link class="js-favicon" rel="icon" type="image/png" href="../images/favicon.png">
     
     <!-- Google Analytics (Global Site Tag) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
@@ -82,9 +82,11 @@
             transition: transform 0.2s cubic-bezier(0.25, 1, 0.5, 1), background-color 0.2s ease;
         }
         
-        .timeline-scrubber:hover::-webkit-slider-thumb {
-            transform: scale(1.05);
-            background: linear-gradient(90deg, transparent 18px, rgba(250, 246, 240, 0.6) 18px, rgba(250, 246, 240, 0.6) 20px, transparent 20px, transparent 24px, rgba(250, 246, 240, 0.6) 24px, rgba(250, 246, 240, 0.6) 26px, transparent 26px), #181F22;
+        .timeline-scrubber:hover {
+            &::-webkit-slider-thumb {
+                transform: scale(1.05);
+                background: linear-gradient(90deg, transparent 18px, rgba(250, 246, 240, 0.6) 18px, rgba(250, 246, 240, 0.6) 20px, transparent 20px, transparent 24px, rgba(250, 246, 240, 0.6) 24px, rgba(250, 246, 240, 0.6) 26px, transparent 26px), #181F22;
+            }
         }
 
         /* Firefox Browsers */
@@ -99,9 +101,11 @@
             transition: transform 0.2s cubic-bezier(0.25, 1, 0.5, 1), background-color 0.2s ease;
         }
         
-        .timeline-scrubber:hover::-moz-range-thumb {
-            transform: scale(1.05);
-            background: linear-gradient(90deg, transparent 18px, rgba(250, 246, 240, 0.6) 18px, rgba(250, 246, 240, 0.6) 20px, transparent 20px, transparent 24px, rgba(250, 246, 240, 0.6) 24px, rgba(250, 246, 240, 0.6) 26px, transparent 26px), #181F22;
+        .timeline-scrubber:hover {
+            &::-moz-range-thumb {
+                transform: scale(1.05);
+                background: linear-gradient(90deg, transparent 18px, rgba(250, 246, 240, 0.6) 18px, rgba(250, 246, 240, 0.6) 20px, transparent 20px, transparent 24px, rgba(250, 246, 240, 0.6) 24px, rgba(250, 246, 240, 0.6) 26px, transparent 26px), #181F22;
+            }
         }
 
         /* Asymmetrical Hamburger Lines */
@@ -116,9 +120,11 @@
         .hamburger-line-2 { top: 11px; right: 0; width: 70%; }
         .hamburger-line-3 { top: 19px; left: 0; width: 100%; }
 
-        #mobile-menu-toggle.is-active .hamburger-line-1 { transform: translate3d(24px, 0, 0); opacity: 0; }
-        #mobile-menu-toggle.is-active .hamburger-line-2 { transform: translate3d(-24px, 0, 0); opacity: 0; }
-        #mobile-menu-toggle.is-active .hamburger-line-3 { transform: translate3d(24px, 0, 0); opacity: 0; }
+        #mobile-menu-toggle.is-active {
+            .hamburger-line-1 { transform: translate3d(24px, 0, 0); opacity: 0; }
+            .hamburger-line-2 { transform: translate3d(-24px, 0, 0); opacity: 0; }
+            .hamburger-line-3 { transform: translate3d(24px, 0, 0); opacity: 0; }
+        }
         
         .nav-icon-close {
             position: absolute;
@@ -265,7 +271,7 @@
             </div>
             
             <div class="relative w-full">
-                <!-- Left Nav Arrow (-mt-6 Realignment Applied) -->
+                <!-- Left Nav Arrow (-mt-6 Realignment Applied from image_7c380c.jpg context) -->
                 <button class="hidden md:flex absolute -left-5 top-1/2 -translate-y-1/2 -mt-6 z-30 w-11 h-11 bg-[#FAF6F0]/90 backdrop-blur-md rounded-full border border-stone-300/60 text-[#181F22] items-center justify-center opacity-0 group-hover/section:opacity-100 hover:scale-105 transition-all duration-300 shadow-md hover:bg-[#181F22] hover:text-white hover:border-[#181F22] cursor-pointer control-prev" onclick="scrollSectionLeft(this)" aria-label="Scroll left">
                     <i class="fa-solid fa-chevron-left text-xs"></i>
                 </button>
@@ -339,7 +345,7 @@
 
                 </div>
 
-                <!-- Right Nav Arrow (-mt-6 Realignment Applied) -->
+                <!-- Right Nav Arrow (-mt-6 Realignment Applied from image_7c380c.jpg context) -->
                 <button class="hidden md:flex absolute -right-5 top-1/2 -translate-y-1/2 -mt-6 z-30 w-11 h-11 bg-[#FAF6F0]/90 backdrop-blur-md rounded-full border border-stone-300/60 text-[#181F22] items-center justify-center opacity-0 group-hover/section:opacity-100 hover:scale-105 transition-all duration-300 shadow-md hover:bg-[#181F22] hover:text-white hover:border-[#181F22] cursor-pointer control-next" onclick="scrollSectionRight(this)" aria-label="Scroll right">
                     <i class="fa-solid fa-chevron-right text-xs"></i>
                 </button>
@@ -359,7 +365,7 @@
             </div>
             
             <div class="relative w-full">
-                <!-- Left Nav Arrow (-mt-6 Realignment Applied) -->
+                <!-- Left Nav Arrow (-mt-6 Realignment Applied from image_7c380c.jpg context) -->
                 <button class="hidden md:flex absolute -left-5 top-1/2 -translate-y-1/2 -mt-6 z-30 w-11 h-11 bg-[#FAF6F0]/90 backdrop-blur-md rounded-full border border-stone-300/60 text-[#181F22] items-center justify-center opacity-0 group-hover/section:opacity-100 hover:scale-105 transition-all duration-300 shadow-md hover:bg-[#181F22] hover:text-white hover:border-[#181F22] cursor-pointer control-prev" onclick="scrollSectionLeft(this)" aria-label="Scroll left">
                     <i class="fa-solid fa-chevron-left text-xs"></i>
                 </button>
@@ -420,7 +426,7 @@
 
                 </div>
 
-                <!-- Right Nav Arrow (-mt-6 Realignment Applied) -->
+                <!-- Right Nav Arrow (-mt-6 Realignment Applied from image_7c380c.jpg context) -->
                 <button class="hidden md:flex absolute -right-5 top-1/2 -translate-y-1/2 -mt-6 z-30 w-11 h-11 bg-[#FAF6F0]/90 backdrop-blur-md rounded-full border border-stone-300/60 text-[#181F22] items-center justify-center opacity-0 group-hover/section:opacity-100 hover:scale-105 transition-all duration-300 shadow-md hover:bg-[#181F22] hover:text-white hover:border-[#181F22] cursor-pointer control-next" onclick="scrollSectionRight(this)" aria-label="Scroll right">
                     <i class="fa-solid fa-chevron-right text-xs"></i>
                 </button>
@@ -440,7 +446,7 @@
             </div>
             
             <div class="relative w-full">
-                <!-- Left Nav Arrow (-mt-6 Realignment Applied) -->
+                <!-- Left Nav Arrow (-mt-6 Realignment Applied from image_7c380c.jpg context) -->
                 <button class="hidden md:flex absolute -left-5 top-1/2 -translate-y-1/2 -mt-6 z-30 w-11 h-11 bg-[#FAF6F0]/90 backdrop-blur-md rounded-full border border-stone-300/60 text-[#181F22] items-center justify-center opacity-0 group-hover/section:opacity-100 hover:scale-105 transition-all duration-300 shadow-md hover:bg-[#181F22] hover:text-white hover:border-[#181F22] cursor-pointer control-prev" onclick="scrollSectionLeft(this)" aria-label="Scroll left">
                     <i class="fa-solid fa-chevron-left text-xs"></i>
                 </button>
@@ -524,7 +530,7 @@
                                 <img src="../images/Lynford3.png" class="w-full h-full object-cover shrink-0 select-none" alt="Urban Luxury Lounge">
                                 <img src="../images/Lynford4.png" class="w-full h-full object-cover shrink-0 select-none" alt="Urban Luxury Frontage">
                                 <img src="../images/Lynford5.png" class="w-full h-full object-cover shrink-0 select-none" alt="Urban Luxury Deck">
-                                <img src="../images/Lynford6.png" class="w-full h-full object-cover shrink-0 select-none" alt="Urban Luxury Lounge">
+                                <img src="../images/Lynford3.png" class="w-full h-full object-cover shrink-0 select-none" alt="Urban Luxury Lounge">
                             </div>
                             
                             <button class="carousel-btn-left absolute left-0 top-0 bottom-0 w-14 bg-black/0 hover:bg-black/20 text-white/40 hover:text-white/90 transition-all duration-200 flex items-center justify-center z-30 focus:outline-none cursor-pointer" aria-label="Previous slide">
@@ -551,7 +557,7 @@
 
                 </div>
 
-                <!-- Right Nav Arrow (-mt-6 Realignment Applied) -->
+                <!-- Right Nav Arrow (-mt-6 Realignment Applied from image_7c380c.jpg context) -->
                 <button class="hidden md:flex absolute -right-5 top-1/2 -translate-y-1/2 -mt-6 z-30 w-11 h-11 bg-[#FAF6F0]/90 backdrop-blur-md rounded-full border border-stone-300/60 text-[#181F22] items-center justify-center opacity-0 group-hover/section:opacity-100 hover:scale-105 transition-all duration-300 shadow-md hover:bg-[#181F22] hover:text-white hover:border-[#181F22] cursor-pointer control-next" onclick="scrollSectionRight(this)" aria-label="Scroll right">
                     <i class="fa-solid fa-chevron-right text-xs"></i>
                 </button>
@@ -590,38 +596,38 @@
                 
                 <!-- Track Loop 1 -->
                 <div class="flex gap-18 items-center pr-18 min-w-max">
-                    <img src="../images/Kare.png" alt="Utah Jazz" class="h-14 w-auto object-contain opacity-35 grayscale hover:opacity-90 hover:grayscale-0 transition duration-300">
-                    <img src="../images/PorchPatio.png" alt="Panasonic" class="h-20 w-auto object-contain opacity-35 grayscale hover:opacity-90 hover:grayscale-0 transition duration-300">
-                    <img src="../images/Butter.png" alt="Google" class="h-10 w-auto object-contain opacity-35 grayscale hover:opacity-90 hover:grayscale-0 transition duration-300">
-                    <img src="../images/ErnBurn.png" alt="Amazon" class="h-24 w-auto object-contain opacity-35 grayscale hover:opacity-90 hover:grayscale-0 transition duration-300">
-                    <img src="../images/BeyondAbundance.png" alt="Netflix" class="h-18 w-auto object-contain opacity-35 grayscale hover:opacity-90 hover:grayscale-0 transition duration-300">
-                    <img src="../images/Augusta.png" alt="Marvel" class="h-14 w-auto object-contain opacity-35 grayscale hover:opacity-90 hover:grayscale-0 transition duration-300">
-                    <img src="../images/Circles.png" alt="Tesla" class="h-16 w-auto object-contain opacity-35 grayscale hover:opacity-90 hover:grayscale-0 transition duration-300">
-                    <img src="../images/ColdwellRealty.png" alt="Tesla" class="h-18 w-auto object-contain opacity-35 grayscale hover:opacity-90 hover:grayscale-0 transition duration-300">
+                    <img src="../images/Kare.png" alt="Kare Colostrum" class="h-14 w-auto object-contain opacity-35 grayscale hover:opacity-90 hover:grayscale-0 transition duration-300">
+                    <img src="../images/PorchPatio.png" alt="Porch and Patio" class="h-20 w-auto object-contain opacity-35 grayscale hover:opacity-90 hover:grayscale-0 transition duration-300">
+                    <img src="../images/Butter.png" alt="Butter Shears" class="h-10 w-auto object-contain opacity-35 grayscale hover:opacity-90 hover:grayscale-0 transition duration-300">
+                    <img src="../images/ErnBurn.png" alt="ErnBurn" class="h-24 w-auto object-contain opacity-35 grayscale hover:opacity-90 hover:grayscale-0 transition duration-300">
+                    <img src="../images/BeyondAbundance.png" alt="Beyond Abundance" class="h-18 w-auto object-contain opacity-35 grayscale hover:opacity-90 hover:grayscale-0 transition duration-300">
+                    <img src="../images/Augusta.png" alt="Augusta Dental" class="h-14 w-auto object-contain opacity-35 grayscale hover:opacity-90 hover:grayscale-0 transition duration-300">
+                    <img src="../images/Circles.png" alt="Circles Salt Lake" class="h-16 w-auto object-contain opacity-35 grayscale hover:opacity-90 hover:grayscale-0 transition duration-300">
+                    <img src="../images/ColdwellRealty.png" alt="Coldwell Realty" class="h-18 w-auto object-contain opacity-35 grayscale hover:opacity-90 hover:grayscale-0 transition duration-300">
                 </div>
 
                 <!-- Track Loop 2 -->
                 <div class="flex gap-18 items-center pr-18 min-w-max" aria-hidden="true">
-                    <img src="../images/Kare.png" alt="Utah Jazz" class="h-14 w-auto object-contain opacity-35 grayscale hover:opacity-90 hover:grayscale-0 transition duration-300">
-                    <img src="../images/PorchPatio.png" alt="Panasonic" class="h-20 w-auto object-contain opacity-35 grayscale hover:opacity-90 hover:grayscale-0 transition duration-300">
-                    <img src="../images/Butter.png" alt="Google" class="h-10 w-auto object-contain opacity-35 grayscale hover:opacity-90 hover:grayscale-0 transition duration-300">
-                    <img src="../images/ErnBurn.png" alt="Amazon" class="h-24 w-auto object-contain opacity-35 grayscale hover:opacity-90 hover:grayscale-0 transition duration-300">
-                    <img src="../images/BeyondAbundance.png" alt="Netflix" class="h-18 w-auto object-contain opacity-35 grayscale hover:opacity-90 hover:grayscale-0 transition duration-300">
-                    <img src="../images/Augusta.png" alt="Marvel" class="h-14 w-auto object-contain opacity-35 grayscale hover:opacity-90 hover:grayscale-0 transition duration-300">
-                    <img src="../images/Circles.png" alt="Tesla" class="h-16 w-auto object-contain opacity-35 grayscale hover:opacity-90 hover:grayscale-0 transition duration-300">
-                    <img src="../images/ColdwellRealty.png" alt="Tesla" class="h-18 w-auto object-contain opacity-35 grayscale hover:opacity-90 hover:grayscale-0 transition duration-300">
+                    <img src="../images/Kare.png" alt="" class="h-14 w-auto object-contain opacity-35 grayscale hover:opacity-90 hover:grayscale-0 transition duration-300">
+                    <img src="../images/PorchPatio.png" alt="" class="h-20 w-auto object-contain opacity-35 grayscale hover:opacity-90 hover:grayscale-0 transition duration-300">
+                    <img src="../images/Butter.png" alt="" class="h-10 w-auto object-contain opacity-35 grayscale hover:opacity-90 hover:grayscale-0 transition duration-300">
+                    <img src="../images/ErnBurn.png" alt="" class="h-24 w-auto object-contain opacity-35 grayscale hover:opacity-90 hover:grayscale-0 transition duration-300">
+                    <img src="../images/BeyondAbundance.png" alt="" class="h-18 w-auto object-contain opacity-35 grayscale hover:opacity-90 hover:grayscale-0 transition duration-300">
+                    <img src="../images/Augusta.png" alt="" class="h-14 w-auto object-contain opacity-35 grayscale hover:opacity-90 hover:grayscale-0 transition duration-300">
+                    <img src="../images/Circles.png" alt="" class="h-16 w-auto object-contain opacity-35 grayscale hover:opacity-90 hover:grayscale-0 transition duration-300">
+                    <img src="../images/ColdwellRealty.png" alt="" class="h-18 w-auto object-contain opacity-35 grayscale hover:opacity-90 hover:grayscale-0 transition duration-300">
                 </div>
 
                 <!-- Track Loop 3 -->
                 <div class="flex gap-18 items-center pr-18 min-w-max" aria-hidden="true">
-                    <img src="../images/Kare.png" alt="Utah Jazz" class="h-14 w-auto object-contain opacity-35 grayscale hover:opacity-90 hover:grayscale-0 transition duration-300">
-                    <img src="../images/PorchPatio.png" alt="Panasonic" class="h-20 w-auto object-contain opacity-35 grayscale hover:opacity-90 hover:grayscale-0 transition duration-300">
-                    <img src="../images/Butter.png" alt="Google" class="h-10 w-auto object-contain opacity-35 grayscale hover:opacity-90 hover:grayscale-0 transition duration-300">
-                    <img src="../images/ErnBurn.png" alt="Amazon" class="h-24 w-auto object-contain opacity-35 grayscale hover:opacity-90 hover:grayscale-0 transition duration-300">
-                    <img src="../images/BeyondAbundance.png" alt="Netflix" class="h-18 w-auto object-contain opacity-35 grayscale hover:opacity-90 hover:grayscale-0 transition duration-300">
-                    <img src="../images/Augusta.png" alt="Marvel" class="h-14 w-auto object-contain opacity-35 grayscale hover:opacity-90 hover:grayscale-0 transition duration-300">
-                    <img src="../images/Circles.png" alt="Tesla" class="h-16 w-auto object-contain opacity-35 grayscale hover:opacity-90 hover:grayscale-0 transition duration-300">
-                    <img src="../images/ColdwellRealty.png" alt="Tesla" class="h-18 w-auto object-contain opacity-35 grayscale hover:opacity-90 hover:grayscale-0 transition duration-300">
+                    <img src="../images/Kare.png" alt="" class="h-14 w-auto object-contain opacity-35 grayscale hover:opacity-90 hover:grayscale-0 transition duration-300">
+                    <img src="../images/PorchPatio.png" alt="" class="h-20 w-auto object-contain opacity-35 grayscale hover:opacity-90 hover:grayscale-0 transition duration-300">
+                    <img src="../images/Butter.png" alt="" class="h-10 w-auto object-contain opacity-35 grayscale hover:opacity-90 hover:grayscale-0 transition duration-300">
+                    <img src="../images/ErnBurn.png" alt="" class="h-24 w-auto object-contain opacity-35 grayscale hover:opacity-90 hover:grayscale-0 transition duration-300">
+                    <img src="../images/BeyondAbundance.png" alt="" class="h-18 w-auto object-contain opacity-35 grayscale hover:opacity-90 hover:grayscale-0 transition duration-300">
+                    <img src="../images/Augusta.png" alt="" class="h-14 w-auto object-contain opacity-35 grayscale hover:opacity-90 hover:grayscale-0 transition duration-300">
+                    <img src="../images/Circles.png" alt="" class="h-16 w-auto object-contain opacity-35 grayscale hover:opacity-90 hover:grayscale-0 transition duration-300">
+                    <img src="../images/ColdwellRealty.png" alt="" class="h-18 w-auto object-contain opacity-35 grayscale hover:opacity-90 hover:grayscale-0 transition duration-300">
                 </div>
 
             </div>
@@ -783,7 +789,15 @@
                 if (!menuCard.contains(e.target) && !toggleBtn.contains(e.target)) { closeMenu(); }
             });
 
-            // Desktop Drag-to-Scroll + Scrubber Synchronization
+            // Universal Video Modal Close via Backdrop Click
+            const videoModal = document.getElementById('video-modal');
+            videoModal.addEventListener('click', (e) => {
+                if (e.target === videoModal) {
+                    closeVideoModal();
+                }
+            });
+
+            // Drag-to-Scroll & Scrubber Synchronization Engine
             const sections = document.querySelectorAll('section[data-section-id]');
             
             sections.forEach(section => {
@@ -809,6 +823,20 @@
                     track.scrollLeft = (scrubber.value / 100) * maxScroll;
                 });
 
+                // Universal Open Handler (Supports Desktop Clicks + Native Mobile Taps Everywhere)
+                track.addEventListener('click', (e) => {
+                    if (didDrag) {
+                        didDrag = false;
+                        return;
+                    }
+                    const card = e.target.closest('.video-card');
+                    if (card) {
+                        const videoId = card.getAttribute('data-video-id');
+                        if (videoId) openVideoModal(videoId);
+                    }
+                });
+
+                // Desktop Exclusive Desktop Drag Execution
                 if (!window.matchMedia('(hover: none) and (pointer: coarse)').matches) {
                     track.addEventListener('mousedown', (e) => {
                         if (e.button !== 0 || e.target.closest('.carousel-container')) return;
@@ -831,20 +859,6 @@
                         if (!active) return;
                         active = false;
                         track.style.cursor = '';
-                    });
-
-                    track.addEventListener('click', (e) => {
-                        if (didDrag) {
-                            e.preventDefault();
-                            e.stopPropagation();
-                            didDrag = false;
-                            return;
-                        }
-                        const card = e.target.closest('.video-card');
-                        if (card) {
-                            const videoId = card.getAttribute('data-video-id');
-                            if (videoId) openVideoModal(videoId);
-                        }
                     });
                 }
             });
