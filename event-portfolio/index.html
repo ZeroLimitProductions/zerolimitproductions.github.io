@@ -9,7 +9,7 @@
     <meta name="keywords" content="Zero Limit Productions, Milestones Portfolio, Utah Videography, Wedding Films Utah, Multi-Cam Theater Recording, Missionary Homecoming Video, Event Videographer">
     <meta name="robots" content="index, follow">
     <meta name="author" content="Zero Limit Productions">
-    <link class="canonical" href="https://zerolimitproductions.com/event-portfolio/">
+    <link rel="canonical" href="https://zerolimitproductions.com/event-portfolio/">
 
     <meta property="og:type" content="website">
     <meta property="og:title" content="Milestones & Events Portfolio | Zero Limit Productions">
@@ -23,8 +23,8 @@
     <meta name="twitter:description" content="Watch milestone films and live event videos by Zero Limit Productions.">
     <meta name="twitter:image" content="/images/cover.png">
 
-    <link class="icon" type="image/png" href="/images/favicon.png">
-    <link class="apple-touch-icon" href="/images/favicon.png">
+    <link rel="icon" type="image/png" href="/images/favicon.png">
+    <link rel="apple-touch-icon" href="/images/favicon.png">
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
     <script>
@@ -41,7 +41,6 @@
         html {
             scroll-behavior: smooth;
         }
-        /* Hide default scrollbars cleanly */
         .no-scrollbar::-webkit-scrollbar {
             display: none;
         }
@@ -50,13 +49,13 @@
             scrollbar-width: none;
         }
 
-        /* --- PREMIUM TIMELINE SLIDER CUSTOM STYLING --- */
+        /* --- PREMIUM TIMELINE SLIDER CUSTOM STYLING WITH MIXING-BOARD TEXTURE --- */
         .timeline-scrubber {
             -webkit-appearance: none;
             appearance: none;
             width: 100%;
-            height: 2px;
-            background: rgba(24, 31, 34, 0.15); /* Soft baseline */
+            height: 3px; 
+            background: rgba(24, 31, 34, 0.15); 
             outline: none;
             transition: background 0.3s ease;
         }
@@ -65,37 +64,39 @@
             background: rgba(24, 31, 34, 0.25);
         }
 
-        /* Webkit Browsers (Chrome, Safari, Edge) */
+        /* Webkit Browsers (Chrome, Safari, Edge, iOS Safari) */
         .timeline-scrubber::-webkit-slider-thumb {
             -webkit-appearance: none;
             appearance: none;
-            width: 32px;
-            height: 8px;
-            background: #A27165;
-            border-radius: 0px; /* Sharp premium edges */
+            width: 44px;
+            height: 16px; 
+            background: linear-gradient(90deg, transparent 18px, rgba(250, 246, 240, 0.5) 18px, rgba(250, 246, 240, 0.5) 20px, transparent 20px, transparent 24px, rgba(250, 246, 240, 0.5) 24px, rgba(250, 246, 240, 0.5) 26px, transparent 26px), #A27165;
+            border-radius: 1px; 
             cursor: ew-resize;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.15);
             transition: transform 0.2s cubic-bezier(0.25, 1, 0.5, 1), background-color 0.2s ease;
         }
         
         .timeline-scrubber:hover::-webkit-slider-thumb {
-            transform: scaleY(1.5);
-            background: #181F22;
+            transform: scale(1.05);
+            background: linear-gradient(90deg, transparent 18px, rgba(250, 246, 240, 0.6) 18px, rgba(250, 246, 240, 0.6) 20px, transparent 20px, transparent 24px, rgba(250, 246, 240, 0.6) 24px, rgba(250, 246, 240, 0.6) 26px, transparent 26px), #181F22;
         }
 
         /* Firefox Browsers */
         .timeline-scrubber::-moz-range-thumb {
-            width: 32px;
-            height: 8px;
-            background: #A27165;
+            width: 44px;
+            height: 16px;
+            background: linear-gradient(90deg, transparent 18px, rgba(250, 246, 240, 0.5) 18px, rgba(250, 246, 240, 0.5) 20px, transparent 20px, transparent 24px, rgba(250, 246, 240, 0.5) 24px, rgba(250, 246, 240, 0.5) 26px, transparent 26px), #A27165;
             border: none;
-            border-radius: 0px;
+            border-radius: 1px;
             cursor: ew-resize;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.15);
             transition: transform 0.2s cubic-bezier(0.25, 1, 0.5, 1), background-color 0.2s ease;
         }
         
         .timeline-scrubber:hover::-moz-range-thumb {
-            transform: scaleY(1.5);
-            background: #181F22;
+            transform: scale(1.05);
+            background: linear-gradient(90deg, transparent 18px, rgba(250, 246, 240, 0.6) 18px, rgba(250, 246, 240, 0.6) 20px, transparent 20px, transparent 24px, rgba(250, 246, 240, 0.6) 24px, rgba(250, 246, 240, 0.6) 26px, transparent 26px), #181F22;
         }
 
         /* Asymmetrical Hamburger Lines */
@@ -223,7 +224,7 @@
         </div>
     </section>
 
-    <main class="pt-16 pb-24 space-y-24 max-w-7xl mx-auto z-10 relative">
+    <main class="pt-16 pb-24 space-y-14 max-w-7xl mx-auto z-10 relative">
         
         <!-- SECTION 1: WEDDINGS -->
         <section class="space-y-4 px-4 sm:px-6 lg:px-12 relative group/section" data-section-id="weddings">
@@ -233,86 +234,106 @@
             </div>
             
             <div class="relative w-full">
-                <button class="hidden md:flex absolute -left-6 top-1/2 -translate-y-1/2 z-30 w-12 h-12 bg-[#FAF6F0] border border-stone-300 text-stone-800 items-center justify-center opacity-0 group-hover/section:opacity-100 transition-opacity duration-300 shadow-sm hover:bg-stone-100 cursor-pointer control-prev" aria-label="Scroll left">
+                <!-- Left Nav Arrow -->
+                <button class="hidden md:flex absolute -left-5 -translate-y-1/2 z-30 w-11 h-11 bg-[#FAF6F0]/90 backdrop-blur-md rounded-full border border-stone-300/60 text-[#181F22] items-center justify-center opacity-0 group-hover/section:opacity-100 hover:scale-105 transition-all duration-300 shadow-md hover:bg-[#181F22] hover:text-white hover:border-[#181F22] cursor-pointer control-prev" aria-label="Scroll left">
                     <i class="fa-solid fa-chevron-left text-xs"></i>
                 </button>
 
                 <div class="scroll-track flex gap-6 overflow-x-auto no-scrollbar pt-2">
+                    <!-- Card 1 -->
                     <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] group cursor-pointer" data-video-id="boK61rwQyeY">
-                        <div class="relative aspect-[16/9] bg-stone-900 overflow-hidden border border-stone-300/30 shadow-xs pointer-events-none">
-                            <img src="https://img.youtube.com/vi/boK61rwQyeY/maxresdefault.jpg" alt="Wedding Film" class="w-full h-full object-cover group-hover:scale-101 transition-transform duration-500">
-                            <div class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors flex items-center justify-center">
-                                <div class="w-12 h-12 bg-[#FAF6F0] rounded-none flex items-center justify-center text-[#181F22] shadow-md group-hover:scale-105 transition-transform"><i class="fa-solid fa-play ml-0.5"></i></div>
+                        <div class="relative aspect-[16/9] bg-stone-900 overflow-hidden border border-stone-300/30 shadow-xs js-thumb-frame">
+                            <img src="https://img.youtube.com/vi/boK61rwQyeY/maxresdefault.jpg" alt="Wedding Film" class="w-full h-full object-cover group-hover:scale-102 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-black/15 group-hover:bg-black/30 transition-colors flex items-center justify-center">
+                                <i class="fa-solid fa-play text-white text-4xl drop-shadow-lg scale-90 group-hover:scale-110 transition-transform duration-300"></i>
                             </div>
                         </div>
-                        <div class="pt-3 space-y-0.5 pointer-events-none">
+                        <div class="pt-3 space-y-0.5">
                             <div class="text-[9px] font-mono tracking-widest text-[#A27165] uppercase font-bold">Featured Wedding</div>
                             <h4 class="font-serif text-base text-[#181F22]">Jane & Richard's Wedding</h4>
                         </div>
                     </div>
 
+                    <!-- Card 2 -->
                     <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] group cursor-pointer" data-video-id="v1v7cbKabq4">
-                        <div class="relative aspect-[16/9] bg-stone-900 overflow-hidden border border-stone-300/30 shadow-xs pointer-events-none">
-                            <img src="https://img.youtube.com/vi/v1v7cbKabq4/maxresdefault.jpg" alt="Desert Wedding Film" class="w-full h-full object-cover group-hover:scale-101 transition-transform duration-500">
-                            <div class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors flex items-center justify-center">
-                                <div class="w-12 h-12 bg-[#FAF6F0] rounded-none flex items-center justify-center text-[#181F22] shadow-md group-hover:scale-105 transition-transform"><i class="fa-solid fa-play ml-0.5"></i></div>
+                        <div class="relative aspect-[16/9] bg-stone-900 overflow-hidden border border-stone-300/30 shadow-xs js-thumb-frame">
+                            <img src="https://img.youtube.com/vi/v1v7cbKabq4/maxresdefault.jpg" alt="Desert Wedding Film" class="w-full h-full object-cover group-hover:scale-102 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-black/15 group-hover:bg-black/30 transition-colors flex items-center justify-center">
+                                <i class="fa-solid fa-play text-white text-4xl drop-shadow-lg scale-90 group-hover:scale-110 transition-transform duration-300"></i>
                             </div>
                         </div>
-                        <div class="pt-3 space-y-0.5 pointer-events-none">
+                        <div class="pt-3 space-y-0.5">
                             <div class="text-[9px] font-mono tracking-widest text-[#A27165] uppercase font-bold">Featured First Look</div>
                             <h4 class="font-serif text-base text-[#181F22]">Jane & Richard's First Look</h4>
                         </div>
                     </div>
                     
+                    <!-- Card 3 -->
                     <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] group cursor-pointer" data-video-id="zlIN__GHL2w">
-                        <div class="relative aspect-[16/9] bg-stone-900 overflow-hidden border border-stone-300/30 shadow-xs pointer-events-none">
-                            <img src="https://img.youtube.com/vi/zlIN__GHL2w/maxresdefault.jpg" alt="Desert Wedding Film" class="w-full h-full object-cover group-hover:scale-101 transition-transform duration-500">
-                            <div class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors flex items-center justify-center">
-                                <div class="w-12 h-12 bg-[#FAF6F0] rounded-none flex items-center justify-center text-[#181F22] shadow-md group-hover:scale-105 transition-transform"><i class="fa-solid fa-play ml-0.5"></i></div>
+                        <div class="relative aspect-[16/9] bg-stone-900 overflow-hidden border border-stone-300/30 shadow-xs js-thumb-frame">
+                            <img src="https://img.youtube.com/vi/zlIN__GHL2w/maxresdefault.jpg" alt="Desert Wedding Film" class="w-full h-full object-cover group-hover:scale-102 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-black/15 group-hover:bg-black/30 transition-colors flex items-center justify-center">
+                                <i class="fa-solid fa-play text-white text-4xl drop-shadow-lg scale-90 group-hover:scale-110 transition-transform duration-300"></i>
                             </div>
                         </div>
-                        <div class="pt-3 space-y-0.5 pointer-events-none">
+                        <div class="pt-3 space-y-0.5">
                             <div class="text-[9px] font-mono tracking-widest text-stone-400 uppercase font-bold">Cinematic Story</div>
                             <h4 class="font-serif text-base text-[#181F22]">Lydia & Ryan's First Look</h4>
                         </div>
                     </div>
 
+                    <!-- Card 4 -->
                     <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] group cursor-pointer" data-video-id="SmtxRlCbTTU">
-                        <div class="relative aspect-[16/9] bg-stone-900 overflow-hidden border border-stone-300/30 shadow-xs pointer-events-none">
-                            <img src="https://img.youtube.com/vi/SmtxRlCbTTU/maxresdefault.jpg" alt="Desert Wedding Film" class="w-full h-full object-cover group-hover:scale-101 transition-transform duration-500">
-                            <div class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors flex items-center justify-center">
-                                <div class="w-12 h-12 bg-[#FAF6F0] rounded-none flex items-center justify-center text-[#181F22] shadow-md group-hover:scale-105 transition-transform"><i class="fa-solid fa-play ml-0.5"></i></div>
+                        <div class="relative aspect-[16/9] bg-stone-900 overflow-hidden border border-stone-300/30 shadow-xs js-thumb-frame">
+                            <img src="https://img.youtube.com/vi/SmtxRlCbTTU/maxresdefault.jpg" alt="Desert Wedding Film" class="w-full h-full object-cover group-hover:scale-102 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-black/15 group-hover:bg-black/30 transition-colors flex items-center justify-center">
+                                <i class="fa-solid fa-play text-white text-4xl drop-shadow-lg scale-90 group-hover:scale-110 transition-transform duration-300"></i>
                             </div>
                         </div>
-                        <div class="pt-3 space-y-0.5 pointer-events-none">
+                        <div class="pt-3 space-y-0.5">
                             <div class="text-[9px] font-mono tracking-widest text-stone-400 uppercase font-bold">Cinematic Story</div>
                             <h4 class="font-serif text-base text-[#181F22]">Lydia & Ryan's Wedding</h4>
                         </div>
                     </div>
 
+                    <!-- Card 5 -->
                     <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] group cursor-pointer" data-video-id="iftNK9Kz5LU">
-                        <div class="relative aspect-[16/9] bg-stone-900 overflow-hidden border border-stone-300/30 shadow-xs pointer-events-none">
-                            <img src="https://img.youtube.com/vi/iftNK9Kz5LU/maxresdefault.jpg" alt="Mountain Wedding Highlight" class="w-full h-full object-cover group-hover:scale-101 transition-transform duration-500">
-                            <div class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors flex items-center justify-center">
-                                <div class="w-12 h-12 bg-[#FAF6F0] rounded-none flex items-center justify-center text-[#181F22] shadow-md group-hover:scale-105 transition-transform"><i class="fa-solid fa-play ml-0.5"></i></div>
+                        <div class="relative aspect-[16/9] bg-stone-900 overflow-hidden border border-stone-300/30 shadow-xs js-thumb-frame">
+                            <img src="https://img.youtube.com/vi/iftNK9Kz5LU/maxresdefault.jpg" alt="Mountain Wedding Highlight" class="w-full h-full object-cover group-hover:scale-102 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-black/15 group-hover:bg-black/30 transition-colors flex items-center justify-center">
+                                <i class="fa-solid fa-play text-white text-4xl drop-shadow-lg scale-90 group-hover:scale-110 transition-transform duration-300"></i>
                             </div>
                         </div>
-                        <div class="pt-3 space-y-0.5 pointer-events-none">
+                        <div class="pt-3 space-y-0.5">
                             <div class="text-[9px] font-mono tracking-widest text-stone-400 uppercase font-bold">Classic Film</div>
                             <h4 class="font-serif text-base text-[#181F22]">Sarah & Harrison's Wedding</h4>
                         </div>
                     </div>
+
+                    <!-- Card 6 -->
+                    <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] group cursor-pointer" data-video-id="xoUQbAEmqFQ">
+                        <div class="relative aspect-[16/9] bg-stone-900 overflow-hidden border border-stone-300/30 shadow-xs js-thumb-frame">
+                            <img src="https://img.youtube.com/vi/xoUQbAEmqFQ/maxresdefault.jpg" alt="Wedding Reception" class="w-full h-full object-cover group-hover:scale-102 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-black/15 group-hover:bg-black/30 transition-colors flex items-center justify-center">
+                                <i class="fa-solid fa-play text-white text-4xl drop-shadow-lg scale-90 group-hover:scale-110 transition-transform duration-300"></i>
+                            </div>
+                        </div>
+                        <div class="pt-3 space-y-0.5">
+                            <div class="text-[9px] font-mono tracking-widest text-stone-400 uppercase font-bold">Classic Film</div>
+                            <h4 class="font-serif text-base text-[#181F22]">Ethan & Sophie's Wedding Reception</h4>
+                        </div>
+                    </div>
                 </div>
 
-                <button class="hidden md:flex absolute -right-6 top-1/2 -translate-y-1/2 z-30 w-12 h-12 bg-[#FAF6F0] border border-stone-300 text-stone-800 items-center justify-center opacity-0 group-hover/section:opacity-100 transition-opacity duration-300 shadow-sm hover:bg-stone-100 cursor-pointer control-next" aria-label="Scroll right">
+                <!-- Right Nav Arrow -->
+                <button class="hidden md:flex absolute -right-5 -translate-y-1/2 z-30 w-11 h-11 bg-[#FAF6F0]/90 backdrop-blur-md rounded-full border border-stone-300/60 text-[#181F22] items-center justify-center opacity-0 group-hover/section:opacity-100 hover:scale-105 transition-all duration-300 shadow-md hover:bg-[#181F22] hover:text-white hover:border-[#181F22] cursor-pointer control-next" aria-label="Scroll right">
                     <i class="fa-solid fa-chevron-right text-xs"></i>
                 </button>
             </div>
 
-            <!-- PREMIUM TIMELINE CONTROLLER -->
             <div class="w-full max-w-xs mx-auto pt-4 flex flex-col items-center gap-1.5">
                 <input type="range" min="0" max="100" value="0" class="timeline-scrubber" aria-label="Scrub portfolio timeline">
-                <span class="text-[9px] font-mono tracking-widest text-stone-400/80 uppercase font-medium">Timeline Scrubber</span>
+                <span class="text-[9px] font-mono tracking-[0.25em] text-stone-400/80 uppercase font-medium">Slide to Explore</span>
             </div>
         </section>
 
@@ -324,73 +345,106 @@
             </div>
             
             <div class="relative w-full">
-                <button class="hidden md:flex absolute -left-6 top-1/2 -translate-y-1/2 z-30 w-12 h-12 bg-[#FAF6F0] border border-stone-300 text-stone-800 items-center justify-center opacity-0 group-hover/section:opacity-100 transition-opacity duration-300 shadow-sm hover:bg-stone-100 cursor-pointer control-prev" aria-label="Scroll left">
+                <!-- Left Nav Arrow -->
+                <button class="hidden md:flex absolute -left-5 -translate-y-1/2 z-30 w-11 h-11 bg-[#FAF6F0]/90 backdrop-blur-md rounded-full border border-stone-300/60 text-[#181F22] items-center justify-center opacity-0 group-hover/section:opacity-100 hover:scale-105 transition-all duration-300 shadow-md hover:bg-[#181F22] hover:text-white hover:border-[#181F22] cursor-pointer control-prev" aria-label="Scroll left">
                     <i class="fa-solid fa-chevron-left text-xs"></i>
                 </button>
 
                 <div class="scroll-track flex gap-6 overflow-x-auto no-scrollbar pt-2">
+                    <!-- Card 1 -->
                     <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] group cursor-pointer" data-video-id="iF7pQ-cdR94">
-                        <div class="relative aspect-[16/9] bg-stone-900 overflow-hidden border border-stone-300/30 shadow-xs pointer-events-none">
-                            <img src="https://img.youtube.com/vi/iF7pQ-cdR94/maxresdefault.jpg" alt="Stage Production" class="w-full h-full object-cover group-hover:scale-101 transition-transform duration-500">
-                            <div class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors flex items-center justify-center">
-                                <div class="w-12 h-12 bg-[#FAF6F0] rounded-none flex items-center justify-center text-[#181F22] shadow-md group-hover:scale-105 transition-transform"><i class="fa-solid fa-play ml-0.5"></i></div>
+                        <div class="relative aspect-[16/9] bg-stone-900 overflow-hidden border border-stone-300/30 shadow-xs js-thumb-frame">
+                            <img src="https://img.youtube.com/vi/iF7pQ-cdR94/maxresdefault.jpg" alt="Stage Production" class="w-full h-full object-cover group-hover:scale-102 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-black/15 group-hover:bg-black/30 transition-colors flex items-center justify-center">
+                                <i class="fa-solid fa-play text-white text-4xl drop-shadow-lg scale-90 group-hover:scale-110 transition-transform duration-300"></i>
                             </div>
                         </div>
-                        <div class="pt-3 space-y-0.5 pointer-events-none">
+                        <div class="pt-3 space-y-0.5">
                             <div class="text-[9px] font-mono tracking-widest text-[#A27165] uppercase font-bold">Featured Homecoming</div>
                             <h4 class="font-serif text-base text-[#181F22]">Sister Smith's Homecoming</h4>
                         </div>
                     </div>
 
+                    <!-- Card 2 -->
                     <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] group cursor-pointer" data-video-id="xxwhwDf2RVI">
-                        <div class="relative aspect-[16/9] bg-stone-900 overflow-hidden border border-stone-300/30 shadow-xs pointer-events-none">
-                            <img src="https://img.youtube.com/vi/xxwhwDf2RVI/maxresdefault.jpg" alt="Musical Showcase" class="w-full h-full object-cover group-hover:scale-101 transition-transform duration-500">
-                            <div class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors flex items-center justify-center">
-                                <div class="w-12 h-12 bg-[#FAF6F0] rounded-none flex items-center justify-center text-[#181F22] shadow-md group-hover:scale-105 transition-transform"><i class="fa-solid fa-play ml-0.5"></i></div>
+                        <div class="relative aspect-[16/9] bg-stone-900 overflow-hidden border border-stone-300/30 shadow-xs js-thumb-frame">
+                            <img src="https://img.youtube.com/vi/xxwhwDf2RVI/maxresdefault.jpg" alt="Musical Showcase" class="w-full h-full object-cover group-hover:scale-102 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-black/15 group-hover:bg-black/30 transition-colors flex items-center justify-center">
+                                <i class="fa-solid fa-play text-white text-4xl drop-shadow-lg scale-90 group-hover:scale-110 transition-transform duration-300"></i>
                             </div>
                         </div>
-                        <div class="pt-3 space-y-0.5 pointer-events-none">
+                        <div class="pt-3 space-y-0.5">
                             <div class="text-[9px] font-mono tracking-widest text-[#A27165] uppercase font-bold">Featured Homecoming</div>
                             <h4 class="font-serif text-base text-[#181F22]">Elder Ballard's Homecoming</h4>
                         </div>
                     </div>
 
+                    <!-- Card 3 -->
                     <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] group cursor-pointer" data-video-id="QwnsFVuiKeg">
-                        <div class="relative aspect-[16/9] bg-stone-900 overflow-hidden border border-stone-300/30 shadow-xs pointer-events-none">
-                            <img src="https://img.youtube.com/vi/QwnsFVuiKeg/maxresdefault.jpg" alt="Musical Showcase" class="w-full h-full object-cover group-hover:scale-101 transition-transform duration-500">
-                            <div class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors flex items-center justify-center">
-                                <div class="w-12 h-12 bg-[#FAF6F0] rounded-none flex items-center justify-center text-[#181F22] shadow-md group-hover:scale-105 transition-transform"><i class="fa-solid fa-play ml-0.5"></i></div>
+                        <div class="relative aspect-[16/9] bg-stone-900 overflow-hidden border border-stone-300/30 shadow-xs js-thumb-frame">
+                            <img src="https://img.youtube.com/vi/QwnsFVuiKeg/maxresdefault.jpg" alt="Musical Showcase" class="w-full h-full object-cover group-hover:scale-102 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-black/15 group-hover:bg-black/30 transition-colors flex items-center justify-center">
+                                <i class="fa-solid fa-play text-white text-4xl drop-shadow-lg scale-90 group-hover:scale-110 transition-transform duration-300"></i>
                             </div>
                         </div>
-                        <div class="pt-3 space-y-0.5 pointer-events-none">
+                        <div class="pt-3 space-y-0.5">
                             <div class="text-[9px] font-mono tracking-widest text-stone-400 uppercase font-bold">Classic Homecoming</div>
                             <h4 class="font-serif text-base text-[#181F22]">Elder William's Homecoming</h4>
                         </div>
                     </div>
 
+                    <!-- Card 4 -->
                     <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] group cursor-pointer" data-video-id="-5ZwG47_hH8">
-                        <div class="relative aspect-[16/9] bg-stone-900 overflow-hidden border border-stone-300/30 shadow-xs pointer-events-none">
-                            <img src="https://img.youtube.com/vi/-5ZwG47_hH8/maxresdefault.jpg" alt="Musical Showcase" class="w-full h-full object-cover group-hover:scale-101 transition-transform duration-500">
-                            <div class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors flex items-center justify-center">
-                                <div class="w-12 h-12 bg-[#FAF6F0] rounded-none flex items-center justify-center text-[#181F22] shadow-md group-hover:scale-105 transition-transform"><i class="fa-solid fa-play ml-0.5"></i></div>
+                        <div class="relative aspect-[16/9] bg-stone-900 overflow-hidden border border-stone-300/30 shadow-xs js-thumb-frame">
+                            <img src="https://img.youtube.com/vi/-5ZwG47_hH8/maxresdefault.jpg" alt="Musical Showcase" class="w-full h-full object-cover group-hover:scale-102 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-black/15 group-hover:bg-black/30 transition-colors flex items-center justify-center">
+                                <i class="fa-solid fa-play text-white text-4xl drop-shadow-lg scale-90 group-hover:scale-110 transition-transform duration-300"></i>
                             </div>
                         </div>
-                        <div class="pt-3 space-y-0.5 pointer-events-none">
+                        <div class="pt-3 space-y-0.5">
                             <div class="text-[9px] font-mono tracking-widest text-stone-400 uppercase font-bold">Classic Homecoming</div>
                             <h4 class="font-serif text-base text-[#181F22]">Elder Tenney's Homecoming</h4>
                         </div>
                     </div>
+
+                    <!-- Card 5 -->
+                    <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] group cursor-pointer" data-video-id="KiPPxmwu7mo">
+                        <div class="relative aspect-[16/9] bg-stone-900 overflow-hidden border border-stone-300/30 shadow-xs js-thumb-frame">
+                            <img src="https://img.youtube.com/vi/KiPPxmwu7mo/maxresdefault.jpg" alt="Homecoming Celebration" class="w-full h-full object-cover group-hover:scale-102 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-black/15 group-hover:bg-black/30 transition-colors flex items-center justify-center">
+                                <i class="fa-solid fa-play text-white text-4xl drop-shadow-lg scale-90 group-hover:scale-110 transition-transform duration-300"></i>
+                            </div>
+                        </div>
+                        <div class="pt-3 space-y-0.5">
+                            <div class="text-[9px] font-mono tracking-widest text-stone-400 uppercase font-bold">Classic Homecoming</div>
+                            <h4 class="font-serif text-base text-[#181F22]">Sister Moore's Homecoming</h4>
+                        </div>
+                    </div>
+
+                    <!-- Card 6 -->
+                    <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] group cursor-pointer" data-video-id="XLM6B5DJeqs">
+                        <div class="relative aspect-[16/9] bg-stone-900 overflow-hidden border border-stone-300/30 shadow-xs js-thumb-frame">
+                            <img src="https://img.youtube.com/vi/XLM6B5DJeqs/maxresdefault.jpg" alt="Missionary Welcome Home" class="w-full h-full object-cover group-hover:scale-102 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-black/15 group-hover:bg-black/30 transition-colors flex items-center justify-center">
+                                <i class="fa-solid fa-play text-white text-4xl drop-shadow-lg scale-90 group-hover:scale-110 transition-transform duration-300"></i>
+                            </div>
+                        </div>
+                        <div class="pt-3 space-y-0.5">
+                            <div class="text-[9px] font-mono tracking-widest text-stone-400 uppercase font-bold">Classic Homecoming</div>
+                            <h4 class="font-serif text-base text-[#181F22]">Elder Roth's Homecoming</h4>
+                        </div>
+                    </div>
                 </div>
 
-                <button class="hidden md:flex absolute -right-6 top-1/2 -translate-y-1/2 z-30 w-12 h-12 bg-[#FAF6F0] border border-stone-300 text-stone-800 items-center justify-center opacity-0 group-hover/section:opacity-100 transition-opacity duration-300 shadow-sm hover:bg-stone-100 cursor-pointer control-next" aria-label="Scroll right">
+                <!-- Right Nav Arrow -->
+                <button class="hidden md:flex absolute -right-5 -translate-y-1/2 z-30 w-11 h-11 bg-[#FAF6F0]/90 backdrop-blur-md rounded-full border border-stone-300/60 text-[#181F22] items-center justify-center opacity-0 group-hover/section:opacity-100 hover:scale-105 transition-all duration-300 shadow-md hover:bg-[#181F22] hover:text-white hover:border-[#181F22] cursor-pointer control-next" aria-label="Scroll right">
                     <i class="fa-solid fa-chevron-right text-xs"></i>
                 </button>
             </div>
 
-            <!-- PREMIUM TIMELINE CONTROLLER -->
             <div class="w-full max-w-xs mx-auto pt-4 flex flex-col items-center gap-1.5">
                 <input type="range" min="0" max="100" value="0" class="timeline-scrubber" aria-label="Scrub portfolio timeline">
-                <span class="text-[9px] font-mono tracking-widest text-stone-400/80 uppercase font-medium">Timeline Scrubber</span>
+                <span class="text-[9px] font-mono tracking-[0.25em] text-stone-400/80 uppercase font-medium">Slide to Explore</span>
             </div>
         </section>
 
@@ -402,60 +456,92 @@
             </div>
             
             <div class="relative w-full">
-                <button class="hidden md:flex absolute -left-6 top-1/2 -translate-y-1/2 z-30 w-12 h-12 bg-[#FAF6F0] border border-stone-300 text-stone-800 items-center justify-center opacity-0 group-hover/section:opacity-100 transition-opacity duration-300 shadow-sm hover:bg-stone-100 cursor-pointer control-prev" aria-label="Scroll left">
+                <!-- Left Nav Arrow -->
+                <button class="hidden md:flex absolute -left-5 -translate-y-1/2 z-30 w-11 h-11 bg-[#FAF6F0]/90 backdrop-blur-md rounded-full border border-stone-300/60 text-[#181F22] items-center justify-center opacity-0 group-hover/section:opacity-100 hover:scale-105 transition-all duration-300 shadow-md hover:bg-[#181F22] hover:text-white hover:border-[#181F22] cursor-pointer control-prev" aria-label="Scroll left">
                     <i class="fa-solid fa-chevron-left text-xs"></i>
                 </button>
 
                 <div class="scroll-track flex gap-6 overflow-x-auto no-scrollbar pt-2">
+                    <!-- Card 1 -->
                     <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] group cursor-pointer" data-video-id="YjGyt48VXkA">
-                        <div class="relative aspect-[16/9] bg-stone-900 overflow-hidden border border-stone-300/30 shadow-xs pointer-events-none">
-                            <img src="https://img.youtube.com/vi/YjGyt48VXkA/maxresdefault.jpg" alt="Airport Homecoming" class="w-full h-full object-cover group-hover:scale-101 transition-transform duration-500">
-                            <div class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors flex items-center justify-center">
-                                <div class="w-12 h-12 bg-[#FAF6F0] rounded-none flex items-center justify-center text-[#181F22] shadow-md group-hover:scale-105 transition-transform"><i class="fa-solid fa-play ml-0.5"></i></div>
+                        <div class="relative aspect-[16/9] bg-stone-900 overflow-hidden border border-stone-300/30 shadow-xs js-thumb-frame">
+                            <img src="https://img.youtube.com/vi/YjGyt48VXkA/maxresdefault.jpg" alt="Airport Homecoming" class="w-full h-full object-cover group-hover:scale-102 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-black/15 group-hover:bg-black/30 transition-colors flex items-center justify-center">
+                                <i class="fa-solid fa-play text-white text-4xl drop-shadow-lg scale-90 group-hover:scale-110 transition-transform duration-300"></i>
                             </div>
                         </div>
-                        <div class="pt-3 space-y-0.5 pointer-events-none">
+                        <div class="pt-3 space-y-0.5">
                             <div class="text-[9px] font-mono tracking-widest text-[#A27165] uppercase font-bold">Featured Musical</div>
                             <h4 class="font-serif text-base text-[#181F22]">Hadestown | Alta High School</h4>
                         </div>
                     </div>
 
+                    <!-- Card 2 -->
                     <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] group cursor-pointer" data-video-id="tlff8RG3GZY">
-                        <div class="relative aspect-[16/9] bg-stone-900 overflow-hidden border border-stone-300/30 shadow-xs pointer-events-none">
-                            <img src="https://img.youtube.com/vi/tlff8RG3GZY/maxresdefault.jpg" alt="Homecoming surprise" class="w-full h-full object-cover group-hover:scale-101 transition-transform duration-500">
-                            <div class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors flex items-center justify-center">
-                                <div class="w-12 h-12 bg-[#FAF6F0] rounded-none flex items-center justify-center text-[#181F22] shadow-md group-hover:scale-105 transition-transform"><i class="fa-solid fa-play ml-0.5"></i></div>
+                        <div class="relative aspect-[16/9] bg-stone-900 overflow-hidden border border-stone-300/30 shadow-xs js-thumb-frame">
+                            <img src="https://img.youtube.com/vi/tlff8RG3GZY/maxresdefault.jpg" alt="Homecoming surprise" class="w-full h-full object-cover group-hover:scale-102 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-black/15 group-hover:bg-black/30 transition-colors flex items-center justify-center">
+                                <i class="fa-solid fa-play text-white text-4xl drop-shadow-lg scale-90 group-hover:scale-110 transition-transform duration-300"></i>
                             </div>
                         </div>
-                        <div class="pt-3 space-y-0.5 pointer-events-none">
+                        <div class="pt-3 space-y-0.5">
                             <div class="text-[9px] font-mono tracking-widest text-[#A27165] uppercase font-bold">Featured Play</div>
                             <h4 class="font-serif text-base text-[#181F22]">The Play That Goes Wrong | Alta High School</h4>
                         </div>
                     </div>
 
+                    <!-- Card 3 -->
                     <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] group cursor-pointer" data-video-id="Pxqy4mztGc4">
-                        <div class="relative aspect-[16/9] bg-stone-900 overflow-hidden border border-stone-300/30 shadow-xs pointer-events-none">
-                            <img src="https://img.youtube.com/vi/Pxqy4mztGc4/maxresdefault.jpg" alt="Homecoming surprise" class="w-full h-full object-cover group-hover:scale-101 transition-transform duration-500">
-                            <div class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors flex items-center justify-center">
-                                <div class="w-12 h-12 bg-[#FAF6F0] rounded-none flex items-center justify-center text-[#181F22] shadow-md group-hover:scale-105 transition-transform"><i class="fa-solid fa-play ml-0.5"></i></div>
+                        <div class="relative aspect-[16/9] bg-stone-900 overflow-hidden border border-stone-300/30 shadow-xs js-thumb-frame">
+                            <img src="https://img.youtube.com/vi/Pxqy4mztGc4/maxresdefault.jpg" alt="Homecoming surprise" class="w-full h-full object-cover group-hover:scale-102 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-black/15 group-hover:bg-black/30 transition-colors flex items-center justify-center">
+                                <i class="fa-solid fa-play text-white text-4xl drop-shadow-lg scale-90 group-hover:scale-110 transition-transform duration-300"></i>
                             </div>
                         </div>
-                        <div class="pt-3 space-y-0.5 pointer-events-none">
+                        <div class="pt-3 space-y-0.5">
                             <div class="text-[9px] font-mono tracking-widest text-stone-400 uppercase font-bold">Light Show</div>
                             <h4 class="font-serif text-base text-[#181F22]">Smart & Richardson Christmas Light Show</h4>
                         </div>
                     </div>
+
+                    <!-- Card 4 -->
+                    <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] group cursor-pointer" data-video-id="5nr6Zp3Q87k">
+                        <div class="relative aspect-[16/9] bg-stone-900 overflow-hidden border border-stone-300/30 shadow-xs js-thumb-frame">
+                            <img src="https://img.youtube.com/vi/5nr6Zp3Q87k/maxresdefault.jpg" alt="Shakespeare Play" class="w-full h-full object-cover group-hover:scale-102 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-black/15 group-hover:bg-black/30 transition-colors flex items-center justify-center">
+                                <i class="fa-solid fa-play text-white text-4xl drop-shadow-lg scale-90 group-hover:scale-110 transition-transform duration-300"></i>
+                            </div>
+                        </div>
+                        <div class="pt-3 space-y-0.5">
+                            <div class="text-[9px] font-mono tracking-widest text-stone-400 uppercase font-bold">Classic Show</div>
+                            <h4 class="font-serif text-base text-[#181F22]">Shakespeare 2025 | Alta High School</h4>
+                        </div>
+                    </div>
+
+                    <!-- Card 5 -->
+                    <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] group cursor-pointer" data-video-id="Y-18i0XrANQ">
+                        <div class="relative aspect-[16/9] bg-stone-900 overflow-hidden border border-stone-300/30 shadow-xs js-thumb-frame">
+                            <img src="https://img.youtube.com/vi/Y-18i0XrANQ/maxresdefault.jpg" alt="Metamorphoses Production" class="w-full h-full object-cover group-hover:scale-102 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-black/15 group-hover:bg-black/30 transition-colors flex items-center justify-center">
+                                <i class="fa-solid fa-play text-white text-4xl drop-shadow-lg scale-90 group-hover:scale-110 transition-transform duration-300"></i>
+                            </div>
+                        </div>
+                        <div class="pt-3 space-y-0.5">
+                            <div class="text-[9px] font-mono tracking-widest text-stone-400 uppercase font-bold">Classic Show</div>
+                            <h4 class="font-serif text-base text-[#181F22]">Metamorphoses | Alta High School</h4>
+                        </div>
+                    </div>
                 </div>
 
-                <button class="hidden md:flex absolute -right-6 top-1/2 -translate-y-1/2 z-30 w-12 h-12 bg-[#FAF6F0] border border-stone-300 text-stone-800 items-center justify-center opacity-0 group-hover/section:opacity-100 transition-opacity duration-300 shadow-sm hover:bg-stone-100 cursor-pointer control-next" aria-label="Scroll right">
+                <!-- Right Nav Arrow -->
+                <button class="hidden md:flex absolute -right-5 -translate-y-1/2 z-30 w-11 h-11 bg-[#FAF6F0]/90 backdrop-blur-md rounded-full border border-stone-300/60 text-[#181F22] items-center justify-center opacity-0 group-hover/section:opacity-100 hover:scale-105 transition-all duration-300 shadow-md hover:bg-[#181F22] hover:text-white hover:border-[#181F22] cursor-pointer control-next" aria-label="Scroll right">
                     <i class="fa-solid fa-chevron-right text-xs"></i>
                 </button>
             </div>
 
-            <!-- PREMIUM TIMELINE CONTROLLER -->
             <div class="w-full max-w-xs mx-auto pt-4 flex flex-col items-center gap-1.5">
                 <input type="range" min="0" max="100" value="0" class="timeline-scrubber" aria-label="Scrub portfolio timeline">
-                <span class="text-[9px] font-mono tracking-widest text-stone-400/80 uppercase font-medium">Timeline Scrubber</span>
+                <span class="text-[9px] font-mono tracking-[0.25em] text-stone-400/80 uppercase font-medium">Slide to Explore</span>
             </div>
         </section>
 
@@ -578,9 +664,12 @@
         </div>
     </footer>
 
-    <div id="video-modal" class="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300">
-        <button onclick="closeVideoModal()" class="absolute top-6 right-6 text-white text-2xl hover:text-stone-300 focus:outline-none cursor-pointer" aria-label="Close Player"><i class="fa-solid fa-xmark"></i></button>
-        <div class="w-full max-w-4xl aspect-[16/9] bg-stone-950 border border-white/10 shadow-2xl relative">
+    <!-- PREMIUM GREYED-OUT LIGHTBOX MODAL (Click/Tap Backdrop to Close) -->
+    <div id="video-modal" class="fixed inset-0 bg-stone-950/80 backdrop-blur-md z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300 cursor-pointer">
+        <button id="modal-close-btn" class="absolute top-6 right-6 text-white text-2xl hover:text-stone-300 focus:outline-none cursor-pointer" aria-label="Close Player">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div class="w-full max-w-4xl aspect-[16/9] bg-stone-950 border border-white/10 shadow-2xl relative cursor-default">
             <iframe id="modal-iframe" class="w-full h-full" src="" title="YouTube Video Player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
     </div>
@@ -642,6 +731,16 @@
                 });
             });
 
+            // --- LIGHTBOX BACKDROP CLOSE EVENT LISTENER ---
+            const videoModal = document.getElementById('video-modal');
+            const closeBtn = document.getElementById('modal-close-btn');
+
+            videoModal.addEventListener('click', (e) => {
+                if (e.target === videoModal || closeBtn.contains(e.target)) {
+                    closeVideoModal();
+                }
+            });
+
             // --- INITIALIZE PREMIUM SYNCED SMOOTH SCROLL SCRUBBERS ---
             initializeTimelineSliders();
         });
@@ -661,13 +760,20 @@
                 let isRunningAnimation = false;
                 let targetScrollLeft = track.scrollLeft;
 
-                // Set up slider range limits based on layout parameters
                 function updateScrubberBounds() {
                     const maxScroll = track.scrollWidth - track.clientWidth;
                     scrubber.max = maxScroll > 0 ? maxScroll : 0;
                     scrubber.value = track.scrollLeft;
                     
-                    // Toggle helper arrow visibility states based on distance left
+                    // DYNAMIC ARROW CENTERING SYSTEM
+                    // Factors in both thumbnail box height and track layout padding offsets
+                    const firstThumb = track.querySelector('.js-thumb-frame');
+                    if (firstThumb) {
+                        const thumbCenter = firstThumb.offsetTop + (firstThumb.offsetHeight / 2);
+                        if (btnPrev) btnPrev.style.top = `${thumbCenter}px`;
+                        if (btnNext) btnNext.style.top = `${thumbCenter}px`;
+                    }
+
                     if (btnPrev && btnNext) {
                         if (maxScroll <= 0) {
                             btnPrev.style.display = 'none';
@@ -679,12 +785,10 @@
                     }
                 }
 
-                // Smooth Animation Interpolation Loop
                 function smoothScrollLoop() {
                     const diff = targetScrollLeft - track.scrollLeft;
                     
                     if (Math.abs(diff) > 0.5) {
-                        // Premium ease-out physics coefficient (0.08 = ultra velvety)
                         track.scrollLeft += diff * 0.08;
                         scrubber.value = track.scrollLeft;
                         requestAnimationFrame(smoothScrollLoop);
@@ -705,15 +809,11 @@
                     }
                 }
 
-                // 1. Handle slider scrubber inputs
                 scrubber.addEventListener('input', () => {
-                    // Instantly lock values for explicit 1:1 scrubbing stability
                     targetScrollLeft = parseInt(scrubber.value, 10);
                     track.scrollLeft = targetScrollLeft;
                 });
 
-                // 2. Fallback monitor for trackpad gestures or swiping to adjust scrubber positions in reverse
-                let scrollTimeout;
                 track.addEventListener('scroll', () => {
                     if (!isRunningAnimation) {
                         scrubber.value = track.scrollLeft;
@@ -721,7 +821,6 @@
                     }
                 }, { passive: true });
 
-                // 3. Arrow Click Handlers paired with precise card alignments
                 function getStepDistance() {
                     const firstCard = track.querySelector('.video-card');
                     return firstCard ? firstCard.offsetWidth + 24 : 350;
@@ -739,15 +838,13 @@
                     });
                 }
 
-                // Initializer loops & resize listeners to catch dimension recalibrations
                 window.addEventListener('load', updateScrubberBounds);
                 window.addEventListener('resize', updateScrubberBounds);
-                // Run immediate setup call
                 setTimeout(updateScrubberBounds, 100);
             });
         }
 
-        // --- YOUTUBE LIGHTBOX MODAL ---
+        // --- YOUTUBE LIGHTBOX MODAL CONTROLS ---
         function openVideoModal(youtubeId) {
             const modal = document.getElementById('video-modal');
             const iframe = document.getElementById('modal-iframe');

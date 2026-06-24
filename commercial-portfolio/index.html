@@ -54,6 +54,56 @@
             scrollbar-width: none;
         }
 
+        /* --- PREMIUM TIMELINE SLIDER CUSTOM STYLING WITH MIXING-BOARD TEXTURE --- */
+        .timeline-scrubber {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 100%;
+            height: 3px; 
+            background: rgba(24, 31, 34, 0.15); 
+            outline: none;
+            transition: background 0.3s ease;
+        }
+        
+        .timeline-scrubber:hover {
+            background: rgba(24, 31, 34, 0.25);
+        }
+
+        /* Webkit Browsers (Chrome, Safari, Edge, iOS Safari) */
+        .timeline-scrubber::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 44px;
+            height: 16px; 
+            background: linear-gradient(90deg, transparent 18px, rgba(250, 246, 240, 0.5) 18px, rgba(250, 246, 240, 0.5) 20px, transparent 20px, transparent 24px, rgba(250, 246, 240, 0.5) 24px, rgba(250, 246, 240, 0.5) 26px, transparent 26px), #A27165;
+            border-radius: 1px; 
+            cursor: ew-resize;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+            transition: transform 0.2s cubic-bezier(0.25, 1, 0.5, 1), background-color 0.2s ease;
+        }
+        
+        .timeline-scrubber:hover::-webkit-slider-thumb {
+            transform: scale(1.05);
+            background: linear-gradient(90deg, transparent 18px, rgba(250, 246, 240, 0.6) 18px, rgba(250, 246, 240, 0.6) 20px, transparent 20px, transparent 24px, rgba(250, 246, 240, 0.6) 24px, rgba(250, 246, 240, 0.6) 26px, transparent 26px), #181F22;
+        }
+
+        /* Firefox Browsers */
+        .timeline-scrubber::-moz-range-thumb {
+            width: 44px;
+            height: 16px;
+            background: linear-gradient(90deg, transparent 18px, rgba(250, 246, 240, 0.5) 18px, rgba(250, 246, 240, 0.5) 20px, transparent 20px, transparent 24px, rgba(250, 246, 240, 0.5) 24px, rgba(250, 246, 240, 0.5) 26px, transparent 26px), #A27165;
+            border: none;
+            border-radius: 1px;
+            cursor: ew-resize;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+            transition: transform 0.2s cubic-bezier(0.25, 1, 0.5, 1), background-color 0.2s ease;
+        }
+        
+        .timeline-scrubber:hover::-moz-range-thumb {
+            transform: scale(1.05);
+            background: linear-gradient(90deg, transparent 18px, rgba(250, 246, 240, 0.6) 18px, rgba(250, 246, 240, 0.6) 20px, transparent 20px, transparent 24px, rgba(250, 246, 240, 0.6) 24px, rgba(250, 246, 240, 0.6) 26px, transparent 26px), #181F22;
+        }
+
         /* Asymmetrical Hamburger Lines */
         .hamburger-line {
             display: block;
@@ -86,11 +136,7 @@
         /* Horizontal scroll tracks — desktop grab cursor; mobile axis fix */
         .scroll-track {
             cursor: grab;
-            /* MOBILE FIX: tells the browser "horizontal touch = pan this element,
-               vertical touch = pass up to the page scroll". Eliminates the axis
-               conflict that caused page-scroll to lock/stutter over the tracks. */
             touch-action: pan-x;
-            /* Stops scroll-chaining when the track reaches its left/right bounds. */
             overscroll-behavior-x: contain;
         }
         .scroll-track:active {
@@ -209,82 +255,83 @@
     </section>
 
     <!-- Main Content Track Grid Layouts -->
-    <main class="pt-16 pb-24 space-y-16 max-w-7xl mx-auto z-10 relative">
+    <main class="pt-16 pb-24 space-y-14 max-w-7xl mx-auto z-10 relative">
         
         <!-- Category 1: Commercial Films -->
-        <section class="space-y-4 px-4 sm:px-6 lg:px-12 relative group/section">
+        <section class="space-y-4 px-4 sm:px-6 lg:px-12 relative group/section" data-section-id="commercials">
             <div class="flex items-center justify-between border-b border-stone-300/60 pb-2">
                 <h3 class="font-serif text-lg sm:text-xl text-[#181F22]">Commercial Work</h3>
-                <span class="text-[10px] font-mono text-stone-400 uppercase tracking-wider hidden sm:inline">Drag or use arrows to explore</span>
+                <span class="text-[10px] font-mono text-stone-400 uppercase tracking-wider hidden sm:inline">Use timeline bar below to scrub</span>
             </div>
             
             <div class="relative w-full">
-                <button class="hidden md:flex absolute -left-6 top-1/2 -translate-y-1/2 z-30 w-12 h-12 bg-[#FAF6F0] border border-stone-300 text-stone-800 items-center justify-center opacity-0 group-hover/section:opacity-100 transition-opacity duration-300 shadow-sm hover:bg-stone-100 cursor-pointer" onclick="scrollSectionLeft(this)" aria-label="Scroll left">
+                <!-- Left Nav Arrow (-mt-6 Realignment Applied) -->
+                <button class="hidden md:flex absolute -left-5 top-1/2 -translate-y-1/2 -mt-6 z-30 w-11 h-11 bg-[#FAF6F0]/90 backdrop-blur-md rounded-full border border-stone-300/60 text-[#181F22] items-center justify-center opacity-0 group-hover/section:opacity-100 hover:scale-105 transition-all duration-300 shadow-md hover:bg-[#181F22] hover:text-white hover:border-[#181F22] cursor-pointer control-prev" onclick="scrollSectionLeft(this)" aria-label="Scroll left">
                     <i class="fa-solid fa-chevron-left text-xs"></i>
                 </button>
 
-                <div class="scroll-track flex gap-6 overflow-x-auto no-scrollbar snap-x snap-mandatory pt-2 select-none">
+                <div class="scroll-track flex gap-6 overflow-x-auto no-scrollbar pt-2">
 
-                    <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] snap-start group cursor-pointer" data-video-id="FxmGNxQ45jE">
-                        <div class="relative aspect-[16/9] bg-stone-900 overflow-hidden border border-stone-300/30 shadow-xs pointer-events-none">
-                            <img src="https://img.youtube.com/vi/FxmGNxQ45jE/maxresdefault.jpg" alt="Product Promo" class="w-full h-full object-cover group-hover:scale-101 transition-transform duration-500">
-                            <div class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors flex items-center justify-center">
-                                <div class="w-12 h-12 bg-[#FAF6F0] rounded-none flex items-center justify-center text-[#181F22] shadow-md group-hover:scale-105 transition-transform"><i class="fa-solid fa-play ml-0.5"></i></div>
+                    <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] group cursor-pointer" data-video-id="FxmGNxQ45jE">
+                        <div class="relative aspect-[16/9] bg-stone-900 overflow-hidden border border-stone-300/30 shadow-xs js-thumb-frame">
+                            <img src="https://img.youtube.com/vi/FxmGNxQ45jE/maxresdefault.jpg" alt="Product Promo" class="w-full h-full object-cover group-hover:scale-102 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-black/15 group-hover:bg-black/30 transition-colors flex items-center justify-center">
+                                <i class="fa-solid fa-play text-white text-4xl drop-shadow-lg scale-90 group-hover:scale-110 transition-transform duration-300"></i>
                             </div>
                         </div>
-                        <div class="pt-3 space-y-0.5 pointer-events-none">
+                        <div class="pt-3 space-y-0.5">
                             <div class="text-[9px] font-mono tracking-widest text-[#A27165] uppercase font-bold">Featured Production</div>
                             <h4 class="font-serif text-base text-[#181F22]">Circles Salt Lake | Graduation Video</h4>
                         </div>
                     </div>                    
 
-                    <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] snap-start group cursor-pointer" data-video-id="b_xFRgXExno">
-                        <div class="relative aspect-[16/9] bg-stone-900 overflow-hidden border border-stone-300/30 shadow-xs pointer-events-none">
-                            <img src="https://img.youtube.com/vi/b_xFRgXExno/maxresdefault.jpg" alt="Brand Commercial" class="w-full h-full object-cover group-hover:scale-101 transition-transform duration-500">
-                            <div class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors flex items-center justify-center">
-                                <div class="w-12 h-12 bg-[#FAF6F0] rounded-none flex items-center justify-center text-[#181F22] shadow-md group-hover:scale-105 transition-transform"><i class="fa-solid fa-play ml-0.5"></i></div>
+                    <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] group cursor-pointer" data-video-id="b_xFRgXExno">
+                        <div class="relative aspect-[16/9] bg-stone-900 overflow-hidden border border-stone-300/30 shadow-xs js-thumb-frame">
+                            <img src="https://img.youtube.com/vi/b_xFRgXExno/maxresdefault.jpg" alt="Brand Commercial" class="w-full h-full object-cover group-hover:scale-102 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-black/15 group-hover:bg-black/30 transition-colors flex items-center justify-center">
+                                <i class="fa-solid fa-play text-white text-4xl drop-shadow-lg scale-90 group-hover:scale-110 transition-transform duration-300"></i>
                             </div>
                         </div>
-                        <div class="pt-3 space-y-0.5 pointer-events-none">
+                        <div class="pt-3 space-y-0.5">
                             <div class="text-[9px] font-mono tracking-widest text-[#A27165] uppercase font-bold">Featured Production</div>
                             <h4 class="font-serif text-base text-[#181F22]">Porch and Patio | Landscaping Showcase</h4>
                         </div>
                     </div>
 
-                    <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] snap-start group cursor-pointer" data-video-id="xPgZHxAmQkg">
-                        <div class="relative aspect-[16/9] bg-stone-900 overflow-hidden border border-stone-300/30 shadow-xs pointer-events-none">
-                            <img src="https://img.youtube.com/vi/xPgZHxAmQkg/maxresdefault.jpg" alt="Product Promo" class="w-full h-full object-cover group-hover:scale-101 transition-transform duration-500">
-                            <div class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors flex items-center justify-center">
-                                <div class="w-12 h-12 bg-[#FAF6F0] rounded-none flex items-center justify-center text-[#181F22] shadow-md group-hover:scale-105 transition-transform"><i class="fa-solid fa-play ml-0.5"></i></div>
+                    <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] group cursor-pointer" data-video-id="xPgZHxAmQkg">
+                        <div class="relative aspect-[16/9] bg-stone-900 overflow-hidden border border-stone-300/30 shadow-xs js-thumb-frame">
+                            <img src="https://img.youtube.com/vi/xPgZHxAmQkg/maxresdefault.jpg" alt="Product Promo" class="w-full h-full object-cover group-hover:scale-102 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-black/15 group-hover:bg-black/30 transition-colors flex items-center justify-center">
+                                <i class="fa-solid fa-play text-white text-4xl drop-shadow-lg scale-90 group-hover:scale-110 transition-transform duration-300"></i>
                             </div>
                         </div>
-                        <div class="pt-3 space-y-0.5 pointer-events-none">
+                        <div class="pt-3 space-y-0.5">
                             <div class="text-[9px] font-mono tracking-widest text-stone-400 uppercase font-bold">Virtual Walkthrough</div>
                             <h4 class="font-serif text-base text-[#181F22]">Augusta Dental | Office Tour</h4>
                         </div>
                     </div>
 
-                    <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] snap-start group cursor-pointer" data-video-id="1JSfvJwlSi0">
-                        <div class="relative aspect-[16/9] bg-stone-900 overflow-hidden border border-stone-300/30 shadow-xs pointer-events-none">
-                            <img src="https://img.youtube.com/vi/1JSfvJwlSi0/maxresdefault.jpg" alt="Product Promo" class="w-full h-full object-cover group-hover:scale-101 transition-transform duration-500">
-                            <div class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors flex items-center justify-center">
-                                <div class="w-12 h-12 bg-[#FAF6F0] rounded-none flex items-center justify-center text-[#181F22] shadow-md group-hover:scale-105 transition-transform"><i class="fa-solid fa-play ml-0.5"></i></div>
+                    <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] group cursor-pointer" data-video-id="1JSfvJwlSi0">
+                        <div class="relative aspect-[16/9] bg-stone-900 overflow-hidden border border-stone-300/30 shadow-xs js-thumb-frame">
+                            <img src="https://img.youtube.com/vi/1JSfvJwlSi0/maxresdefault.jpg" alt="Product Promo" class="w-full h-full object-cover group-hover:scale-102 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-black/15 group-hover:bg-black/30 transition-colors flex items-center justify-center">
+                                <i class="fa-solid fa-play text-white text-4xl drop-shadow-lg scale-90 group-hover:scale-110 transition-transform duration-300"></i>
                             </div>
                         </div>
-                        <div class="pt-3 space-y-0.5 pointer-events-none">
+                        <div class="pt-3 space-y-0.5">
                             <div class="text-[9px] font-mono tracking-widest text-stone-400 uppercase font-bold">Product Promo</div>
                             <h4 class="font-serif text-base text-[#181F22]">Porch and Patio | Furniture Showcase</h4>
                         </div>
                     </div>
 
-                    <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] snap-start group cursor-pointer" data-video-id="UofT-lmG9xg">
-                        <div class="relative aspect-[16/9] bg-stone-900 overflow-hidden border border-stone-300/30 shadow-xs pointer-events-none">
-                            <img src="https://img.youtube.com/vi/UofT-lmG9xg/maxresdefault.jpg" alt="Local Business Spotlight" class="w-full h-full object-cover group-hover:scale-101 transition-transform duration-500">
-                            <div class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors flex items-center justify-center">
-                                <div class="w-12 h-12 bg-[#FAF6F0] rounded-none flex items-center justify-center text-[#181F22] shadow-md group-hover:scale-105 transition-transform"><i class="fa-solid fa-play ml-0.5"></i></div>
+                    <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] group cursor-pointer" data-video-id="UofT-lmG9xg">
+                        <div class="relative aspect-[16/9] bg-stone-900 overflow-hidden border border-stone-300/30 shadow-xs js-thumb-frame">
+                            <img src="https://img.youtube.com/vi/UofT-lmG9xg/maxresdefault.jpg" alt="Local Business Spotlight" class="w-full h-full object-cover group-hover:scale-102 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-black/15 group-hover:bg-black/30 transition-colors flex items-center justify-center">
+                                <i class="fa-solid fa-play text-white text-4xl drop-shadow-lg scale-90 group-hover:scale-110 transition-transform duration-300"></i>
                             </div>
                         </div>
-                        <div class="pt-3 space-y-0.5 pointer-events-none">
+                        <div class="pt-3 space-y-0.5">
                             <div class="text-[9px] font-mono tracking-widest text-stone-400 uppercase font-bold">Longform Editing</div>
                             <h4 class="font-serif text-base text-[#181F22]">ErnBurn | Tech Showcase</h4>
                         </div>
@@ -292,73 +339,80 @@
 
                 </div>
 
-                <button class="hidden md:flex absolute -right-6 top-1/2 -translate-y-1/2 z-30 w-12 h-12 bg-[#FAF6F0] border border-stone-300 text-stone-800 items-center justify-center opacity-0 group-hover/section:opacity-100 transition-opacity duration-300 shadow-sm hover:bg-stone-100 cursor-pointer" onclick="scrollSectionRight(this)" aria-label="Scroll right">
+                <!-- Right Nav Arrow (-mt-6 Realignment Applied) -->
+                <button class="hidden md:flex absolute -right-5 top-1/2 -translate-y-1/2 -mt-6 z-30 w-11 h-11 bg-[#FAF6F0]/90 backdrop-blur-md rounded-full border border-stone-300/60 text-[#181F22] items-center justify-center opacity-0 group-hover/section:opacity-100 hover:scale-105 transition-all duration-300 shadow-md hover:bg-[#181F22] hover:text-white hover:border-[#181F22] cursor-pointer control-next" onclick="scrollSectionRight(this)" aria-label="Scroll right">
                     <i class="fa-solid fa-chevron-right text-xs"></i>
                 </button>
+            </div>
+
+            <div class="w-full max-w-xs mx-auto pt-4 flex flex-col items-center gap-1.5">
+                <input type="range" min="0" max="100" value="0" class="timeline-scrubber" aria-label="Scrub portfolio timeline">
+                <span class="text-[9px] font-mono tracking-[0.25em] text-stone-400/80 uppercase font-medium">Slide to Explore</span>
             </div>
         </section>
 
         <!-- Category 2: Social Vertical/Horizontal Reels -->
-        <section class="space-y-4 px-4 sm:px-6 lg:px-12 relative group/section">
+        <section class="space-y-4 px-4 sm:px-6 lg:px-12 relative group/section" data-section-id="reels">
             <div class="flex items-center justify-between border-b border-stone-300/60 pb-2">
                 <h3 class="font-serif text-lg sm:text-xl text-[#181F22]">Reels</h3>
-                <span class="text-[10px] font-mono text-stone-400 uppercase tracking-wider hidden sm:inline">Drag or use arrows to explore</span>
+                <span class="text-[10px] font-mono text-stone-400 uppercase tracking-wider hidden sm:inline">Use timeline bar below to scrub</span>
             </div>
             
             <div class="relative w-full">
-                <button class="hidden md:flex absolute -left-6 top-1/2 -translate-y-1/2 z-30 w-12 h-12 bg-[#FAF6F0] border border-stone-300 text-stone-800 items-center justify-center opacity-0 group-hover/section:opacity-100 transition-opacity duration-300 shadow-sm hover:bg-stone-100 cursor-pointer" onclick="scrollSectionLeft(this)" aria-label="Scroll left">
+                <!-- Left Nav Arrow (-mt-6 Realignment Applied) -->
+                <button class="hidden md:flex absolute -left-5 top-1/2 -translate-y-1/2 -mt-6 z-30 w-11 h-11 bg-[#FAF6F0]/90 backdrop-blur-md rounded-full border border-stone-300/60 text-[#181F22] items-center justify-center opacity-0 group-hover/section:opacity-100 hover:scale-105 transition-all duration-300 shadow-md hover:bg-[#181F22] hover:text-white hover:border-[#181F22] cursor-pointer control-prev" onclick="scrollSectionLeft(this)" aria-label="Scroll left">
                     <i class="fa-solid fa-chevron-left text-xs"></i>
                 </button>
 
-                <div class="scroll-track flex gap-6 overflow-x-auto no-scrollbar snap-x snap-mandatory pt-2 select-none">
+                <div class="scroll-track flex gap-6 overflow-x-auto no-scrollbar pt-2">
                     
-                    <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] snap-start group cursor-pointer" data-video-id="ioQUe5l7XnQ">
-                        <div class="relative aspect-[16/9] bg-stone-900 overflow-hidden border border-stone-300/30 shadow-xs pointer-events-none">
-                            <img src="https://img.youtube.com/vi/ioQUe5l7XnQ/maxresdefault.jpg" alt="Fitness Reel" class="w-full h-full object-cover group-hover:scale-101 transition-transform duration-500">
-                            <div class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors flex items-center justify-center">
-                                <div class="w-12 h-12 bg-[#FAF6F0] rounded-none flex items-center justify-center text-[#181F22] shadow-md group-hover:scale-105 transition-transform"><i class="fa-solid fa-play ml-0.5"></i></div>
+                    <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] group cursor-pointer" data-video-id="ioQUe5l7XnQ">
+                        <div class="relative aspect-[16/9] bg-stone-900 overflow-hidden border border-stone-300/30 shadow-xs js-thumb-frame">
+                            <img src="https://img.youtube.com/vi/ioQUe5l7XnQ/maxresdefault.jpg" alt="Fitness Reel" class="w-full h-full object-cover group-hover:scale-102 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-black/15 group-hover:bg-black/30 transition-colors flex items-center justify-center">
+                                <i class="fa-solid fa-play text-white text-4xl drop-shadow-lg scale-90 group-hover:scale-110 transition-transform duration-300"></i>
                             </div>
                         </div>
-                        <div class="pt-3 space-y-0.5 pointer-events-none">
+                        <div class="pt-3 space-y-0.5">
                             <div class="text-[9px] font-mono tracking-widest text-[#A27165] uppercase font-bold">Featured Social</div>
                             <h4 class="font-serif text-base text-[#181F22]">ErnBurn | Social Media</h4>
                         </div>
                     </div>
 
-                    <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] snap-start group cursor-pointer" data-video-id="odrRQUIUNCo">
-                        <div class="relative aspect-[16/9] bg-stone-900 overflow-hidden border border-stone-300/30 shadow-xs pointer-events-none">
-                            <img src="https://img.youtube.com/vi/odrRQUIUNCo/maxresdefault.jpg" alt="Retail Short Form" class="w-full h-full object-cover group-hover:scale-101 transition-transform duration-500">
-                            <div class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors flex items-center justify-center">
-                                <div class="w-12 h-12 bg-[#FAF6F0] rounded-none flex items-center justify-center text-[#181F22] shadow-md group-hover:scale-105 transition-transform"><i class="fa-solid fa-play ml-0.5"></i></div>
+                    <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] group cursor-pointer" data-video-id="odrRQUIUNCo">
+                        <div class="relative aspect-[16/9] bg-stone-900 overflow-hidden border border-stone-300/30 shadow-xs js-thumb-frame">
+                            <img src="https://img.youtube.com/vi/odrRQUIUNCo/maxresdefault.jpg" alt="Retail Short Form" class="w-full h-full object-cover group-hover:scale-102 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-black/15 group-hover:bg-black/30 transition-colors flex items-center justify-center">
+                                <i class="fa-solid fa-play text-white text-4xl drop-shadow-lg scale-90 group-hover:scale-110 transition-transform duration-300"></i>
                             </div>
                         </div>
-                        <div class="pt-3 space-y-0.5 pointer-events-none">
+                        <div class="pt-3 space-y-0.5">
                             <div class="text-[9px] font-mono tracking-widest text-stone-400 uppercase font-bold">Short-Form Ad</div>
                             <h4 class="font-serif text-base text-[#181F22]">Butter Shears | Shear Ad</h4>
                         </div>
                     </div>
 
-                    <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] snap-start group cursor-pointer" data-video-id="l8rSVzf0BEc">
-                        <div class="relative aspect-[16/9] bg-stone-900 overflow-hidden border border-stone-300/30 shadow-xs pointer-events-none">
-                            <img src="https://img.youtube.com/vi/l8rSVzf0BEc/maxresdefault.jpg" alt="Retail Short Form" class="w-full h-full object-cover group-hover:scale-101 transition-transform duration-500">
-                            <div class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors flex items-center justify-center">
-                                <div class="w-12 h-12 bg-[#FAF6F0] rounded-none flex items-center justify-center text-[#181F22] shadow-md group-hover:scale-105 transition-transform"><i class="fa-solid fa-play ml-0.5"></i></div>
+                    <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] group cursor-pointer" data-video-id="l8rSVzf0BEc">
+                        <div class="relative aspect-[16/9] bg-stone-900 overflow-hidden border border-stone-300/30 shadow-xs js-thumb-frame">
+                            <img src="https://img.youtube.com/vi/l8rSVzf0BEc/maxresdefault.jpg" alt="Retail Short Form" class="w-full h-full object-cover group-hover:scale-102 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-black/15 group-hover:bg-black/30 transition-colors flex items-center justify-center">
+                                <i class="fa-solid fa-play text-white text-4xl drop-shadow-lg scale-90 group-hover:scale-110 transition-transform duration-300"></i>
                             </div>
                         </div>
-                        <div class="pt-3 space-y-0.5 pointer-events-none">
+                        <div class="pt-3 space-y-0.5">
                             <div class="text-[9px] font-mono tracking-widest text-stone-400 uppercase font-bold">Short-Form Ad</div>
                             <h4 class="font-serif text-base text-[#181F22]">Kare Colostrum | Colostrum Ad</h4>
                         </div>
                     </div>
 
-                    <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] snap-start group cursor-pointer" data-video-id="vLKhptNV-vo">
-                        <div class="relative aspect-[16/9] bg-stone-900 overflow-hidden border border-stone-300/30 shadow-xs pointer-events-none">
-                            <img src="https://img.youtube.com/vi/vLKhptNV-vo/maxresdefault.jpg" alt="Retail Short Form" class="w-full h-full object-cover group-hover:scale-101 transition-transform duration-500">
-                            <div class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors flex items-center justify-center">
-                                <div class="w-12 h-12 bg-[#FAF6F0] rounded-none flex items-center justify-center text-[#181F22] shadow-md group-hover:scale-105 transition-transform"><i class="fa-solid fa-play ml-0.5"></i></div>
+                    <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] group cursor-pointer" data-video-id="vLKhptNV-vo">
+                        <div class="relative aspect-[16/9] bg-stone-900 overflow-hidden border border-stone-300/30 shadow-xs js-thumb-frame">
+                            <img src="https://img.youtube.com/vi/vLKhptNV-vo/maxresdefault.jpg" alt="Retail Short Form" class="w-full h-full object-cover group-hover:scale-102 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-black/15 group-hover:bg-black/30 transition-colors flex items-center justify-center">
+                                <i class="fa-solid fa-play text-white text-4xl drop-shadow-lg scale-90 group-hover:scale-110 transition-transform duration-300"></i>
                             </div>
                         </div>
-                        <div class="pt-3 space-y-0.5 pointer-events-none">
+                        <div class="pt-3 space-y-0.5">
                             <div class="text-[9px] font-mono tracking-widest text-stone-400 uppercase font-bold">Short-Form Ad</div>
                             <h4 class="font-serif text-base text-[#181F22]">Porch and Patio | Lifestyle Ad</h4>
                         </div>
@@ -366,28 +420,35 @@
 
                 </div>
 
-                <button class="hidden md:flex absolute -right-6 top-1/2 -translate-y-1/2 z-30 w-12 h-12 bg-[#FAF6F0] border border-stone-300 text-stone-800 items-center justify-center opacity-0 group-hover/section:opacity-100 transition-opacity duration-300 shadow-sm hover:bg-stone-100 cursor-pointer" onclick="scrollSectionRight(this)" aria-label="Scroll right">
+                <!-- Right Nav Arrow (-mt-6 Realignment Applied) -->
+                <button class="hidden md:flex absolute -right-5 top-1/2 -translate-y-1/2 -mt-6 z-30 w-11 h-11 bg-[#FAF6F0]/90 backdrop-blur-md rounded-full border border-stone-300/60 text-[#181F22] items-center justify-center opacity-0 group-hover/section:opacity-100 hover:scale-105 transition-all duration-300 shadow-md hover:bg-[#181F22] hover:text-white hover:border-[#181F22] cursor-pointer control-next" onclick="scrollSectionRight(this)" aria-label="Scroll right">
                     <i class="fa-solid fa-chevron-right text-xs"></i>
                 </button>
+            </div>
+
+            <div class="w-full max-w-xs mx-auto pt-4 flex flex-col items-center gap-1.5">
+                <input type="range" min="0" max="100" value="0" class="timeline-scrubber" aria-label="Scrub portfolio timeline">
+                <span class="text-[9px] font-mono tracking-[0.25em] text-stone-400/80 uppercase font-medium">Slide to Explore</span>
             </div>
         </section>
 
         <!-- Category 3: Architectural Real Estate Showcases -->
-        <section class="space-y-4 px-4 sm:px-6 lg:px-12 relative group/section">
+        <section class="space-y-4 px-4 sm:px-6 lg:px-12 relative group/section" data-section-id="real-estate">
             <div class="flex items-center justify-between border-b border-stone-300/60 pb-2">
                 <h3 class="font-serif text-lg sm:text-xl text-[#181F22]">Real Estate</h3>
-                <span class="text-[10px] font-mono text-stone-400 uppercase tracking-wider hidden sm:inline">Click sides or wait 5s to rotate</span>
+                <span class="text-[10px] font-mono text-stone-400 uppercase tracking-wider hidden sm:inline">Use timeline bar below to scrub</span>
             </div>
             
             <div class="relative w-full">
-                <button class="hidden md:flex absolute -left-6 top-1/2 -translate-y-1/2 z-30 w-12 h-12 bg-[#FAF6F0] border border-stone-300 text-stone-800 items-center justify-center opacity-0 group-hover/section:opacity-100 transition-opacity duration-300 shadow-sm hover:bg-stone-100 cursor-pointer" onclick="scrollSectionLeft(this)" aria-label="Scroll left">
+                <!-- Left Nav Arrow (-mt-6 Realignment Applied) -->
+                <button class="hidden md:flex absolute -left-5 top-1/2 -translate-y-1/2 -mt-6 z-30 w-11 h-11 bg-[#FAF6F0]/90 backdrop-blur-md rounded-full border border-stone-300/60 text-[#181F22] items-center justify-center opacity-0 group-hover/section:opacity-100 hover:scale-105 transition-all duration-300 shadow-md hover:bg-[#181F22] hover:text-white hover:border-[#181F22] cursor-pointer control-prev" onclick="scrollSectionLeft(this)" aria-label="Scroll left">
                     <i class="fa-solid fa-chevron-left text-xs"></i>
                 </button>
 
-                <div class="scroll-track flex gap-6 overflow-x-auto no-scrollbar snap-x snap-mandatory pt-2 select-none">
+                <div class="scroll-track flex gap-6 overflow-x-auto no-scrollbar pt-2">
                     
                     <!-- Showcase Item 1 -->
-                    <div class="min-w-[290px] sm:min-w-[420px] max-w-[420px] snap-start group relative">
+                    <div class="min-w-[290px] sm:min-w-[420px] max-w-[420px] group relative">
                         <div class="carousel-container relative aspect-[16/9] bg-stone-900 overflow-hidden border border-stone-300/30 shadow-xs">
                             <div class="carousel-slides flex transition-transform duration-500 h-full w-full">
                                 <img src="../images/Haviture1.jpg" class="w-full h-full object-cover shrink-0 select-none" alt="Modern Architecture Exterior">
@@ -396,7 +457,6 @@
                                 <img src="../images/Haviture4.jpg" class="w-full h-full object-cover shrink-0 select-none" alt="Modern Architecture Exterior">
                                 <img src="../images/Haviture5.jpg" class="w-full h-full object-cover shrink-0 select-none" alt="Modern Architecture Kitchen">
                                 <img src="../images/Haviture6.jpg" class="w-full h-full object-cover shrink-0 select-none" alt="Modern Architecture Living Space">
-                                                        
                             </div>
                             
                             <button class="carousel-btn-left absolute left-0 top-0 bottom-0 w-14 bg-black/0 hover:bg-black/20 text-white/40 hover:text-white/90 transition-all duration-200 flex items-center justify-center z-30 focus:outline-none cursor-pointer" aria-label="Previous slide">
@@ -422,7 +482,7 @@
                     </div>
 
                     <!-- Showcase Item 2 -->
-                    <div class="min-w-[290px] sm:min-w-[420px] max-w-[420px] snap-start group relative">
+                    <div class="min-w-[290px] sm:min-w-[420px] max-w-[420px] group relative">
                         <div class="carousel-container relative aspect-[16/9] bg-stone-900 overflow-hidden border border-stone-300/30 shadow-xs">
                             <div class="carousel-slides flex transition-transform duration-500 h-full w-full">
                                 <img src="../images/Stephens1.png" class="w-full h-full object-cover shrink-0 select-none" alt="Urban Luxury Frontage">
@@ -455,8 +515,8 @@
                         </div>
                     </div>
 
-                    <!-- Showcase Item 2 -->
-                    <div class="min-w-[290px] sm:min-w-[420px] max-w-[420px] snap-start group relative">
+                    <!-- Showcase Item 3 -->
+                    <div class="min-w-[290px] sm:min-w-[420px] max-w-[420px] group relative">
                         <div class="carousel-container relative aspect-[16/9] bg-stone-900 overflow-hidden border border-stone-300/30 shadow-xs">
                             <div class="carousel-slides flex transition-transform duration-500 h-full w-full">
                                 <img src="../images/Lynford1.png" class="w-full h-full object-cover shrink-0 select-none" alt="Urban Luxury Frontage">
@@ -491,9 +551,15 @@
 
                 </div>
 
-                <button class="hidden md:flex absolute -right-6 top-1/2 -translate-y-1/2 z-30 w-12 h-12 bg-[#FAF6F0] border border-stone-300 text-stone-800 items-center justify-center opacity-0 group-hover/section:opacity-100 transition-opacity duration-300 shadow-sm hover:bg-stone-100 cursor-pointer" onclick="scrollSectionRight(this)" aria-label="Scroll right">
+                <!-- Right Nav Arrow (-mt-6 Realignment Applied) -->
+                <button class="hidden md:flex absolute -right-5 top-1/2 -translate-y-1/2 -mt-6 z-30 w-11 h-11 bg-[#FAF6F0]/90 backdrop-blur-md rounded-full border border-stone-300/60 text-[#181F22] items-center justify-center opacity-0 group-hover/section:opacity-100 hover:scale-105 transition-all duration-300 shadow-md hover:bg-[#181F22] hover:text-white hover:border-[#181F22] cursor-pointer control-next" onclick="scrollSectionRight(this)" aria-label="Scroll right">
                     <i class="fa-solid fa-chevron-right text-xs"></i>
                 </button>
+            </div>
+
+            <div class="w-full max-w-xs mx-auto pt-4 flex flex-col items-center gap-1.5">
+                <input type="range" min="0" max="100" value="0" class="timeline-scrubber" aria-label="Scrub portfolio timeline">
+                <span class="text-[9px] font-mono tracking-[0.25em] text-stone-400/80 uppercase font-medium">Slide to Explore</span>
             </div>
         </section>
 
@@ -517,7 +583,7 @@
         </div>
     </section>
 
-    <!-- Infinite Scroll Corporate Marquee (Relative Paths Enabled) -->
+    <!-- Infinite Scroll Corporate Marquee -->
     <section class="py-4 bg-white border-y border-stone-200 overflow-hidden z-10 relative w-full">
         <div class="relative w-full before:absolute before:left-0 before:top-0 before:bottom-0 before:w-32 before:bg-gradient-to-r before:from-white before:to-transparent before:z-20 after:absolute after:right-0 after:top-0 after:bottom-0 after:w-32 after:bg-gradient-to-l after:from-white after:to-transparent after:z-20">
             <div class="animate-marquee-container">
@@ -641,7 +707,6 @@
                 </div>
 
                 <div class="space-y-4 order-4 md:order-4">
-                    <!-- ALSO PLACED LOGO HERE FOR CONSISTENCY -->
                     <p class="font-bold text-white tracking-[0.25em] text-xs uppercase flex items-center gap-2">
                         <img src="/images/zlplogo.png" alt="" class="w-4 h-4 object-contain brightness-0 invert">
                         <span>ZERO LIMIT<span class="text-stone-400 font-light"> PRODUCTIONS</span></span>
@@ -718,146 +783,61 @@
                 if (!menuCard.contains(e.target) && !toggleBtn.contains(e.target)) { closeMenu(); }
             });
 
-            // ── Desktop Drag-to-Scroll ─────────────────────────────────────────────────
-            // MOBILE:  no JS listeners here. touch-action:pan-x (CSS) lets the browser
-            //          handle horizontal track scroll natively while vertical page-scroll
-            //          passes through. Zero axis conflict.
-            // DESKTOP: mouse drag with velocity momentum + CSS snap on release.
-            //          document-level move/up listeners so drag works outside the track.
-            (function () {
-                // Skip mouse-drag setup entirely on primary-touch (coarse) devices.
-                // On hybrids (Surface, iPad + BT mouse) this still activates correctly.
-                if (window.matchMedia('(hover: none) and (pointer: coarse)').matches) return;
+            // Desktop Drag-to-Scroll + Scrubber Synchronization
+            const sections = document.querySelectorAll('section[data-section-id]');
+            
+            sections.forEach(section => {
+                const track = section.querySelector('.scroll-track');
+                const scrubber = section.querySelector('.timeline-scrubber');
+                if (!track || !scrubber) return;
 
-                const tracks = document.querySelectorAll('.scroll-track');
+                let active = false;
+                let didDrag = false;
+                let startX = 0;
+                let startSL = 0;
 
-                tracks.forEach(function (track) {
-                    let active  = false;   // mouse button is held
-                    let didDrag = false;   // cursor moved enough to count as a drag
-                    let startX  = 0;       // pageX at mousedown
-                    let startSL = 0;       // scrollLeft at mousedown
-                    let velX    = 0;       // px/ms at last mousemove (+ = mouse moved right)
-                    let prevX   = 0;
-                    let prevT   = 0;
-                    let rafId   = null;
+                function updateScrubber() {
+                    const maxScroll = track.scrollWidth - track.clientWidth;
+                    if (maxScroll <= 0) return;
+                    scrubber.value = (track.scrollLeft / maxScroll) * 100;
+                }
 
-                    // ── helpers ──────────────────────────────────────────────────
-                    function disableSnap() {
-                        track.style.scrollSnapType = 'none';
-                        track.style.scrollBehavior = 'auto';
-                    }
+                track.addEventListener('scroll', updateScrubber);
 
-                    function snapToNearest() {
-                        // Re-enable snap then scroll to the closest snap target so the
-                        // browser doesn't fight a pending programmatic scrollTo.
-                        track.style.scrollSnapType = 'x mandatory';
-                        track.style.scrollBehavior = 'smooth';
+                scrubber.addEventListener('input', () => {
+                    const maxScroll = track.scrollWidth - track.clientWidth;
+                    track.scrollLeft = (scrubber.value / 100) * maxScroll;
+                });
 
-                        const snapItems = Array.from(track.querySelectorAll('.snap-start'));
-                        if (!snapItems.length) { track.style.scrollBehavior = ''; return; }
-
-                        const trackRect     = track.getBoundingClientRect();
-                        let nearestTarget   = track.scrollLeft;
-                        let nearestDist     = Infinity;
-
-                        snapItems.forEach(function (item) {
-                            // How far is this item's left edge from the track's left edge RIGHT NOW?
-                            const offsetFromLeft = item.getBoundingClientRect().left - trackRect.left;
-                            const dist = Math.abs(offsetFromLeft);
-                            if (dist < nearestDist) {
-                                nearestDist   = dist;
-                                // The scrollLeft that aligns this item with the track's left edge.
-                                nearestTarget = track.scrollLeft + offsetFromLeft;
-                            }
-                        });
-
-                        track.scrollTo({ left: nearestTarget, behavior: 'smooth' });
-                        setTimeout(function () { track.style.scrollBehavior = ''; }, 600);
-                    }
-
-                    // ── drag lifecycle ────────────────────────────────────────────
-                    function beginDrag(pageX) {
-                        if (rafId) { cancelAnimationFrame(rafId); rafId = null; }
-                        active  = true;
+                if (!window.matchMedia('(hover: none) and (pointer: coarse)').matches) {
+                    track.addEventListener('mousedown', (e) => {
+                        if (e.button !== 0 || e.target.closest('.carousel-container')) return;
+                        e.preventDefault();
+                        active = true;
                         didDrag = false;
-                        startX  = pageX;
+                        startX = e.pageX;
                         startSL = track.scrollLeft;
-                        velX    = 0;
-                        prevX   = pageX;
-                        prevT   = performance.now();
-                        disableSnap();
                         track.style.cursor = 'grabbing';
-                    }
+                    });
 
-                    function onDragMove(pageX) {
+                    document.addEventListener('mousemove', (e) => {
                         if (!active) return;
-                        const now = performance.now();
-                        const dt  = now - prevT;
-                        if (dt > 0) velX = (pageX - prevX) / dt;
-                        prevX = pageX;
-                        prevT = now;
-
-                        // startX - pageX: positive when mouse moved LEFT → scrollLeft increases
-                        const delta = startX - pageX;
+                        const delta = startX - e.pageX;
                         track.scrollLeft = startSL + delta;
                         if (Math.abs(delta) > 4) didDrag = true;
-                    }
+                    });
 
-                    function endDrag() {
+                    document.addEventListener('mouseup', () => {
                         if (!active) return;
                         active = false;
                         track.style.cursor = '';
-                        applyMomentum();
-                    }
-
-                    // ── momentum + snap ───────────────────────────────────────────
-                    function applyMomentum() {
-                        // velX > 0 means the mouse moved RIGHT → scrollLeft was decreasing.
-                        // Flip sign so positive v = scrollLeft increasing (content going left).
-                        let v = -velX;
-
-                        const MAX_VEL   = 6;     // px/ms cap — prevents overshooting on fast flicks
-                        const FRICTION  = 0.90;  // velocity decay per ~16 ms rAF tick
-                        const THRESHOLD = 0.05;  // px/ms — below this we snap and stop
-
-                        v = Math.max(-MAX_VEL, Math.min(MAX_VEL, v));
-
-                        function tick() {
-                            if (Math.abs(v) < THRESHOLD) {
-                                snapToNearest();
-                                return;
-                            }
-                            const maxSL = track.scrollWidth - track.clientWidth;
-                            track.scrollLeft = Math.max(0, Math.min(maxSL, track.scrollLeft + v * 16));
-                            v *= FRICTION;
-                            rafId = requestAnimationFrame(tick);
-                        }
-
-                        if (Math.abs(v) > THRESHOLD) {
-                            rafId = requestAnimationFrame(tick);
-                        } else {
-                            snapToNearest();
-                        }
-                    }
-
-                    // ── event binding ─────────────────────────────────────────────
-                    track.addEventListener('mousedown', function (e) {
-                        if (e.button !== 0) return;
-                        if (e.target.closest('.carousel-container')) return;
-                        e.preventDefault(); // block text/image selection drag
-                        beginDrag(e.pageX);
                     });
 
-                    // document-level listeners: drag stays tracked if cursor leaves the track
-                    document.addEventListener('mousemove', function (e) { onDragMove(e.pageX); });
-                    document.addEventListener('mouseup',   function ()   { if (active) endDrag(); });
-
-                    // Click guard: suppress video-open when the user actually dragged
-                    track.addEventListener('click', function (e) {
+                    track.addEventListener('click', (e) => {
                         if (didDrag) {
                             e.preventDefault();
                             e.stopPropagation();
-                            didDrag = false; // reset for next interaction
+                            didDrag = false;
                             return;
                         }
                         const card = e.target.closest('.video-card');
@@ -866,8 +846,8 @@
                             if (videoId) openVideoModal(videoId);
                         }
                     });
-                });
-            }());
+                }
+            });
 
             // Automated Real Estate Carousel Logic Engine (5s Auto-rotation)
             const realEstateCarousels = document.querySelectorAll('.carousel-container');
@@ -920,20 +900,18 @@
 
         // Desktop Arrow Step Calculations
         function getScrollStep(track) {
-            const firstCard = track.querySelector('.snap-start');
+            const firstCard = track.querySelector('.video-card, .group');
             if (!firstCard) return 300;
             return firstCard.offsetWidth + 24; 
         }
 
         function scrollSectionLeft(btn) {
             const track = btn.parentElement.querySelector('.scroll-track');
-            track.style.scrollBehavior = 'smooth';
             track.scrollBy({ left: -getScrollStep(track), behavior: 'smooth' });
         }
 
         function scrollSectionRight(btn) {
             const track = btn.parentElement.querySelector('.scroll-track');
-            track.style.scrollBehavior = 'smooth';
             track.scrollBy({ left: getScrollStep(track), behavior: 'smooth' });
         }
 
