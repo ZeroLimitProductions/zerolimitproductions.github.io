@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Your Project | Zero Limit Productions | Video Production Utah</title>
     
-    <meta name="description" content="Secure your production slot with Zero Limit Productions. High-end multi-cam videography for weddings, stage performances, missionary homecomings, real estate showcases, and commercial marketing in Utah.">
-    <meta name="keywords" content="video production utah, book videographer utah, corporate video inquiry, wedding video production form, multi-cam booking, drew mckay, slc videography, utah film production, real estate video utah">
+    <meta name="description" content="Secure your production slot with Zero Limit Productions. High-end multi-cam videography for weddings, stage performances, missionary homecomings, and commercial marketing in Utah.">
+    <meta name="keywords" content="video production utah, book videographer utah, corporate video inquiry, wedding video production form, multi-cam booking, drew mckay, slc videography, utah film production">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="bingbot" content="index, follow">
@@ -21,7 +21,7 @@
     <meta property="og:locale" content="en_US">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Book Your Project | Zero Limit Productions | Cinematic Videography Utah">
-    <meta property="og:description" content="Initiate your professional video production timeline. Custom corporate marketing campaigns, real estate cinematic tours, and elegant legacy milestone coverage across Utah.">
+    <meta property="og:description" content="Initiate your professional video production timeline. Custom corporate marketing campaigns and elegant legacy milestone coverage across Utah.">
     <meta property="og:url" content="https://zerolimitproductions.com/booking/">
     <meta property="og:site_name" content="Zero Limit Productions">
     <meta property="og:image" content="https://zerolimitproductions.com/images/cover.png">
@@ -51,6 +51,30 @@
     <style>
         html {
             scroll-behavior: smooth;
+        }
+
+        /* NUCLEAR OVERRIDE FOR IOS SAFARI NATIVE DATE DROPDOWN BLOWOUTS */
+        input[type="date"] {
+            -webkit-appearance: none !important;
+            appearance: none !important;
+            display: block !important;
+            width: 100% !important;
+            max-width: 100% !important;
+            min-width: 0 !important;
+            box-sizing: border-box !important;
+            overflow: hidden !important;
+        }
+        
+        /* Targets Apple's deep text container directly, stripping dynamic text layout expansion rules */
+        input[type="date"]::-webkit-date-and-time-value {
+            text-align: left !important;
+            display: block !important;
+            width: auto !important;
+            max-width: 100% !important;
+            min-width: 0 !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            min-height: 1.5em;
         }
 
         /* HAMBURGER RECTANGLE CONTROLS */
@@ -102,7 +126,6 @@
     <header class="sticky top-0 z-50 bg-[#FAF6F0]/90 backdrop-blur-md border-b border-stone-200 shadow-xs">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 h-20 grid grid-cols-2 md:grid-cols-3 items-center relative">
             
-            <!-- BRANDING LOGO & TITLE HEADER AREA -->
             <div class="flex justify-start">
                 <a href="../" class="flex items-center gap-3 text-xs sm:text-sm font-bold tracking-[0.25em] text-[#181F22]">
                     <img src="../images/zlplogo.png" alt="Zero Limit Productions Identity Logo" class="w-6 h-6 object-contain block flex-shrink-0">
@@ -125,7 +148,7 @@
                         <div class="h-[1px] bg-stone-200/80 mx-4 my-1"></div>
                         <a href="../commercial-portfolio/" class="flex flex-col px-5 py-3 hover:bg-stone-100/80 transition group/item">
                             <span class="text-[#181F22] tracking-wider text-[11px] font-bold">Business & Commercial</span>
-                            <span class="text-stone-400 normal-case font-light text-[10px] mt-0.5">Commercials, Real Estate, Reels</span>
+                            <span class="text-stone-400 normal-case font-light text-[10px] mt-0.5">Commercials, Marketing, Reels</span>
                         </a>
                     </div>
                 </div>
@@ -215,7 +238,7 @@
                 <span class="italic font-light text-stone-200">and let's bring it to life.</span>
             </h1>
             <p class="text-stone-400 text-xs sm:text-sm max-w-xl mx-auto font-light leading-relaxed tracking-wide">
-                Whether you're planning a wedding, documenting a stage performance, celebrating a missionary homecoming, showcasing premium real estate, or looking to scale your business with high-converting video, I'm excited to help you tell your story.
+                Whether you're planning a wedding, documenting a stage performance, celebrating a missionary homecoming, or looking to scale your business with high-converting video, I'm excited to help you tell your story.
             </p>
         </div>
     </section>
@@ -271,7 +294,7 @@
                             <i class="fa-solid fa-eye text-[10px] text-stone-400"></i> Business & Commercial Track
                         </h3>
                         <p class="text-[11px] text-stone-500 font-light leading-relaxed">
-                            High-impact commercial clips, modern real estate listings, social media reels, and promotional material structured cleanly to connect with consumers and level up your brand presence.
+                            High-impact commercial clips, modern business assets, social media reels, and promotional material structured cleanly to connect with consumers and level up your brand presence.
                         </p>
                     </div>
                 </div>
@@ -345,10 +368,13 @@
                                 <label for="phone" class="text-[9px] font-bold tracking-widest text-stone-700 uppercase block">Phone Number</label>
                                 <input type="tel" id="phone" name="phone" required autocomplete="tel" placeholder="(555) 555-5555" class="w-full bg-[#FAF6F0] border border-stone-300 focus:border-[#181F22] rounded-none px-4 py-3 text-sm text-stone-900 focus:outline-none transition shadow-xs">
                             </div>
-                            <div class="space-y-2 min-w-0">
+                            
+                            <!-- EXPLICIT COUPLING ISOLATION CAGE FOR THE DATE COMPONENT (MATCHED FROM HOME PAGE) -->
+                            <div class="space-y-2 min-w-0 w-full overflow-hidden">
                                 <label for="date" class="text-[9px] font-bold tracking-widest text-stone-700 uppercase block">Estimated Event Date</label>
-                                <!-- FIXED FOR IOS SAFARI: CHANGED INPUT TO DISPLAY: BLOCK TO BREAK INLINE-FLEX CALCULATION -->
-                                <input type="date" id="date" name="date" class="block w-full bg-[#FAF6F0] border border-stone-300 focus:border-[#181F22] rounded-none px-4 py-3 text-sm text-stone-900 focus:outline-none transition shadow-xs">
+                                <div class="w-full min-w-0 max-w-full block overflow-hidden">
+                                    <input type="date" id="date" name="date" class="w-full max-w-full min-w-0 block bg-[#FAF6F0] border border-stone-300 focus:border-[#181F22] rounded-none px-4 py-3 text-sm text-stone-900 focus:outline-none transition shadow-xs">
+                                </div>
                             </div>
                         </div>
 
@@ -357,7 +383,7 @@
                             <div class="relative w-full">
                                 <select id="event-type" name="event-type" class="w-full bg-[#FAF6F0] border border-stone-300 focus:border-[#181F22] rounded-none px-4 py-3 text-sm text-stone-900 focus:outline-none transition appearance-none pr-10 shadow-xs">
                                     <option value="Milestones & Events Track">Milestones & Events (Wedding, Stage, Homecoming)</option>
-                                    <option value="Business & Commercial Track">Business, Real Estate & Commercial (Marketing, Reels, Property Tours)</option>
+                                    <option value="Business & Commercial Track">Business & Commercial (Commercials, Marketing, Reels)</option>
                                     <option value="Other Concept Track">Something else completely!</option>
                                 </select>
                                 <div class="absolute right-4 top-1/2 -translate-y-1/2 text-stone-500 text-xs pointer-events-none">
@@ -381,7 +407,6 @@
         </div>
     </section>
 
-    <!-- Global Footer -->
     <footer class="bg-[#181F22] text-stone-300/70 text-sm relative z-10 border-t border-[#242D30] pt-16 pb-12 sm:pt-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12 pb-12 sm:pb-16 border-b border-white/10">
@@ -436,20 +461,20 @@
                 <div class="space-y-4 order-3 md:order-1">
                     <p class="text-[10px] font-bold tracking-[0.2em] text-white uppercase">Directory</p>
                     <ul class="space-y-2.5 text-xs font-light">
-                        <li><a href="/" class="hover:text-white transition-colors duration-200 flex items-center gap-1.5"><span class="w-1 h-1 bg-[#A27165] rounded-full opacity-50"></span> Return Home</a></li>
-                        <li><a href="/event-portfolio/" class="hover:text-white transition-colors duration-200 flex items-center gap-1.5"><span class="w-1 h-1 bg-[#A27165] rounded-full opacity-50"></span> Milestones Portfolio</a></li>
-                        <li><a href="/commercial-portfolio/" class="hover:text-white transition-colors duration-200 flex items-center gap-1.5"><span class="w-1 h-1 bg-[#A27165] rounded-full opacity-50"></span> Business Portfolio</a></li>
-                        <li><a href="/about/" class="hover:text-white transition-colors duration-200 flex items-center gap-1.5"><span class="w-1 h-1 bg-[#A27165] rounded-full opacity-50"></span> About Our Crew</a></li>
+                        <li><a href="../" class="hover:text-white transition-colors duration-200 flex items-center gap-1.5"><span class="w-1 h-1 bg-[#A27165] rounded-full opacity-50"></span> Return Home</a></li>
+                        <li><a href="../event-portfolio/" class="hover:text-white transition-colors duration-200 flex items-center gap-1.5"><span class="w-1 h-1 bg-[#A27165] rounded-full opacity-50"></span> Milestones Portfolio</a></li>
+                        <li><a href="../commercial-portfolio/" class="hover:text-white transition-colors duration-200 flex items-center gap-1.5"><span class="w-1 h-1 bg-[#A27165] rounded-full opacity-50"></span> Business Portfolio</a></li>
+                        <li><a href="../about/" class="hover:text-white transition-colors duration-200 flex items-center gap-1.5"><span class="w-1 h-1 bg-[#A27165] rounded-full opacity-50"></span> About Our Crew</a></li>
                     </ul>
                 </div>
 
                 <div class="space-y-4 order-4 md:order-4">
                     <p class="font-bold text-white tracking-[0.25em] text-xs uppercase flex items-center gap-2">
-                        <img src="/images/zlplogo.png" alt="" class="w-4 h-4 object-contain brightness-0 invert">
+                        <img src="../images/zlplogo.png" alt="" class="w-4 h-4 object-contain brightness-0 invert">
                         <span>ZERO LIMIT<span class="text-stone-400 font-light"> PRODUCTIONS</span></span>
                     </p>
                     <p class="text-xs text-stone-300/60 font-light leading-relaxed max-w-xs">
-                        High-end multi-cam video production, and timeless cinematic storytelling across commercial landscapes, real estate showcases, and individual legacy milestones.
+                        High-end multi-cam video production, and timeless cinematic storytelling across commercial landscapes and individual legacy milestones.
                     </p>
                 </div>
             </div>
@@ -527,7 +552,6 @@
                 }
             });
 
-            // ACCORDION TOGGLES
             const faqToggles = document.querySelectorAll('.faq-toggle');
             faqToggles.forEach(toggle => {
                 toggle.addEventListener('click', () => {
@@ -555,7 +579,6 @@
                 });
             });
 
-            // FORM PROCESSING LOGIC (WEB3FORMS)
             const bookingForm = document.getElementById('booking-form');
             const formStatus = document.getElementById('form-status');
             const submitBtn = document.getElementById('submit-btn');
