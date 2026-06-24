@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zero Limit Productions | Video Production & Cinematic Storytelling Utah</title>
     
+    <!-- SEO METADATA (STRATEGIC BACKEND ONLY) -->
     <meta name="description" content="Zero Limit Productions is a premier video production studio specializing in high-end multi-cam videography. Capturing weddings, theater stage events, missionary homecomings, and commercial marketing videos in Utah.">
     <meta name="keywords" content="video production utah, videographer utah, commercial video production, wedding videography utah, event video recording, multi-cam production, zero limit productions, drew mckay">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -12,11 +13,13 @@
     <meta name="author" content="Zero Limit Productions">
     <link class="canonical" href="https://zerolimitproductions.com/">
 
+    <!-- GEOGRAPHIC TARGETING -->
     <meta name="geo.region" content="US-UT">
     <meta name="geo.placename" content="Utah">
     <meta name="geo.position" content="40.7608;-111.8910">
     <meta name="ICBM" content="40.7608, -111.8910">
 
+    <!-- OPEN GRAPH / FACEBOOK SOCIAL CAPABILITY -->
     <meta property="og:locale" content="en_US">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Zero Limit Productions | Video Production & Cinematic Storytelling Utah">
@@ -28,14 +31,17 @@
     <meta property="og:image:height" content="630">
     <meta property="og:image:type" content="image/png">
 
+    <!-- TWITTER SOCIAL CARDS CAPABILITY -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Zero Limit Productions | Professional Video Production Utah">
     <meta name="twitter:description" content="High-end multi-cam videography, commercial marketing, wedding cinema, and live performance recording services in Utah.">
     <meta name="twitter:image" content="https://zerolimitproductions.com/images/cover.png">
 
+    <!-- FAVORITE ICON CAPABILITY -->
     <link rel="icon" type="image/png" href="images/favicon.png">
     <link rel="apple-touch-icon" href="images/favicon.png">
 
+    <!-- GOOGLE ANALYTICS INTEGRATION (GA4) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -44,6 +50,7 @@
         gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true });
     </script>
 
+    <!-- PROFESSIONAL JSON-LD SCHEMA STRUCTURED DATA (SEO HYPER-OPTIMIZATION) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -85,6 +92,7 @@
     }
     </script>
 
+    <!-- FRAMEWORKS & ICON FONTS -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -93,14 +101,28 @@
             scroll-behavior: smooth;
         }
 
-        /* BRUTE-FORCE OVERRIDE FOR IOS SAFARI DATE WRAPPER BLOWOUTS */
+        /* NUCLEAR OVERRIDE FOR IOS SAFARI NATIVE DATE DROPDOWN BLOWOUTS */
         input[type="date"] {
-            min-width: 0 !important; /* Overrides default CSS grid track expansion mechanics */
-        }
-        input[type="date"]::-webkit-date-and-time-value {
-            text-align: left !important; /* Strips implicit Apple centering alignments */
-            min-height: 1.5em;
+            -webkit-appearance: none !important;
+            appearance: none !important;
+            display: block !important;
             width: 100% !important;
+            max-width: 100% !important;
+            min-width: 0 !important;
+            box-sizing: border-box !important;
+            overflow: hidden !important;
+        }
+        
+        /* Targets Apple's deep text container directly, stripping dynamic text layout expansion rules */
+        input[type="date"]::-webkit-date-and-time-value {
+            text-align: left !important;
+            display: block !important;
+            width: auto !important;
+            max-width: 100% !important;
+            min-width: 0 !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            min-height: 1.5em;
         }
 
         /* CUSTOM ASYMMETRICAL HAMBURGER BUTTON STYLING */
@@ -155,6 +177,7 @@
     <header class="sticky top-0 z-50 bg-[#FAF6F0]/90 backdrop-blur-md border-b border-stone-200 shadow-xs">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 h-20 grid grid-cols-2 md:grid-cols-3 items-center relative">
             
+            <!-- BRANDING LOGO & TITLE HEADER AREA -->
             <div class="flex justify-start">
                 <a href="./" class="flex items-center gap-3 text-xs sm:text-sm font-bold tracking-[0.25em] text-[#181F22]">
                     <img src="images/zlplogo.png" alt="Zero Limit Productions Identity Logo" class="w-6 h-6 object-contain block flex-shrink-0">
@@ -162,6 +185,7 @@
                 </a>
             </div>
             
+            <!-- MAIN NAVIGATION DESKTOP BAR -->
             <nav class="hidden md:flex justify-center items-center space-x-10 text-xs font-bold tracking-[0.2em] uppercase h-full" aria-label="Main Navigation">
                 <a href="./" class="text-[#181F22] border-b-2 border-[#A27165] pb-1">Home</a>
                 
@@ -208,6 +232,7 @@
         </div>
     </header>
 
+    <!-- MOBILE NAVIGATION MENU BAR OVERLAY -->
     <div id="mobile-navigation-card" class="fixed top-20 right-0 w-72 z-50 bg-[#FAF6F0]/95 backdrop-blur-md border-l border-b border-stone-300/80 p-6 opacity-0 pointer-events-none -translate-y-2 transition-all duration-300 ease-out md:hidden shadow-2xl">
         <div class="flex flex-col space-y-6">
             <nav class="flex flex-col space-y-5 text-left text-xs font-bold tracking-[0.25em] uppercase" aria-label="Mobile Navigation Menu">
@@ -240,6 +265,7 @@
         </div>
     </div>
 
+    <!-- HERO SECTION WITH ASSET PATHWAYS ROUTED TO VIDEOS FOLDER -->
     <section class="relative h-[80vh] sm:h-[85vh] flex items-center justify-center overflow-hidden bg-[#181F22] text-white">
         <div class="absolute inset-0 z-0">
             <video autoplay loop muted playsinline class="w-full h-full object-cover opacity-30 mix-blend-luminosity">
@@ -301,6 +327,7 @@
         </div>
     </div>
 
+    <!-- PORTFOLIOS SECTION -->
     <section id="portfolios-section" class="py-4 sm:py-8 relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
         
         <div class="absolute inset-x-8 top-12 bottom-4 border border-stone-300/30 bg-stone-200/20 pointer-events-none -z-10 rounded-sm shadow-inner">
@@ -316,6 +343,7 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-8 max-w-5xl mx-auto px-2 sm:px-4">
+            <!-- MILESTONES -->
             <a href="event-portfolio/" class="group relative block w-full aspect-[16/10] sm:aspect-[16/9] md:aspect-[16/10] overflow-hidden bg-[#181F22] transition-all duration-500 cubic-bezier(0.4, 0, 0.2, 1) hover:scale-[1.015] shadow-sm hover:shadow-2xl border border-stone-300/20 hover:border-stone-300/40" aria-label="View Milestones and Events Video Gallery">
                 <img src="images/MilestonesBG2.png" alt="Cinematic wedding videography and stage event production clips" class="absolute inset-0 w-full h-full object-cover opacity-90 transition-transform duration-700 ease-out group-hover:scale-105 z-10">
                 <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-out z-20">
@@ -329,6 +357,7 @@
                 </div>
             </a>
 
+            <!-- BUSINESS & COMMERCIAL -->
             <a href="commercial-portfolio/" class="group relative block w-full aspect-[16/10] sm:aspect-[16/9] md:aspect-[16/10] overflow-hidden bg-[#181F22] transition-all duration-500 cubic-bezier(0.4, 0, 0.2, 1) hover:scale-[1.015] shadow-sm hover:shadow-2xl border border-stone-300/20 hover:border-stone-300/40" aria-label="View Business and Commercial Video Production Gallery">
                 <img src="images/BusinessBG.png" alt="Commercial corporate video production and modern digital real estate media content" class="absolute inset-0 w-full h-full object-cover opacity-90 transition-transform duration-700 ease-out group-hover:scale-105 z-10">
                 <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-out z-20">
@@ -352,6 +381,7 @@
         </div>
     </div>
 
+    <!-- HOW WE WORK SECTION -->
     <section class="py-16 sm:py-20 bg-[#F0F1F3] border-y border-stone-300/50 relative z-10 shadow-xs">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
             <div class="text-center max-w-xl mx-auto mb-12 sm:mb-16 space-y-2">
@@ -379,6 +409,7 @@
         </div>
     </section>
 
+    <!-- CONTACT INTAKE FORM SYSTEM -->
     <section id="contact" class="py-16 sm:py-24 max-w-4xl mx-auto px-4 sm:px-6 scroll-mt-20 z-10">
         <div class="bg-white rounded-none border border-stone-300 p-6 sm:p-16 relative shadow-2xl">
             <div class="absolute top-0 left-[-8px] w-4 h-[1px] bg-[#181F22] pointer-events-none z-20"></div>
@@ -401,25 +432,29 @@
                 <input type="hidden" name="access_key" value="51139d1c-0124-48fe-b489-3af11a8de0e9">
                 <input type="checkbox" name="botcheck" class="hidden" style="display: none;" tabIndex="-1" autoComplete="off">
 
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
-                    <div class="space-y-2">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6 min-w-0 w-full">
+                    <div class="space-y-2 min-w-0 w-full">
                         <label for="name" class="text-[9px] font-bold tracking-widest text-stone-700 uppercase block">Your Name</label>
                         <input type="text" id="name" name="name" required autocomplete="name" class="w-full bg-[#FAF6F0] border border-stone-300 focus:border-[#181F22] rounded-none px-4 py-3 text-sm text-stone-900 focus:outline-none transition shadow-xs">
                     </div>
-                    <div class="space-y-2">
+                    <div class="space-y-2 min-w-0 w-full">
                         <label for="email" class="text-[9px] font-bold tracking-widest text-stone-700 uppercase block">Email Address</label>
                         <input type="email" id="email" name="email" required autocomplete="email" class="w-full bg-[#FAF6F0] border border-stone-300 focus:border-[#181F22] rounded-none px-4 py-3 text-sm text-stone-900 focus:outline-none transition shadow-xs">
                     </div>
                 </div>
 
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
-                    <div class="space-y-2">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6 min-w-0 w-full">
+                    <div class="space-y-2 min-w-0 w-full">
                         <label for="phone" class="text-[9px] font-bold tracking-widest text-stone-700 uppercase block">Phone Number</label>
                         <input type="tel" id="phone" name="phone" required autocomplete="tel" placeholder="(555) 555-5555" class="w-full bg-[#FAF6F0] border border-stone-300 focus:border-[#181F22] rounded-none px-4 py-3 text-sm text-stone-900 focus:outline-none transition shadow-xs">
                     </div>
-                    <div class="space-y-2">
+                    
+                    <!-- EXPLICIT COUPLING ISOLATION CAGE FOR THE DATE COMPONENT -->
+                    <div class="space-y-2 min-w-0 w-full overflow-hidden">
                         <label for="date" class="text-[9px] font-bold tracking-widest text-stone-700 uppercase block">Target Execution Date</label>
-                        <input type="date" id="date" name="date" class="w-full bg-[#FAF6F0] border border-stone-300 focus:border-[#181F22] rounded-none px-4 py-3 text-sm text-stone-900 focus:outline-none transition shadow-xs">
+                        <div class="w-full min-w-0 max-w-full block overflow-hidden">
+                            <input type="date" id="date" name="date" class="w-full max-w-full min-w-0 block bg-[#FAF6F0] border border-stone-300 focus:border-[#181F22] rounded-none px-4 py-3 text-sm text-stone-900 focus:outline-none transition shadow-xs">
+                        </div>
                     </div>
                 </div>
 
@@ -449,6 +484,7 @@
         </div>
     </section>
 
+    <!-- FOOTER -->
     <footer class="bg-[#181F22] text-stone-300/70 text-sm relative z-10 border-t border-[#242D30] pt-16 pb-12 sm:pt-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12 pb-12 sm:pb-16 border-b border-white/10">
@@ -534,6 +570,7 @@
         </div>
     </footer>
 
+    <!-- RESPONSIVE USER INTERFACE INTERACTION CONTROLLER -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const toggleBtn = document.getElementById('mobile-menu-toggle');
