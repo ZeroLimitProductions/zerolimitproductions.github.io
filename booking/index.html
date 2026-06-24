@@ -347,7 +347,8 @@
                             </div>
                             <div class="space-y-2 min-w-0">
                                 <label for="date" class="text-[9px] font-bold tracking-widest text-stone-700 uppercase block">Estimated Event Date</label>
-                                <input type="date" id="date" name="date" class="w-full min-w-0 max-w-full bg-[#FAF6F0] border border-stone-300 focus:border-[#181F22] rounded-none px-4 py-3 text-sm text-stone-900 focus:outline-none transition shadow-xs">
+                                <!-- FIXED FOR IOS SAFARI: CHANGED INPUT TO DISPLAY: BLOCK TO BREAK INLINE-FLEX CALCULATION -->
+                                <input type="date" id="date" name="date" class="block w-full bg-[#FAF6F0] border border-stone-300 focus:border-[#181F22] rounded-none px-4 py-3 text-sm text-stone-900 focus:outline-none transition shadow-xs">
                             </div>
                         </div>
 
