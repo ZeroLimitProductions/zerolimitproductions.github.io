@@ -9,7 +9,7 @@
     <meta name="keywords" content="Zero Limit Productions, Milestones Portfolio, Utah Videography, Wedding Films Utah, Multi-Cam Theater Recording, Missionary Homecoming Video, Event Videographer">
     <meta name="robots" content="index, follow">
     <meta name="author" content="Zero Limit Productions">
-    <link rel="canonical" href="https://zerolimitproductions.com/event-portfolio/">
+    <link class="canonical" href="https://zerolimitproductions.com/event-portfolio/">
 
     <meta property="og:type" content="website">
     <meta property="og:title" content="Milestones & Events Portfolio | Zero Limit Productions">
@@ -79,14 +79,21 @@
         }
         #mobile-menu-toggle.is-active .nav-icon-close { opacity: 1; transform: scale(1) rotate(0deg); }
 
-        /* Smooth grabbing cursor for drag-to-scroll tracks */
+        /* Smooth hardware-accelerated scrolling for mobile and custom grab engine for desktop */
         .scroll-track {
-            cursor: grab;
             user-select: none;
             -webkit-user-select: none;
+            -webkit-overflow-scrolling: touch;
         }
-        .scroll-track:active {
-            cursor: grabbing;
+        
+        /* Apply grab cues specifically on screens with an accurate cursor standard */
+        @media (pointer: fine) {
+            .scroll-track {
+                cursor: grab;
+            }
+            .scroll-track:active {
+                cursor: grabbing;
+            }
         }
     </style>
 </head>
@@ -325,7 +332,6 @@
                         </div>
                     </div>
 
-
                     <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] snap-start group cursor-pointer" data-video-id="QwnsFVuiKeg">
                         <div class="relative aspect-[16/9] bg-stone-900 overflow-hidden border border-stone-300/30 shadow-xs pointer-events-none">
                             <img src="https://img.youtube.com/vi/QwnsFVuiKeg/maxresdefault.jpg" alt="Musical Showcase" class="w-full h-full object-cover group-hover:scale-101 transition-transform duration-500">
@@ -338,7 +344,6 @@
                             <h4 class="font-serif text-base text-[#181F22]">Elder William's Homecoming</h4>
                         </div>
                     </div>
-
 
                     <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] snap-start group cursor-pointer" data-video-id="-5ZwG47_hH8">
                         <div class="relative aspect-[16/9] bg-stone-900 overflow-hidden border border-stone-300/30 shadow-xs pointer-events-none">
@@ -353,7 +358,6 @@
                         </div>
                     </div>
 
-
                     <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] snap-start group cursor-pointer" data-video-id="KiPPxmwu7mo">
                         <div class="relative aspect-[16/9] bg-stone-900 overflow-hidden border border-stone-300/30 shadow-xs pointer-events-none">
                             <img src="https://img.youtube.com/vi/KiPPxmwu7mo/maxresdefault.jpg" alt="Musical Showcase" class="w-full h-full object-cover group-hover:scale-101 transition-transform duration-500">
@@ -366,7 +370,6 @@
                             <h4 class="font-serif text-base text-[#181F22]">Sister Moore's Homecoming</h4>
                         </div>
                     </div>
-
 
                     <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] snap-start group cursor-pointer" data-video-id="XLM6B5DJeqs">
                         <div class="relative aspect-[16/9] bg-stone-900 overflow-hidden border border-stone-300/30 shadow-xs pointer-events-none">
@@ -646,40 +649,65 @@
                 if (!menuCard.contains(e.target) && !toggleBtn.contains(e.target)) { closeMenu(); }
             }, { passive: true });
 
-            // High-Performance Desktop Drag-to-Scroll Engine with Fluid Inertia
-            // Isolated strictly to mouse inputs to ensure native hardware-accelerated touch behavior remains perfectly untouched.
+            // Horizontal Scroll Configuration
             const tracks = document.querySelectorAll('.scroll-track');
             
             tracks.forEach(track => {
+                // 1. Universal Tap/Click Setup for Modal Triggering
+                track.addEventListener('click', (e) => {
+                    // Prevent video launching if desktop click-dragging is currently active
+                    if (track.dataset.isDragging === 'true') {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        return;
+                    }
+                    const targetCard = e.target.closest('.video-card');
+                    if (targetCard) {
+                        const videoId = targetCard.getAttribute('data-video-id');
+                        if (videoId) openVideoModal(videoId);
+                    }
+                });
+
+                // 2. Strict Touch Environment Check
+                // Completely isolates mobile touchscreens from drag state overrides
+                const isTouchDevice = window.matchMedia('(pointer: coarse)').matches || 
+                                      ('ontouchstart' in window) || 
+                                      (navigator.maxTouchPoints > 0);
+                
+                if (isTouchDevice) {
+                    // Enforce pure CSS scrolling loops for mobile interfaces
+                    track.style.scrollSnapType = 'x mandatory';
+                    track.style.scrollBehavior = 'smooth';
+                    return; 
+                }
+
+                // 3. High-Performance Desktop Drag Mechanics
                 let isDown = false;
                 let startX;
                 let scrollLeft;
-                let isDragging = false;
                 let velocity = 0;
                 let lastX = 0;
                 let lastTime = 0;
                 let animationFrameId = null;
 
+                track.dataset.isDragging = 'false';
+
                 track.addEventListener('mousedown', (e) => {
-                    // Only accept primary left-click mouse inputs
-                    if (e.button !== 0) return;
+                    if (e.button !== 0) return; // Main left clicks only
 
                     isDown = true;
-                    isDragging = false;
+                    track.dataset.isDragging = 'false';
                     startX = e.pageX - track.offsetLeft;
                     scrollLeft = track.scrollLeft;
                     lastX = e.pageX;
                     lastTime = performance.now();
                     velocity = 0;
 
-                    // Immediately terminate any active kinetic animations
                     cancelAnimationFrame(animationFrameId);
 
-                    // Drop framework positioning rules to bind track strictly to the mouse matrix
                     track.style.scrollSnapType = 'none';
                     track.style.scrollBehavior = 'auto';
 
-                    // Attach global document listeners to track smoothly even if the user leaves the node boundary
                     document.addEventListener('mousemove', onMouseMove);
                     document.addEventListener('mouseup', onMouseUp);
                 });
@@ -692,7 +720,6 @@
                     
                     if (elapsed > 0) {
                         const currentVelocity = (lastX - e.pageX) / elapsed;
-                        // Low-pass filter configuration for cinematic glide transitions
                         velocity = velocity * 0.25 + currentVelocity * 0.75;
                     }
 
@@ -703,7 +730,7 @@
                     const deltaX = (x - startX);
                     
                     if (Math.abs(deltaX) > 4) {
-                        isDragging = true;
+                        track.dataset.isDragging = 'true';
                     }
 
                     track.scrollLeft = scrollLeft - deltaX;
@@ -716,7 +743,7 @@
                     document.removeEventListener('mousemove', onMouseMove);
                     document.removeEventListener('mouseup', onMouseUp);
 
-                    if (isDragging && Math.abs(velocity) > 0.05) {
+                    if (track.dataset.isDragging === 'true' && Math.abs(velocity) > 0.05) {
                         startMomentumDrift();
                     } else {
                         snapToClosestCard();
@@ -724,7 +751,7 @@
                 }
 
                 function startMomentumDrift() {
-                    const friction = 0.96; // Fluid friction coefficient
+                    const friction = 0.96;
                     
                     function step() {
                         if (Math.abs(velocity) < 0.02) {
@@ -735,7 +762,6 @@
                         track.scrollLeft += velocity * 16;
                         velocity *= friction;
 
-                        // Clamp positions perfectly at boundaries
                         if (track.scrollLeft <= 0 || track.scrollLeft >= (track.scrollWidth - track.clientWidth)) {
                             velocity = 0;
                             snapToClosestCard();
@@ -749,7 +775,6 @@
                 }
 
                 function snapToClosestCard() {
-                    // Smoothly re-enable native snapping logic
                     track.style.scrollSnapType = 'x mandatory';
                     track.style.scrollBehavior = 'smooth';
 
@@ -773,31 +798,16 @@
                         track.scrollTo({ left: targetLeft, behavior: 'smooth' });
                     }
 
-                    // Delay flag release past event loop ticks to prevent unintended clicks
                     setTimeout(() => {
-                        isDragging = false;
+                        track.dataset.isDragging = 'false';
                     }, 50);
                 }
-
-                // Handle item clicks inside the viewport
-                track.addEventListener('click', (e) => {
-                    if (isDragging) {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        return;
-                    }
-                    const targetCard = e.target.closest('.video-card');
-                    if (targetCard) {
-                        const videoId = targetCard.getAttribute('data-video-id');
-                        if (videoId) openVideoModal(videoId);
-                    }
-                });
             });
         });
 
         // Carousel Button Layout Calculations
         function getScrollStep(track) {
-            const firstCard = track.querySelector('.snap-start, .video-card');
+            const firstCard = track.querySelector('.video-card');
             if (!firstCard) return 300;
             return firstCard.offsetWidth + 24; 
         }
