@@ -41,13 +41,61 @@
         html {
             scroll-behavior: smooth;
         }
-        /* Hide scrollbars but keep functionality */
+        /* Hide default scrollbars cleanly */
         .no-scrollbar::-webkit-scrollbar {
             display: none;
         }
         .no-scrollbar {
             -ms-overflow-style: none;
             scrollbar-width: none;
+        }
+
+        /* --- PREMIUM TIMELINE SLIDER CUSTOM STYLING --- */
+        .timeline-scrubber {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 100%;
+            height: 2px;
+            background: rgba(24, 31, 34, 0.15); /* Soft baseline */
+            outline: none;
+            transition: background 0.3s ease;
+        }
+        
+        .timeline-scrubber:hover {
+            background: rgba(24, 31, 34, 0.25);
+        }
+
+        /* Webkit Browsers (Chrome, Safari, Edge) */
+        .timeline-scrubber::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 32px;
+            height: 8px;
+            background: #A27165;
+            border-radius: 0px; /* Sharp premium edges */
+            cursor: ew-resize;
+            transition: transform 0.2s cubic-bezier(0.25, 1, 0.5, 1), background-color 0.2s ease;
+        }
+        
+        .timeline-scrubber:hover::-webkit-slider-thumb {
+            transform: scaleY(1.5);
+            background: #181F22;
+        }
+
+        /* Firefox Browsers */
+        .timeline-scrubber::-moz-range-thumb {
+            width: 32px;
+            height: 8px;
+            background: #A27165;
+            border: none;
+            border-radius: 0px;
+            cursor: ew-resize;
+            transition: transform 0.2s cubic-bezier(0.25, 1, 0.5, 1), background-color 0.2s ease;
+        }
+        
+        .timeline-scrubber:hover::-moz-range-thumb {
+            transform: scaleY(1.5);
+            background: #181F22;
         }
 
         /* Asymmetrical Hamburger Lines */
@@ -109,7 +157,7 @@
                         <div class="h-[1px] bg-stone-200 mx-4 my-1"></div>
                         <a href="/commercial-portfolio/" class="flex flex-col px-5 py-3 hover:bg-stone-100 transition">
                             <span class="text-[#181F22] tracking-wider text-[11px] font-bold">Business & Commercial</span>
-                            <span class="text-stone-500 normal-case font-light text-[10px] mt-0.5">Brand Frameworks, Reels, Real Estate</span>
+                            <span class="text-stone-500 normal-case font-light text-[10px] mt-0.5">Brand Frameworks, Reels</span>
                         </a>
                     </div>
                 </div>
@@ -175,21 +223,21 @@
         </div>
     </section>
 
-    <main class="pt-16 pb-24 space-y-16 max-w-7xl mx-auto z-10 relative">
+    <main class="pt-16 pb-24 space-y-24 max-w-7xl mx-auto z-10 relative">
         
-        <section class="space-y-4 px-4 sm:px-6 lg:px-12 relative group/section">
+        <!-- SECTION 1: WEDDINGS -->
+        <section class="space-y-4 px-4 sm:px-6 lg:px-12 relative group/section" data-section-id="weddings">
             <div class="flex items-center justify-between border-b border-stone-300/60 pb-2">
                 <h3 class="font-serif text-lg sm:text-xl text-[#181F22]">Weddings</h3>
-                <span class="text-[10px] font-mono text-stone-400 uppercase tracking-wider hidden sm:inline">Use arrows or scroll to explore</span>
+                <span class="text-[10px] font-mono text-stone-400 uppercase tracking-wider hidden sm:inline">Use timeline bar below to scrub</span>
             </div>
             
             <div class="relative w-full">
-                <button class="hidden md:flex absolute -left-6 top-1/2 -translate-y-1/2 z-30 w-12 h-12 bg-[#FAF6F0] border border-stone-300 text-stone-800 items-center justify-center opacity-0 group-hover/section:opacity-100 transition-opacity duration-300 shadow-sm hover:bg-stone-100 cursor-pointer" onclick="scrollSectionLeft(this)" aria-label="Scroll left">
+                <button class="hidden md:flex absolute -left-6 top-1/2 -translate-y-1/2 z-30 w-12 h-12 bg-[#FAF6F0] border border-stone-300 text-stone-800 items-center justify-center opacity-0 group-hover/section:opacity-100 transition-opacity duration-300 shadow-sm hover:bg-stone-100 cursor-pointer control-prev" aria-label="Scroll left">
                     <i class="fa-solid fa-chevron-left text-xs"></i>
                 </button>
 
                 <div class="scroll-track flex gap-6 overflow-x-auto no-scrollbar pt-2">
-                    
                     <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] group cursor-pointer" data-video-id="boK61rwQyeY">
                         <div class="relative aspect-[16/9] bg-stone-900 overflow-hidden border border-stone-300/30 shadow-xs pointer-events-none">
                             <img src="https://img.youtube.com/vi/boK61rwQyeY/maxresdefault.jpg" alt="Wedding Film" class="w-full h-full object-cover group-hover:scale-101 transition-transform duration-500">
@@ -254,41 +302,33 @@
                             <h4 class="font-serif text-base text-[#181F22]">Sarah & Harrison's Wedding</h4>
                         </div>
                     </div>
-
-                    <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] group cursor-pointer" data-video-id="xoUQbAEmqFQ">
-                        <div class="relative aspect-[16/9] bg-stone-900 overflow-hidden border border-stone-300/30 shadow-xs pointer-events-none">
-                            <img src="https://img.youtube.com/vi/xoUQbAEmqFQ/maxresdefault.jpg" alt="Mountain Wedding Highlight" class="w-full h-full object-cover group-hover:scale-101 transition-transform duration-500">
-                            <div class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors flex items-center justify-center">
-                                <div class="w-12 h-12 bg-[#FAF6F0] rounded-none flex items-center justify-center text-[#181F22] shadow-md group-hover:scale-105 transition-transform"><i class="fa-solid fa-play ml-0.5"></i></div>
-                            </div>
-                        </div>
-                        <div class="pt-3 space-y-0.5 pointer-events-none">
-                            <div class="text-[9px] font-mono tracking-widest text-stone-400 uppercase font-bold">Classic Film</div>
-                            <h4 class="font-serif text-base text-[#181F22]">Ethan & Sophie's Wedding Reception</h4>
-                        </div>
-                    </div>
-
                 </div>
 
-                <button class="hidden md:flex absolute -right-6 top-1/2 -translate-y-1/2 z-30 w-12 h-12 bg-[#FAF6F0] border border-stone-300 text-stone-800 items-center justify-center opacity-0 group-hover/section:opacity-100 transition-opacity duration-300 shadow-sm hover:bg-stone-100 cursor-pointer" onclick="scrollSectionRight(this)" aria-label="Scroll right">
+                <button class="hidden md:flex absolute -right-6 top-1/2 -translate-y-1/2 z-30 w-12 h-12 bg-[#FAF6F0] border border-stone-300 text-stone-800 items-center justify-center opacity-0 group-hover/section:opacity-100 transition-opacity duration-300 shadow-sm hover:bg-stone-100 cursor-pointer control-next" aria-label="Scroll right">
                     <i class="fa-solid fa-chevron-right text-xs"></i>
                 </button>
             </div>
+
+            <!-- PREMIUM TIMELINE CONTROLLER -->
+            <div class="w-full max-w-xs mx-auto pt-4 flex flex-col items-center gap-1.5">
+                <input type="range" min="0" max="100" value="0" class="timeline-scrubber" aria-label="Scrub portfolio timeline">
+                <span class="text-[9px] font-mono tracking-widest text-stone-400/80 uppercase font-medium">Timeline Scrubber</span>
+            </div>
         </section>
 
-        <section class="space-y-4 px-4 sm:px-6 lg:px-12 relative group/section">
+        <!-- SECTION 2: HOMECOMINGS -->
+        <section class="space-y-4 px-4 sm:px-6 lg:px-12 relative group/section" data-section-id="homecomings">
             <div class="flex items-center justify-between border-b border-stone-300/60 pb-2">
                 <h3 class="font-serif text-lg sm:text-xl text-[#181F22]">Missionary Homecomings</h3>
-                <span class="text-[10px] font-mono text-stone-400 uppercase tracking-wider hidden sm:inline">Use arrows or scroll to explore</span>
+                <span class="text-[10px] font-mono text-stone-400 uppercase tracking-wider hidden sm:inline">Use timeline bar below to scrub</span>
             </div>
             
             <div class="relative w-full">
-                <button class="hidden md:flex absolute -left-6 top-1/2 -translate-y-1/2 z-30 w-12 h-12 bg-[#FAF6F0] border border-stone-300 text-stone-800 items-center justify-center opacity-0 group-hover/section:opacity-100 transition-opacity duration-300 shadow-sm hover:bg-stone-100 cursor-pointer" onclick="scrollSectionLeft(this)" aria-label="Scroll left">
+                <button class="hidden md:flex absolute -left-6 top-1/2 -translate-y-1/2 z-30 w-12 h-12 bg-[#FAF6F0] border border-stone-300 text-stone-800 items-center justify-center opacity-0 group-hover/section:opacity-100 transition-opacity duration-300 shadow-sm hover:bg-stone-100 cursor-pointer control-prev" aria-label="Scroll left">
                     <i class="fa-solid fa-chevron-left text-xs"></i>
                 </button>
 
                 <div class="scroll-track flex gap-6 overflow-x-auto no-scrollbar pt-2">
-                    
                     <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] group cursor-pointer" data-video-id="iF7pQ-cdR94">
                         <div class="relative aspect-[16/9] bg-stone-900 overflow-hidden border border-stone-300/30 shadow-xs pointer-events-none">
                             <img src="https://img.youtube.com/vi/iF7pQ-cdR94/maxresdefault.jpg" alt="Stage Production" class="w-full h-full object-cover group-hover:scale-101 transition-transform duration-500">
@@ -340,54 +380,33 @@
                             <h4 class="font-serif text-base text-[#181F22]">Elder Tenney's Homecoming</h4>
                         </div>
                     </div>
-
-                    <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] group cursor-pointer" data-video-id="KiPPxmwu7mo">
-                        <div class="relative aspect-[16/9] bg-stone-900 overflow-hidden border border-stone-300/30 shadow-xs pointer-events-none">
-                            <img src="https://img.youtube.com/vi/KiPPxmwu7mo/maxresdefault.jpg" alt="Musical Showcase" class="w-full h-full object-cover group-hover:scale-101 transition-transform duration-500">
-                            <div class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors flex items-center justify-center">
-                                <div class="w-12 h-12 bg-[#FAF6F0] rounded-none flex items-center justify-center text-[#181F22] shadow-md group-hover:scale-105 transition-transform"><i class="fa-solid fa-play ml-0.5"></i></div>
-                            </div>
-                        </div>
-                        <div class="pt-3 space-y-0.5 pointer-events-none">
-                            <div class="text-[9px] font-mono tracking-widest text-stone-400 uppercase font-bold">Classic Homecoming</div>
-                            <h4 class="font-serif text-base text-[#181F22]">Sister Moore's Homecoming</h4>
-                        </div>
-                    </div>
-
-                    <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] group cursor-pointer" data-video-id="XLM6B5DJeqs">
-                        <div class="relative aspect-[16/9] bg-stone-900 overflow-hidden border border-stone-300/30 shadow-xs pointer-events-none">
-                            <img src="https://img.youtube.com/vi/XLM6B5DJeqs/maxresdefault.jpg" alt="Musical Showcase" class="w-full h-full object-cover group-hover:scale-101 transition-transform duration-500">
-                            <div class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors flex items-center justify-center">
-                                <div class="w-12 h-12 bg-[#FAF6F0] rounded-none flex items-center justify-center text-[#181F22] shadow-md group-hover:scale-105 transition-transform"><i class="fa-solid fa-play ml-0.5"></i></div>
-                            </div>
-                        </div>
-                        <div class="pt-3 space-y-0.5 pointer-events-none">
-                            <div class="text-[9px] font-mono tracking-widest text-stone-400 uppercase font-bold">Classic Homecoming</div>
-                            <h4 class="font-serif text-base text-[#181F22]">Elder Roth's Homecoming</h4>
-                        </div>
-                    </div>
-
                 </div>
 
-                <button class="hidden md:flex absolute -right-6 top-1/2 -translate-y-1/2 z-30 w-12 h-12 bg-[#FAF6F0] border border-stone-300 text-stone-800 items-center justify-center opacity-0 group-hover/section:opacity-100 transition-opacity duration-300 shadow-sm hover:bg-stone-100 cursor-pointer" onclick="scrollSectionRight(this)" aria-label="Scroll right">
+                <button class="hidden md:flex absolute -right-6 top-1/2 -translate-y-1/2 z-30 w-12 h-12 bg-[#FAF6F0] border border-stone-300 text-stone-800 items-center justify-center opacity-0 group-hover/section:opacity-100 transition-opacity duration-300 shadow-sm hover:bg-stone-100 cursor-pointer control-next" aria-label="Scroll right">
                     <i class="fa-solid fa-chevron-right text-xs"></i>
                 </button>
             </div>
+
+            <!-- PREMIUM TIMELINE CONTROLLER -->
+            <div class="w-full max-w-xs mx-auto pt-4 flex flex-col items-center gap-1.5">
+                <input type="range" min="0" max="100" value="0" class="timeline-scrubber" aria-label="Scrub portfolio timeline">
+                <span class="text-[9px] font-mono tracking-widest text-stone-400/80 uppercase font-medium">Timeline Scrubber</span>
+            </div>
         </section>
 
-        <section class="space-y-4 px-4 sm:px-6 lg:px-12 relative group/section">
+        <!-- SECTION 3: THEATRE -->
+        <section class="space-y-4 px-4 sm:px-6 lg:px-12 relative group/section" data-section-id="theatre">
             <div class="flex items-center justify-between border-b border-stone-300/60 pb-2">
                 <h3 class="font-serif text-lg sm:text-xl text-[#181F22]">Theatre & Stage</h3>
-                <span class="text-[10px] font-mono text-stone-400 uppercase tracking-wider hidden sm:inline">Use arrows or scroll to explore</span>
+                <span class="text-[10px] font-mono text-stone-400 uppercase tracking-wider hidden sm:inline">Use timeline bar below to scrub</span>
             </div>
             
             <div class="relative w-full">
-                <button class="hidden md:flex absolute -left-6 top-1/2 -translate-y-1/2 z-30 w-12 h-12 bg-[#FAF6F0] border border-stone-300 text-stone-800 items-center justify-center opacity-0 group-hover/section:opacity-100 transition-opacity duration-300 shadow-sm hover:bg-stone-100 cursor-pointer" onclick="scrollSectionLeft(this)" aria-label="Scroll left">
+                <button class="hidden md:flex absolute -left-6 top-1/2 -translate-y-1/2 z-30 w-12 h-12 bg-[#FAF6F0] border border-stone-300 text-stone-800 items-center justify-center opacity-0 group-hover/section:opacity-100 transition-opacity duration-300 shadow-sm hover:bg-stone-100 cursor-pointer control-prev" aria-label="Scroll left">
                     <i class="fa-solid fa-chevron-left text-xs"></i>
                 </button>
 
                 <div class="scroll-track flex gap-6 overflow-x-auto no-scrollbar pt-2">
-                    
                     <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] group cursor-pointer" data-video-id="YjGyt48VXkA">
                         <div class="relative aspect-[16/9] bg-stone-900 overflow-hidden border border-stone-300/30 shadow-xs pointer-events-none">
                             <img src="https://img.youtube.com/vi/YjGyt48VXkA/maxresdefault.jpg" alt="Airport Homecoming" class="w-full h-full object-cover group-hover:scale-101 transition-transform duration-500">
@@ -426,38 +445,17 @@
                             <h4 class="font-serif text-base text-[#181F22]">Smart & Richardson Christmas Light Show</h4>
                         </div>
                     </div>
-
-                    <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] group cursor-pointer" data-video-id="5nr6Zp3Q87k">
-                        <div class="relative aspect-[16/9] bg-stone-900 overflow-hidden border border-stone-300/30 shadow-xs pointer-events-none">
-                            <img src="https://img.youtube.com/vi/5nr6Zp3Q87k/maxresdefault.jpg" alt="Homecoming surprise" class="w-full h-full object-cover group-hover:scale-101 transition-transform duration-500">
-                            <div class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors flex items-center justify-center">
-                                <div class="w-12 h-12 bg-[#FAF6F0] rounded-none flex items-center justify-center text-[#181F22] shadow-md group-hover:scale-105 transition-transform"><i class="fa-solid fa-play ml-0.5"></i></div>
-                            </div>
-                        </div>
-                        <div class="pt-3 space-y-0.5 pointer-events-none">
-                            <div class="text-[9px] font-mono tracking-widest text-stone-400 uppercase font-bold">Classic Show</div>
-                            <h4 class="font-serif text-base text-[#181F22]">Shakespeare 2025 | Alta High School</h4>
-                        </div>
-                    </div>
-
-                    <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] group cursor-pointer" data-video-id="Y-18i0XrANQ">
-                        <div class="relative aspect-[16/9] bg-stone-900 overflow-hidden border border-stone-300/30 shadow-xs pointer-events-none">
-                            <img src="https://img.youtube.com/vi/Y-18i0XrANQ/maxresdefault.jpg" alt="Homecoming surprise" class="w-full h-full object-cover group-hover:scale-101 transition-transform duration-500">
-                            <div class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors flex items-center justify-center">
-                                <div class="w-12 h-12 bg-[#FAF6F0] rounded-none flex items-center justify-center text-[#181F22] shadow-md group-hover:scale-105 transition-transform"><i class="fa-solid fa-play ml-0.5"></i></div>
-                            </div>
-                        </div>
-                        <div class="pt-3 space-y-0.5 pointer-events-none">
-                            <div class="text-[9px] font-mono tracking-widest text-stone-400 uppercase font-bold">Classic Show</div>
-                            <h4 class="font-serif text-base text-[#181F22]">Metamorphoses | Alta High School</h4>
-                        </div>
-                    </div>
-
                 </div>
 
-                <button class="hidden md:flex absolute -right-6 top-1/2 -translate-y-1/2 z-30 w-12 h-12 bg-[#FAF6F0] border border-stone-300 text-stone-800 items-center justify-center opacity-0 group-hover/section:opacity-100 transition-opacity duration-300 shadow-sm hover:bg-stone-100 cursor-pointer" onclick="scrollSectionRight(this)" aria-label="Scroll right">
+                <button class="hidden md:flex absolute -right-6 top-1/2 -translate-y-1/2 z-30 w-12 h-12 bg-[#FAF6F0] border border-stone-300 text-stone-800 items-center justify-center opacity-0 group-hover/section:opacity-100 transition-opacity duration-300 shadow-sm hover:bg-stone-100 cursor-pointer control-next" aria-label="Scroll right">
                     <i class="fa-solid fa-chevron-right text-xs"></i>
                 </button>
+            </div>
+
+            <!-- PREMIUM TIMELINE CONTROLLER -->
+            <div class="w-full max-w-xs mx-auto pt-4 flex flex-col items-center gap-1.5">
+                <input type="range" min="0" max="100" value="0" class="timeline-scrubber" aria-label="Scrub portfolio timeline">
+                <span class="text-[9px] font-mono tracking-widest text-stone-400/80 uppercase font-medium">Timeline Scrubber</span>
             </div>
         </section>
 
@@ -589,7 +587,7 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Mobile Menu Drawer Toggles
+            // --- MOBILE MENU SYSTEM ---
             const toggleBtn = document.getElementById('mobile-menu-toggle');
             const menuCard = document.getElementById('mobile-navigation-card');
             const ctaBtn = document.getElementById('mobile-menu-cta');
@@ -632,7 +630,7 @@
                 if (!menuCard.contains(e.target) && !toggleBtn.contains(e.target)) { closeMenu(); }
             }, { passive: true });
 
-            // Straightforward, Direct Click Handler for Launching Modals
+            // --- LAUNCH LIGHTBOX VIDEO ENGINE ---
             const tracks = document.querySelectorAll('.scroll-track');
             tracks.forEach(track => {
                 track.addEventListener('click', (e) => {
@@ -643,26 +641,113 @@
                     }
                 });
             });
+
+            // --- INITIALIZE PREMIUM SYNCED SMOOTH SCROLL SCRUBBERS ---
+            initializeTimelineSliders();
         });
 
-        // Instant Native Scroll Calculations for Controls
-        function getScrollStep(track) {
-            const firstCard = track.querySelector('.video-card');
-            if (!firstCard) return 300;
-            return firstCard.offsetWidth + 24; 
+        // --- HIGH-END SCROLL INTERACTION CONTROLLER ---
+        function initializeTimelineSliders() {
+            const sections = document.querySelectorAll('section[data-section-id]');
+            
+            sections.forEach(section => {
+                const track = section.querySelector('.scroll-track');
+                const scrubber = section.querySelector('.timeline-scrubber');
+                const btnPrev = section.querySelector('.control-prev');
+                const btnNext = section.querySelector('.control-next');
+                
+                if (!track || !scrubber) return;
+
+                let isRunningAnimation = false;
+                let targetScrollLeft = track.scrollLeft;
+
+                // Set up slider range limits based on layout parameters
+                function updateScrubberBounds() {
+                    const maxScroll = track.scrollWidth - track.clientWidth;
+                    scrubber.max = maxScroll > 0 ? maxScroll : 0;
+                    scrubber.value = track.scrollLeft;
+                    
+                    // Toggle helper arrow visibility states based on distance left
+                    if (btnPrev && btnNext) {
+                        if (maxScroll <= 0) {
+                            btnPrev.style.display = 'none';
+                            btnNext.style.display = 'none';
+                        } else {
+                            btnPrev.style.display = '';
+                            btnNext.style.display = '';
+                        }
+                    }
+                }
+
+                // Smooth Animation Interpolation Loop
+                function smoothScrollLoop() {
+                    const diff = targetScrollLeft - track.scrollLeft;
+                    
+                    if (Math.abs(diff) > 0.5) {
+                        // Premium ease-out physics coefficient (0.08 = ultra velvety)
+                        track.scrollLeft += diff * 0.08;
+                        scrubber.value = track.scrollLeft;
+                        requestAnimationFrame(smoothScrollLoop);
+                    } else {
+                        track.scrollLeft = targetScrollLeft;
+                        scrubber.value = track.scrollLeft;
+                        isRunningAnimation = false;
+                    }
+                }
+
+                function requestSmoothScroll(destination) {
+                    const maxScroll = track.scrollWidth - track.clientWidth;
+                    targetScrollLeft = Math.max(0, Math.min(destination, maxScroll));
+                    
+                    if (!isRunningAnimation) {
+                        isRunningAnimation = true;
+                        requestAnimationFrame(smoothScrollLoop);
+                    }
+                }
+
+                // 1. Handle slider scrubber inputs
+                scrubber.addEventListener('input', () => {
+                    // Instantly lock values for explicit 1:1 scrubbing stability
+                    targetScrollLeft = parseInt(scrubber.value, 10);
+                    track.scrollLeft = targetScrollLeft;
+                });
+
+                // 2. Fallback monitor for trackpad gestures or swiping to adjust scrubber positions in reverse
+                let scrollTimeout;
+                track.addEventListener('scroll', () => {
+                    if (!isRunningAnimation) {
+                        scrubber.value = track.scrollLeft;
+                        targetScrollLeft = track.scrollLeft;
+                    }
+                }, { passive: true });
+
+                // 3. Arrow Click Handlers paired with precise card alignments
+                function getStepDistance() {
+                    const firstCard = track.querySelector('.video-card');
+                    return firstCard ? firstCard.offsetWidth + 24 : 350;
+                }
+
+                if (btnPrev) {
+                    btnPrev.addEventListener('click', () => {
+                        requestSmoothScroll(track.scrollLeft - getStepDistance());
+                    });
+                }
+
+                if (btnNext) {
+                    btnNext.addEventListener('click', () => {
+                        requestSmoothScroll(track.scrollLeft + getStepDistance());
+                    });
+                }
+
+                // Initializer loops & resize listeners to catch dimension recalibrations
+                window.addEventListener('load', updateScrubberBounds);
+                window.addEventListener('resize', updateScrubberBounds);
+                // Run immediate setup call
+                setTimeout(updateScrubberBounds, 100);
+            });
         }
 
-        function scrollSectionLeft(btn) {
-            const track = btn.parentElement.querySelector('.scroll-track');
-            track.scrollLeft -= getScrollStep(track);
-        }
-
-        function scrollSectionRight(btn) {
-            const track = btn.parentElement.querySelector('.scroll-track');
-            track.scrollLeft += getScrollStep(track);
-        }
-
-        // YouTube Modal Lightbox Control Engine
+        // --- YOUTUBE LIGHTBOX MODAL ---
         function openVideoModal(youtubeId) {
             const modal = document.getElementById('video-modal');
             const iframe = document.getElementById('modal-iframe');
