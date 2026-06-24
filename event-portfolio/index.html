@@ -24,7 +24,7 @@
     <meta name="twitter:image" content="/images/cover.png">
 
     <link class="icon" type="image/png" href="/images/favicon.png">
-    <link rel="apple-touch-icon" href="/images/favicon.png">
+    <link class="apple-touch-icon" href="/images/favicon.png">
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
     <script>
@@ -78,23 +78,6 @@
             color: #181F22;
         }
         #mobile-menu-toggle.is-active .nav-icon-close { opacity: 1; transform: scale(1) rotate(0deg); }
-
-        /* Smooth hardware-accelerated scrolling for mobile and custom grab engine for desktop */
-        .scroll-track {
-            user-select: none;
-            -webkit-user-select: none;
-            -webkit-overflow-scrolling: touch;
-        }
-        
-        /* Apply grab cues specifically on screens with an accurate cursor standard */
-        @media (pointer: fine) {
-            .scroll-track {
-                cursor: grab;
-            }
-            .scroll-track:active {
-                cursor: grabbing;
-            }
-        }
     </style>
 </head>
 <body class="bg-[#FAF6F0] text-stone-800 font-sans antialiased selection:bg-[#181F22] selection:text-white relative min-h-screen overflow-x-hidden">
@@ -197,7 +180,7 @@
         <section class="space-y-4 px-4 sm:px-6 lg:px-12 relative group/section">
             <div class="flex items-center justify-between border-b border-stone-300/60 pb-2">
                 <h3 class="font-serif text-lg sm:text-xl text-[#181F22]">Weddings</h3>
-                <span class="text-[10px] font-mono text-stone-400 uppercase tracking-wider hidden sm:inline">Drag or use arrows to explore</span>
+                <span class="text-[10px] font-mono text-stone-400 uppercase tracking-wider hidden sm:inline">Use arrows or scroll to explore</span>
             </div>
             
             <div class="relative w-full">
@@ -205,9 +188,9 @@
                     <i class="fa-solid fa-chevron-left text-xs"></i>
                 </button>
 
-                <div class="scroll-track flex gap-6 overflow-x-auto no-scrollbar snap-x snap-mandatory pt-2 scroll-smooth">
+                <div class="scroll-track flex gap-6 overflow-x-auto no-scrollbar pt-2">
                     
-                    <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] snap-start group cursor-pointer" data-video-id="boK61rwQyeY">
+                    <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] group cursor-pointer" data-video-id="boK61rwQyeY">
                         <div class="relative aspect-[16/9] bg-stone-900 overflow-hidden border border-stone-300/30 shadow-xs pointer-events-none">
                             <img src="https://img.youtube.com/vi/boK61rwQyeY/maxresdefault.jpg" alt="Wedding Film" class="w-full h-full object-cover group-hover:scale-101 transition-transform duration-500">
                             <div class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors flex items-center justify-center">
@@ -220,7 +203,7 @@
                         </div>
                     </div>
 
-                    <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] snap-start group cursor-pointer" data-video-id="v1v7cbKabq4">
+                    <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] group cursor-pointer" data-video-id="v1v7cbKabq4">
                         <div class="relative aspect-[16/9] bg-stone-900 overflow-hidden border border-stone-300/30 shadow-xs pointer-events-none">
                             <img src="https://img.youtube.com/vi/v1v7cbKabq4/maxresdefault.jpg" alt="Desert Wedding Film" class="w-full h-full object-cover group-hover:scale-101 transition-transform duration-500">
                             <div class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors flex items-center justify-center">
@@ -233,7 +216,7 @@
                         </div>
                     </div>
                     
-                    <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] snap-start group cursor-pointer" data-video-id="zlIN__GHL2w">
+                    <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] group cursor-pointer" data-video-id="zlIN__GHL2w">
                         <div class="relative aspect-[16/9] bg-stone-900 overflow-hidden border border-stone-300/30 shadow-xs pointer-events-none">
                             <img src="https://img.youtube.com/vi/zlIN__GHL2w/maxresdefault.jpg" alt="Desert Wedding Film" class="w-full h-full object-cover group-hover:scale-101 transition-transform duration-500">
                             <div class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors flex items-center justify-center">
@@ -246,7 +229,7 @@
                         </div>
                     </div>
 
-                    <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] snap-start group cursor-pointer" data-video-id="SmtxRlCbTTU">
+                    <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] group cursor-pointer" data-video-id="SmtxRlCbTTU">
                         <div class="relative aspect-[16/9] bg-stone-900 overflow-hidden border border-stone-300/30 shadow-xs pointer-events-none">
                             <img src="https://img.youtube.com/vi/SmtxRlCbTTU/maxresdefault.jpg" alt="Desert Wedding Film" class="w-full h-full object-cover group-hover:scale-101 transition-transform duration-500">
                             <div class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors flex items-center justify-center">
@@ -259,7 +242,7 @@
                         </div>
                     </div>
 
-                    <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] snap-start group cursor-pointer" data-video-id="iftNK9Kz5LU">
+                    <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] group cursor-pointer" data-video-id="iftNK9Kz5LU">
                         <div class="relative aspect-[16/9] bg-stone-900 overflow-hidden border border-stone-300/30 shadow-xs pointer-events-none">
                             <img src="https://img.youtube.com/vi/iftNK9Kz5LU/maxresdefault.jpg" alt="Mountain Wedding Highlight" class="w-full h-full object-cover group-hover:scale-101 transition-transform duration-500">
                             <div class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors flex items-center justify-center">
@@ -272,7 +255,7 @@
                         </div>
                     </div>
 
-                    <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] snap-start group cursor-pointer" data-video-id="xoUQbAEmqFQ">
+                    <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] group cursor-pointer" data-video-id="xoUQbAEmqFQ">
                         <div class="relative aspect-[16/9] bg-stone-900 overflow-hidden border border-stone-300/30 shadow-xs pointer-events-none">
                             <img src="https://img.youtube.com/vi/xoUQbAEmqFQ/maxresdefault.jpg" alt="Mountain Wedding Highlight" class="w-full h-full object-cover group-hover:scale-101 transition-transform duration-500">
                             <div class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors flex items-center justify-center">
@@ -296,7 +279,7 @@
         <section class="space-y-4 px-4 sm:px-6 lg:px-12 relative group/section">
             <div class="flex items-center justify-between border-b border-stone-300/60 pb-2">
                 <h3 class="font-serif text-lg sm:text-xl text-[#181F22]">Missionary Homecomings</h3>
-                <span class="text-[10px] font-mono text-stone-400 uppercase tracking-wider hidden sm:inline">Drag or use arrows to explore</span>
+                <span class="text-[10px] font-mono text-stone-400 uppercase tracking-wider hidden sm:inline">Use arrows or scroll to explore</span>
             </div>
             
             <div class="relative w-full">
@@ -304,9 +287,9 @@
                     <i class="fa-solid fa-chevron-left text-xs"></i>
                 </button>
 
-                <div class="scroll-track flex gap-6 overflow-x-auto no-scrollbar snap-x snap-mandatory pt-2 scroll-smooth">
+                <div class="scroll-track flex gap-6 overflow-x-auto no-scrollbar pt-2">
                     
-                    <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] snap-start group cursor-pointer" data-video-id="iF7pQ-cdR94">
+                    <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] group cursor-pointer" data-video-id="iF7pQ-cdR94">
                         <div class="relative aspect-[16/9] bg-stone-900 overflow-hidden border border-stone-300/30 shadow-xs pointer-events-none">
                             <img src="https://img.youtube.com/vi/iF7pQ-cdR94/maxresdefault.jpg" alt="Stage Production" class="w-full h-full object-cover group-hover:scale-101 transition-transform duration-500">
                             <div class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors flex items-center justify-center">
@@ -319,7 +302,7 @@
                         </div>
                     </div>
 
-                    <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] snap-start group cursor-pointer" data-video-id="xxwhwDf2RVI">
+                    <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] group cursor-pointer" data-video-id="xxwhwDf2RVI">
                         <div class="relative aspect-[16/9] bg-stone-900 overflow-hidden border border-stone-300/30 shadow-xs pointer-events-none">
                             <img src="https://img.youtube.com/vi/xxwhwDf2RVI/maxresdefault.jpg" alt="Musical Showcase" class="w-full h-full object-cover group-hover:scale-101 transition-transform duration-500">
                             <div class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors flex items-center justify-center">
@@ -332,7 +315,7 @@
                         </div>
                     </div>
 
-                    <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] snap-start group cursor-pointer" data-video-id="QwnsFVuiKeg">
+                    <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] group cursor-pointer" data-video-id="QwnsFVuiKeg">
                         <div class="relative aspect-[16/9] bg-stone-900 overflow-hidden border border-stone-300/30 shadow-xs pointer-events-none">
                             <img src="https://img.youtube.com/vi/QwnsFVuiKeg/maxresdefault.jpg" alt="Musical Showcase" class="w-full h-full object-cover group-hover:scale-101 transition-transform duration-500">
                             <div class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors flex items-center justify-center">
@@ -345,7 +328,7 @@
                         </div>
                     </div>
 
-                    <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] snap-start group cursor-pointer" data-video-id="-5ZwG47_hH8">
+                    <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] group cursor-pointer" data-video-id="-5ZwG47_hH8">
                         <div class="relative aspect-[16/9] bg-stone-900 overflow-hidden border border-stone-300/30 shadow-xs pointer-events-none">
                             <img src="https://img.youtube.com/vi/-5ZwG47_hH8/maxresdefault.jpg" alt="Musical Showcase" class="w-full h-full object-cover group-hover:scale-101 transition-transform duration-500">
                             <div class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors flex items-center justify-center">
@@ -358,7 +341,7 @@
                         </div>
                     </div>
 
-                    <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] snap-start group cursor-pointer" data-video-id="KiPPxmwu7mo">
+                    <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] group cursor-pointer" data-video-id="KiPPxmwu7mo">
                         <div class="relative aspect-[16/9] bg-stone-900 overflow-hidden border border-stone-300/30 shadow-xs pointer-events-none">
                             <img src="https://img.youtube.com/vi/KiPPxmwu7mo/maxresdefault.jpg" alt="Musical Showcase" class="w-full h-full object-cover group-hover:scale-101 transition-transform duration-500">
                             <div class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors flex items-center justify-center">
@@ -371,7 +354,7 @@
                         </div>
                     </div>
 
-                    <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] snap-start group cursor-pointer" data-video-id="XLM6B5DJeqs">
+                    <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] group cursor-pointer" data-video-id="XLM6B5DJeqs">
                         <div class="relative aspect-[16/9] bg-stone-900 overflow-hidden border border-stone-300/30 shadow-xs pointer-events-none">
                             <img src="https://img.youtube.com/vi/XLM6B5DJeqs/maxresdefault.jpg" alt="Musical Showcase" class="w-full h-full object-cover group-hover:scale-101 transition-transform duration-500">
                             <div class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors flex items-center justify-center">
@@ -395,7 +378,7 @@
         <section class="space-y-4 px-4 sm:px-6 lg:px-12 relative group/section">
             <div class="flex items-center justify-between border-b border-stone-300/60 pb-2">
                 <h3 class="font-serif text-lg sm:text-xl text-[#181F22]">Theatre & Stage</h3>
-                <span class="text-[10px] font-mono text-stone-400 uppercase tracking-wider hidden sm:inline">Drag or use arrows to explore</span>
+                <span class="text-[10px] font-mono text-stone-400 uppercase tracking-wider hidden sm:inline">Use arrows or scroll to explore</span>
             </div>
             
             <div class="relative w-full">
@@ -403,9 +386,9 @@
                     <i class="fa-solid fa-chevron-left text-xs"></i>
                 </button>
 
-                <div class="scroll-track flex gap-6 overflow-x-auto no-scrollbar snap-x snap-mandatory pt-2 scroll-smooth">
+                <div class="scroll-track flex gap-6 overflow-x-auto no-scrollbar pt-2">
                     
-                    <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] snap-start group cursor-pointer" data-video-id="YjGyt48VXkA">
+                    <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] group cursor-pointer" data-video-id="YjGyt48VXkA">
                         <div class="relative aspect-[16/9] bg-stone-900 overflow-hidden border border-stone-300/30 shadow-xs pointer-events-none">
                             <img src="https://img.youtube.com/vi/YjGyt48VXkA/maxresdefault.jpg" alt="Airport Homecoming" class="w-full h-full object-cover group-hover:scale-101 transition-transform duration-500">
                             <div class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors flex items-center justify-center">
@@ -418,7 +401,7 @@
                         </div>
                     </div>
 
-                    <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] snap-start group cursor-pointer" data-video-id="tlff8RG3GZY">
+                    <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] group cursor-pointer" data-video-id="tlff8RG3GZY">
                         <div class="relative aspect-[16/9] bg-stone-900 overflow-hidden border border-stone-300/30 shadow-xs pointer-events-none">
                             <img src="https://img.youtube.com/vi/tlff8RG3GZY/maxresdefault.jpg" alt="Homecoming surprise" class="w-full h-full object-cover group-hover:scale-101 transition-transform duration-500">
                             <div class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors flex items-center justify-center">
@@ -431,7 +414,7 @@
                         </div>
                     </div>
 
-                    <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] snap-start group cursor-pointer" data-video-id="Pxqy4mztGc4">
+                    <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] group cursor-pointer" data-video-id="Pxqy4mztGc4">
                         <div class="relative aspect-[16/9] bg-stone-900 overflow-hidden border border-stone-300/30 shadow-xs pointer-events-none">
                             <img src="https://img.youtube.com/vi/Pxqy4mztGc4/maxresdefault.jpg" alt="Homecoming surprise" class="w-full h-full object-cover group-hover:scale-101 transition-transform duration-500">
                             <div class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors flex items-center justify-center">
@@ -444,7 +427,7 @@
                         </div>
                     </div>
 
-                    <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] snap-start group cursor-pointer" data-video-id="5nr6Zp3Q87k">
+                    <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] group cursor-pointer" data-video-id="5nr6Zp3Q87k">
                         <div class="relative aspect-[16/9] bg-stone-900 overflow-hidden border border-stone-300/30 shadow-xs pointer-events-none">
                             <img src="https://img.youtube.com/vi/5nr6Zp3Q87k/maxresdefault.jpg" alt="Homecoming surprise" class="w-full h-full object-cover group-hover:scale-101 transition-transform duration-500">
                             <div class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors flex items-center justify-center">
@@ -457,7 +440,7 @@
                         </div>
                     </div>
 
-                    <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] snap-start group cursor-pointer" data-video-id="Y-18i0XrANQ">
+                    <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] group cursor-pointer" data-video-id="Y-18i0XrANQ">
                         <div class="relative aspect-[16/9] bg-stone-900 overflow-hidden border border-stone-300/30 shadow-xs pointer-events-none">
                             <img src="https://img.youtube.com/vi/Y-18i0XrANQ/maxresdefault.jpg" alt="Homecoming surprise" class="w-full h-full object-cover group-hover:scale-101 transition-transform duration-500">
                             <div class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors flex items-center justify-center">
@@ -649,163 +632,20 @@
                 if (!menuCard.contains(e.target) && !toggleBtn.contains(e.target)) { closeMenu(); }
             }, { passive: true });
 
-            // Horizontal Scroll Configuration
+            // Straightforward, Direct Click Handler for Launching Modals
             const tracks = document.querySelectorAll('.scroll-track');
-            
             tracks.forEach(track => {
-                // 1. Universal Tap/Click Setup for Modal Triggering
                 track.addEventListener('click', (e) => {
-                    // Prevent video launching if desktop click-dragging is currently active
-                    if (track.dataset.isDragging === 'true') {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        return;
-                    }
                     const targetCard = e.target.closest('.video-card');
                     if (targetCard) {
                         const videoId = targetCard.getAttribute('data-video-id');
                         if (videoId) openVideoModal(videoId);
                     }
                 });
-
-                // 2. Strict Touch Environment Check
-                // Completely isolates mobile touchscreens from drag state overrides
-                const isTouchDevice = window.matchMedia('(pointer: coarse)').matches || 
-                                      ('ontouchstart' in window) || 
-                                      (navigator.maxTouchPoints > 0);
-                
-                if (isTouchDevice) {
-                    // Enforce pure CSS scrolling loops for mobile interfaces
-                    track.style.scrollSnapType = 'x mandatory';
-                    track.style.scrollBehavior = 'smooth';
-                    return; 
-                }
-
-                // 3. High-Performance Desktop Drag Mechanics
-                let isDown = false;
-                let startX;
-                let scrollLeft;
-                let velocity = 0;
-                let lastX = 0;
-                let lastTime = 0;
-                let animationFrameId = null;
-
-                track.dataset.isDragging = 'false';
-
-                track.addEventListener('mousedown', (e) => {
-                    if (e.button !== 0) return; // Main left clicks only
-
-                    isDown = true;
-                    track.dataset.isDragging = 'false';
-                    startX = e.pageX - track.offsetLeft;
-                    scrollLeft = track.scrollLeft;
-                    lastX = e.pageX;
-                    lastTime = performance.now();
-                    velocity = 0;
-
-                    cancelAnimationFrame(animationFrameId);
-
-                    track.style.scrollSnapType = 'none';
-                    track.style.scrollBehavior = 'auto';
-
-                    document.addEventListener('mousemove', onMouseMove);
-                    document.addEventListener('mouseup', onMouseUp);
-                });
-
-                function onMouseMove(e) {
-                    if (!isDown) return;
-
-                    const now = performance.now();
-                    const elapsed = now - lastTime;
-                    
-                    if (elapsed > 0) {
-                        const currentVelocity = (lastX - e.pageX) / elapsed;
-                        velocity = velocity * 0.25 + currentVelocity * 0.75;
-                    }
-
-                    lastX = e.pageX;
-                    lastTime = now;
-
-                    const x = e.pageX - track.offsetLeft;
-                    const deltaX = (x - startX);
-                    
-                    if (Math.abs(deltaX) > 4) {
-                        track.dataset.isDragging = 'true';
-                    }
-
-                    track.scrollLeft = scrollLeft - deltaX;
-                }
-
-                function onMouseUp() {
-                    if (!isDown) return;
-                    isDown = false;
-
-                    document.removeEventListener('mousemove', onMouseMove);
-                    document.removeEventListener('mouseup', onMouseUp);
-
-                    if (track.dataset.isDragging === 'true' && Math.abs(velocity) > 0.05) {
-                        startMomentumDrift();
-                    } else {
-                        snapToClosestCard();
-                    }
-                }
-
-                function startMomentumDrift() {
-                    const friction = 0.96;
-                    
-                    function step() {
-                        if (Math.abs(velocity) < 0.02) {
-                            snapToClosestCard();
-                            return;
-                        }
-
-                        track.scrollLeft += velocity * 16;
-                        velocity *= friction;
-
-                        if (track.scrollLeft <= 0 || track.scrollLeft >= (track.scrollWidth - track.clientWidth)) {
-                            velocity = 0;
-                            snapToClosestCard();
-                            return;
-                        }
-
-                        animationFrameId = requestAnimationFrame(step);
-                    }
-
-                    animationFrameId = requestAnimationFrame(step);
-                }
-
-                function snapToClosestCard() {
-                    track.style.scrollSnapType = 'x mandatory';
-                    track.style.scrollBehavior = 'smooth';
-
-                    const cards = track.querySelectorAll('.video-card');
-                    const trackRect = track.getBoundingClientRect();
-                    let closestCard = null;
-                    let minDistance = Infinity;
-
-                    cards.forEach(card => {
-                        const cardRect = card.getBoundingClientRect();
-                        const distance = Math.abs(cardRect.left - trackRect.left);
-                        if (distance < minDistance) {
-                            minDistance = distance;
-                            closestCard = card;
-                        }
-                    });
-
-                    if (closestCard) {
-                        const cardRect = closestCard.getBoundingClientRect();
-                        const targetLeft = track.scrollLeft + (cardRect.left - trackRect.left);
-                        track.scrollTo({ left: targetLeft, behavior: 'smooth' });
-                    }
-
-                    setTimeout(() => {
-                        track.dataset.isDragging = 'false';
-                    }, 50);
-                }
             });
         });
 
-        // Carousel Button Layout Calculations
+        // Instant Native Scroll Calculations for Controls
         function getScrollStep(track) {
             const firstCard = track.querySelector('.video-card');
             if (!firstCard) return 300;
@@ -814,16 +654,12 @@
 
         function scrollSectionLeft(btn) {
             const track = btn.parentElement.querySelector('.scroll-track');
-            track.style.scrollSnapType = 'x mandatory';
-            track.style.scrollBehavior = 'smooth';
-            track.scrollBy({ left: -getScrollStep(track), behavior: 'smooth' });
+            track.scrollLeft -= getScrollStep(track);
         }
 
         function scrollSectionRight(btn) {
             const track = btn.parentElement.querySelector('.scroll-track');
-            track.style.scrollSnapType = 'x mandatory';
-            track.style.scrollBehavior = 'smooth';
-            track.scrollBy({ left: getScrollStep(track), behavior: 'smooth' });
+            track.scrollLeft += getScrollStep(track);
         }
 
         // YouTube Modal Lightbox Control Engine
