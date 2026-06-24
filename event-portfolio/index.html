@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Milestones & Events Portfolio | Zero Limit Productions</title>
+    
+    <!-- HIGH-LEVEL BACKEND SEO METADATA -->
+    <meta name="description" content="Watch milestone films and live event videos by Zero Limit Productions. High-quality wedding films, multi-cam theater productions, and family homecomings across Utah.">
+    <meta name="keywords" content="Zero Limit Productions, Milestones Portfolio, Utah Videography, Wedding Films Utah, Multi-Cam Theater Recording, Missionary Homecoming Video, Event Videographer">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Zero Limit Productions">
+    <link rel="canonical" href="https://zerolimitproductions.com/event-portfolio/">
+
+    <!-- OPEN GRAPH / SOCIAL COVER CAPABILITY -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Milestones & Events Portfolio | Zero Limit Productions">
+    <meta property="og:description" content="Watch milestone films and live event videos by Zero Limit Productions. High-quality wedding films, multi-cam theater productions, and family homecomings across Utah.">
+    <meta property="og:image" content="/images/cover.png">
+    <meta property="og:url" content="https://zerolimitproductions.com/event-portfolio/">
+    <meta property="og:site_name" content="Zero Limit Productions">
+
+    <!-- TWITTER CARD METADATA -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Milestones & Events Portfolio | Zero Limit Productions">
+    <meta name="twitter:description" content="Watch milestone films and live event videos by Zero Limit Productions.">
+    <meta name="twitter:image" content="/images/cover.png">
+
+    <!-- FAVICON CAPABILITY -->
+    <link rel="icon" type="image/png" href="/images/favicon.png">
+    <link rel="apple-touch-icon" href="/images/favicon.png">
+
+    <!-- GOOGLE ANALYTICS INTEGRATION -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
+    <!-- ORIGINAL LOGIC AND CSS INJECTIONS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Hide scrollbars but keep functionality */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* Asymmetrical Hamburger Lines */
+        .hamburger-line {
+            display: block;
+            position: absolute;
+            height: 2px;
+            background: #181F22;
+            transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.3s ease;
+        }
+        .hamburger-line-1 { top: 3px; left: 0; width: 100%; }
+        .hamburger-line-2 { top: 11px; right: 0; width: 70%; }
+        .hamburger-line-3 { top: 19px; left: 0; width: 100%; }
+
+        #mobile-menu-toggle.is-active .hamburger-line-1 { transform: translate3d(24px, 0, 0); opacity: 0; }
+        #mobile-menu-toggle.is-active .hamburger-line-2 { transform: translate3d(-24px, 0, 0); opacity: 0; }
+        #mobile-menu-toggle.is-active .hamburger-line-3 { transform: translate3d(24px, 0, 0); opacity: 0; }
+        
+        .nav-icon-close {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transform: scale(0.6) rotate(-45deg);
+            transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+            color: #181F22;
+        }
+        #mobile-menu-toggle.is-active .nav-icon-close { opacity: 1; transform: scale(1) rotate(0deg); }
+
+        /* Smooth grabbing cursor for drag-to-scroll tracks */
+        .scroll-track {
+            cursor: grab;
+        }
+        .scroll-track:active {
+            cursor: grabbing;
+        }
+    </style>
+</head>
+<body class="bg-[#FAF6F0] text-stone-800 font-sans antialiased selection:bg-[#181F22] selection:text-white relative min-h-screen overflow-x-hidden">
+
+    <div class="absolute inset-y-0 left-1/2 -translate-x-1/2 w-full max-w-7xl border-x border-stone-300/30 pointer-events-none z-0"></div>
+
+    <header class="sticky top-0 z-50 bg-[#FAF6F0]/90 backdrop-blur-md border-b border-stone-200/80 shadow-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 h-20 grid grid-cols-2 md:grid-cols-3 items-center">
+            
+            <!-- BRANDING LOGO & TITLE HEADER AREA -->
+            <div class="flex justify-start">
+                <a href="../" class="flex items-center gap-3 text-xs sm:text-sm font-bold tracking-[0.25em] text-[#181F22]">
+                    <img src="../images/zlplogo.png" alt="Zero Limit Productions Identity Logo" class="w-6 h-6 object-contain block flex-shrink-0">
+                    <span>ZERO LIMIT<span class="text-stone-400 font-light"> PRODUCTIONS</span></span>
+                </a>
+            </div>
+            
+            <!-- ROUTING PATHWAYS CLEANED OF trailing .html / index.html -->
+            <nav class="hidden md:flex justify-center items-center space-x-10 text-xs font-bold tracking-[0.2em] uppercase h-full">
+                <a href="/" class="text-stone-500 hover:text-[#181F22] transition pb-1">Home</a>
+                
+                <div class="relative group h-full flex items-center">
+                    <button class="text-[#181F22] border-b-2 border-[#A27165] pb-1 flex items-center gap-1.5 cursor-pointer tracking-[0.2em]">
+                        PORTFOLIO <i class="fa-solid fa-chevron-down text-[9px] rotate-180 transition-transform duration-300 group-hover:rotate-0"></i>
+                    </button>
+                    <div class="absolute top-[calc(100%-12px)] left-1/2 -translate-x-1/2 w-64 bg-[#FAF6F0] border border-stone-200 shadow-xl opacity-0 scale-95 pointer-events-none group-hover:opacity-100 group-hover:scale-100 group-hover:pointer-events-auto transition-all duration-200 ease-out py-3 z-50">
+                        <a href="/event-portfolio/" class="flex flex-col px-5 py-3 bg-stone-100 font-bold">
+                            <span class="text-[#181F22] tracking-wider text-[11px]">Milestones & Events</span>
+                            <span class="text-[#A27165] normal-case font-light text-[10px] mt-0.5">Currently Viewing</span>
+                        </a>
+                        <div class="h-[1px] bg-stone-200 mx-4 my-1"></div>
+                        <a href="/commercial-portfolio/" class="flex flex-col px-5 py-3 hover:bg-stone-100 transition">
+                            <span class="text-[#181F22] tracking-wider text-[11px] font-bold">Business & Commercial</span>
+                            <span class="text-stone-500 normal-case font-light text-[10px] mt-0.5">Brand Frameworks, Reels, Real Estate</span>
+                        </a>
+                    </div>
+                </div>
+
+                <a href="/about/" class="text-stone-500 hover:text-[#181F22] transition pb-1">About</a>
+                <a href="/booking/" class="text-stone-500 hover:text-[#181F22] transition pb-1">Booking</a>
+            </nav>
+
+            <div class="hidden md:flex justify-end">
+                <a href="../#contact" class="inline-flex items-center justify-center px-7 py-3 text-[10px] font-bold tracking-[0.2em] text-white bg-[#181F22] hover:bg-[#242D30] rounded-none transition duration-300 shadow-md relative overflow-hidden group">
+                    <span class="relative z-10">BOOK A PROJECT</span>
+                    <div class="absolute inset-0 bg-[#A27165] translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+                </a>
+            </div>
+
+            <div class="flex justify-end md:hidden">
+                <button id="mobile-menu-toggle" class="relative w-10 h-10 flex items-center justify-center text-stone-700 hover:text-stone-900 transition focus:outline-none cursor-pointer">
+                    <div class="relative w-6 h-6">
+                        <span class="hamburger-line hamburger-line-1"></span>
+                        <span class="hamburger-line hamburger-line-2"></span>
+                        <span class="hamburger-line hamburger-line-3"></span>
+                    </div>
+                    <div class="nav-icon-close">
+                        <i class="fa-solid fa-xmark text-lg"></i>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div id="mobile-navigation-card" class="fixed top-20 right-0 w-72 z-50 bg-[#FAF6F0]/95 backdrop-blur-md border-l border-b border-stone-200 p-6 opacity-0 pointer-events-none -translate-y-2 transition-all duration-300 ease-out md:hidden shadow-2xl">
+        <div class="flex flex-col space-y-6">
+            <nav class="flex flex-col space-y-5 text-left text-xs font-bold tracking-[0.25em] uppercase">
+                <a href="/" class="text-stone-500 hover:text-[#181F22] transition">Home</a>
+                <div class="flex flex-col">
+                    <button id="mobile-portfolio-toggle" class="text-[#181F22] flex items-center justify-between w-full uppercase tracking-[0.25em] font-bold text-left focus:outline-none cursor-pointer">
+                        Portfolio <i id="mobile-portfolio-arrow" class="fa-solid fa-chevron-down text-[10px] rotate-180 transition-transform duration-300"></i>
+                    </button>
+                    <div id="mobile-portfolio-sub" class="transition-all duration-300 flex flex-col space-y-4 pl-3 border-l border-stone-200 ml-0.5">
+                        <a href="/event-portfolio/" class="text-[#181F22] text-[11px] font-bold tracking-[0.2em] uppercase flex items-center justify-between mt-3.5">Milestones & Events <span class="w-1 h-1 rounded-full bg-[#A27165]"></span></a>
+                        <a href="/commercial-portfolio/" class="text-stone-500 hover:text-[#181F22] text-[11px] font-bold tracking-[0.2em] uppercase">Business & Commercial</a>
+                    </div>
+                </div>
+                <a href="/about/" class="text-stone-500 hover:text-[#181F22] transition">About</a>
+                <a href="/booking/" class="text-stone-500 hover:text-[#181F22] transition">Booking</a>
+            </nav>
+            <a href="/#contact" id="mobile-menu-cta" class="w-full inline-flex items-center justify-center py-3.5 text-[10px] font-bold tracking-[0.2em] text-white bg-[#181F22] uppercase shadow-md">Book A Project</a>
+        </div>
+    </div>
+
+    <section class="w-full bg-[#181F22] border-b border-stone-800 relative z-10">
+        <div class="max-w-7xl mx-auto pt-16 pb-14 sm:pt-20 sm:pb-16 px-4 sm:px-6 lg:px-12 space-y-3">
+            <div class="flex items-center gap-2.5">
+                <span class="w-6 h-[1px] bg-[#A27165]"></span>
+                <h1 class="text-[10px] font-mono tracking-[0.3em] text-[#A27165] uppercase">Cinema Gallery</h1>
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-serif font-normal tracking-tight text-white">
+                Milestones & Events
+            </h2>
+            <p class="text-stone-400 font-light text-sm sm:text-base max-w-xl leading-relaxed pt-1">
+                Timeless cinematic preservation for your most definitive moments. From heirloom wedding films and multi-cam theater coverage to emotional homecoming records.
+            </p>
+        </div>
+    </section>
+
+    <main class="pt-16 pb-24 space-y-16 max-w-7xl mx-auto z-10 relative">
+        
+        <section class="space-y-4 px-4 sm:px-6 lg:px-12 relative group/section">
+            <div class="flex items-center justify-between border-b border-stone-300/60 pb-2">
+                <h3 class="font-serif text-lg sm:text-xl text-[#181F22]">Weddings</h3>
+                <span class="text-[10px] font-mono text-stone-400 uppercase tracking-wider hidden sm:inline">Drag or use arrows to explore</span>
+            </div>
+            
+            <div class="relative w-full">
+                <button class="hidden md:flex absolute -left-6 top-1/2 -translate-y-1/2 z-30 w-12 h-12 bg-[#FAF6F0] border border-stone-300 text-stone-800 items-center justify-center opacity-0 group-hover/section:opacity-100 transition-opacity duration-300 shadow-sm hover:bg-stone-100 cursor-pointer" onclick="scrollSectionLeft(this)" aria-label="Scroll left">
+                    <i class="fa-solid fa-chevron-left text-xs"></i>
+                </button>
+
+                <div class="scroll-track flex gap-6 overflow-x-auto no-scrollbar snap-x snap-mandatory pt-2 scroll-smooth select-none">
+                    
+                    <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] snap-start group cursor-pointer" data-video-id="boK61rwQyeY">
+                        <div class="relative aspect-[16/9] bg-stone-900 overflow-hidden border border-stone-300/30 shadow-xs pointer-events-none">
+                            <img src="https://img.youtube.com/vi/boK61rwQyeY/maxresdefault.jpg" alt="Wedding Film" class="w-full h-full object-cover group-hover:scale-101 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+                                <div class="w-12 h-12 bg-[#FAF6F0] rounded-none flex items-center justify-center text-[#181F22] shadow-md group-hover:scale-105 transition-transform"><i class="fa-solid fa-play ml-0.5"></i></div>
+                            </div>
+                        </div>
+                        <div class="pt-3 space-y-0.5 pointer-events-none">
+                            <div class="text-[9px] font-mono tracking-widest text-[#A27165] uppercase font-bold">Featured Wedding</div>
+                            <h4 class="font-serif text-base text-[#181F22]">Jane & Richard's Wedding</h4>
+                        </div>
+                    </div>
+
+                    <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] snap-start group cursor-pointer" data-video-id="v1v7cbKabq4">
+                        <div class="relative aspect-[16/9] bg-stone-900 overflow-hidden border border-stone-300/30 shadow-xs pointer-events-none">
+                            <img src="https://img.youtube.com/vi/v1v7cbKabq4/maxresdefault.jpg" alt="Desert Wedding Film" class="w-full h-full object-cover group-hover:scale-101 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+                                <div class="w-12 h-12 bg-[#FAF6F0] rounded-none flex items-center justify-center text-[#181F22] shadow-md group-hover:scale-105 transition-transform"><i class="fa-solid fa-play ml-0.5"></i></div>
+                            </div>
+                        </div>
+                        <div class="pt-3 space-y-0.5 pointer-events-none">
+                            <div class="text-[9px] font-mono tracking-widest text-[#A27165] uppercase font-bold">Featured First Look</div>
+                            <h4 class="font-serif text-base text-[#181F22]">Jane & Richard's First Look</h4>
+                        </div>
+                    </div>
+                    
+                    <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] snap-start group cursor-pointer" data-video-id="zlIN__GHL2w">
+                        <div class="relative aspect-[16/9] bg-stone-900 overflow-hidden border border-stone-300/30 shadow-xs pointer-events-none">
+                            <img src="https://img.youtube.com/vi/zlIN__GHL2w/maxresdefault.jpg" alt="Desert Wedding Film" class="w-full h-full object-cover group-hover:scale-101 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+                                <div class="w-12 h-12 bg-[#FAF6F0] rounded-none flex items-center justify-center text-[#181F22] shadow-md group-hover:scale-105 transition-transform"><i class="fa-solid fa-play ml-0.5"></i></div>
+                            </div>
+                        </div>
+                        <div class="pt-3 space-y-0.5 pointer-events-none">
+                            <div class="text-[9px] font-mono tracking-widest text-stone-400 uppercase font-bold">Cinematic Story</div>
+                            <h4 class="font-serif text-base text-[#181F22]">Lydia & Ryan's First Look</h4>
+                        </div>
+                    </div>
+
+                    <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] snap-start group cursor-pointer" data-video-id="SmtxRlCbTTU">
+                        <div class="relative aspect-[16/9] bg-stone-900 overflow-hidden border border-stone-300/30 shadow-xs pointer-events-none">
+                            <img src="https://img.youtube.com/vi/SmtxRlCbTTU/maxresdefault.jpg" alt="Desert Wedding Film" class="w-full h-full object-cover group-hover:scale-101 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+                                <div class="w-12 h-12 bg-[#FAF6F0] rounded-none flex items-center justify-center text-[#181F22] shadow-md group-hover:scale-105 transition-transform"><i class="fa-solid fa-play ml-0.5"></i></div>
+                            </div>
+                        </div>
+                        <div class="pt-3 space-y-0.5 pointer-events-none">
+                            <div class="text-[9px] font-mono tracking-widest text-stone-400 uppercase font-bold">Cinematic Story</div>
+                            <h4 class="font-serif text-base text-[#181F22]">Lydia & Ryan's Wedding</h4>
+                        </div>
+                    </div>
+
+                    <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] snap-start group cursor-pointer" data-video-id="iftNK9Kz5LU">
+                        <div class="relative aspect-[16/9] bg-stone-900 overflow-hidden border border-stone-300/30 shadow-xs pointer-events-none">
+                            <img src="https://img.youtube.com/vi/iftNK9Kz5LU/maxresdefault.jpg" alt="Mountain Wedding Highlight" class="w-full h-full object-cover group-hover:scale-101 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+                                <div class="w-12 h-12 bg-[#FAF6F0] rounded-none flex items-center justify-center text-[#181F22] shadow-md group-hover:scale-105 transition-transform"><i class="fa-solid fa-play ml-0.5"></i></div>
+                            </div>
+                        </div>
+                        <div class="pt-3 space-y-0.5 pointer-events-none">
+                            <div class="text-[9px] font-mono tracking-widest text-stone-400 uppercase font-bold">Classic Film</div>
+                            <h4 class="font-serif text-base text-[#181F22]">Sarah & Harrison's Wedding</h4>
+                        </div>
+                    </div>
+
+                    <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] snap-start group cursor-pointer" data-video-id="xoUQbAEmqFQ">
+                        <div class="relative aspect-[16/9] bg-stone-900 overflow-hidden border border-stone-300/30 shadow-xs pointer-events-none">
+                            <img src="https://img.youtube.com/vi/xoUQbAEmqFQ/maxresdefault.jpg" alt="Mountain Wedding Highlight" class="w-full h-full object-cover group-hover:scale-101 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+                                <div class="w-12 h-12 bg-[#FAF6F0] rounded-none flex items-center justify-center text-[#181F22] shadow-md group-hover:scale-105 transition-transform"><i class="fa-solid fa-play ml-0.5"></i></div>
+                            </div>
+                        </div>
+                        <div class="pt-3 space-y-0.5 pointer-events-none">
+                            <div class="text-[9px] font-mono tracking-widest text-stone-400 uppercase font-bold">Classic Film</div>
+                            <h4 class="font-serif text-base text-[#181F22]">Ethan & Sophie's Wedding Reception</h4>
+                        </div>
+                    </div>
+
+                </div>
+
+                <button class="hidden md:flex absolute -right-6 top-1/2 -translate-y-1/2 z-30 w-12 h-12 bg-[#FAF6F0] border border-stone-300 text-stone-800 items-center justify-center opacity-0 group-hover/section:opacity-100 transition-opacity duration-300 shadow-sm hover:bg-stone-100 cursor-pointer" onclick="scrollSectionRight(this)" aria-label="Scroll right">
+                    <i class="fa-solid fa-chevron-right text-xs"></i>
+                </button>
+            </div>
+        </section>
+
+        <section class="space-y-4 px-4 sm:px-6 lg:px-12 relative group/section">
+            <div class="flex items-center justify-between border-b border-stone-300/60 pb-2">
+                <h3 class="font-serif text-lg sm:text-xl text-[#181F22]">Missionary Homecomings</h3>
+                <span class="text-[10px] font-mono text-stone-400 uppercase tracking-wider hidden sm:inline">Drag or use arrows to explore</span>
+            </div>
+            
+            <div class="relative w-full">
+                <button class="hidden md:flex absolute -left-6 top-1/2 -translate-y-1/2 z-30 w-12 h-12 bg-[#FAF6F0] border border-stone-300 text-stone-800 items-center justify-center opacity-0 group-hover/section:opacity-100 transition-opacity duration-300 shadow-sm hover:bg-stone-100 cursor-pointer" onclick="scrollSectionLeft(this)" aria-label="Scroll left">
+                    <i class="fa-solid fa-chevron-left text-xs"></i>
+                </button>
+
+                <div class="scroll-track flex gap-6 overflow-x-auto no-scrollbar snap-x snap-mandatory pt-2 scroll-smooth select-none">
+                    
+                    <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] snap-start group cursor-pointer" data-video-id="iF7pQ-cdR94">
+                        <div class="relative aspect-[16/9] bg-stone-900 overflow-hidden border border-stone-300/30 shadow-xs pointer-events-none">
+                            <img src="https://img.youtube.com/vi/iF7pQ-cdR94/maxresdefault.jpg" alt="Stage Production" class="w-full h-full object-cover group-hover:scale-101 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+                                <div class="w-12 h-12 bg-[#FAF6F0] rounded-none flex items-center justify-center text-[#181F22] shadow-md group-hover:scale-105 transition-transform"><i class="fa-solid fa-play ml-0.5"></i></div>
+                            </div>
+                        </div>
+                        <div class="pt-3 space-y-0.5 pointer-events-none">
+                            <div class="text-[9px] font-mono tracking-widest text-[#A27165] uppercase font-bold">Featured Homecoming</div>
+                            <h4 class="font-serif text-base text-[#181F22]">Sister Smith's Homecoming</h4>
+                        </div>
+                    </div>
+
+                    <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] snap-start group cursor-pointer" data-video-id="xxwhwDf2RVI">
+                        <div class="relative aspect-[16/9] bg-stone-900 overflow-hidden border border-stone-300/30 shadow-xs pointer-events-none">
+                            <img src="https://img.youtube.com/vi/xxwhwDf2RVI/maxresdefault.jpg" alt="Musical Showcase" class="w-full h-full object-cover group-hover:scale-101 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+                                <div class="w-12 h-12 bg-[#FAF6F0] rounded-none flex items-center justify-center text-[#181F22] shadow-md group-hover:scale-105 transition-transform"><i class="fa-solid fa-play ml-0.5"></i></div>
+                            </div>
+                        </div>
+                        <div class="pt-3 space-y-0.5 pointer-events-none">
+                            <div class="text-[9px] font-mono tracking-widest text-[#A27165] uppercase font-bold">Featured Homecoming</div>
+                            <h4 class="font-serif text-base text-[#181F22]">Elder Ballard's Homecoming</h4>
+                        </div>
+                    </div>
+
+
+                    <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] snap-start group cursor-pointer" data-video-id="QwnsFVuiKeg">
+                        <div class="relative aspect-[16/9] bg-stone-900 overflow-hidden border border-stone-300/30 shadow-xs pointer-events-none">
+                            <img src="https://img.youtube.com/vi/QwnsFVuiKeg/maxresdefault.jpg" alt="Musical Showcase" class="w-full h-full object-cover group-hover:scale-101 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+                                <div class="w-12 h-12 bg-[#FAF6F0] rounded-none flex items-center justify-center text-[#181F22] shadow-md group-hover:scale-105 transition-transform"><i class="fa-solid fa-play ml-0.5"></i></div>
+                            </div>
+                        </div>
+                        <div class="pt-3 space-y-0.5 pointer-events-none">
+                            <div class="text-[9px] font-mono tracking-widest text-stone-400 uppercase font-bold">Classic Homecoming</div>
+                            <h4 class="font-serif text-base text-[#181F22]">Elder William's Homecoming</h4>
+                        </div>
+                    </div>
+
+
+                    <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] snap-start group cursor-pointer" data-video-id="-5ZwG47_hH8">
+                        <div class="relative aspect-[16/9] bg-stone-900 overflow-hidden border border-stone-300/30 shadow-xs pointer-events-none">
+                            <img src="https://img.youtube.com/vi/-5ZwG47_hH8/maxresdefault.jpg" alt="Musical Showcase" class="w-full h-full object-cover group-hover:scale-101 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+                                <div class="w-12 h-12 bg-[#FAF6F0] rounded-none flex items-center justify-center text-[#181F22] shadow-md group-hover:scale-105 transition-transform"><i class="fa-solid fa-play ml-0.5"></i></div>
+                            </div>
+                        </div>
+                        <div class="pt-3 space-y-0.5 pointer-events-none">
+                            <div class="text-[9px] font-mono tracking-widest text-stone-400 uppercase font-bold">Classic Homecoming</div>
+                            <h4 class="font-serif text-base text-[#181F22]">Elder Tenney's Homecoming</h4>
+                        </div>
+                    </div>
+
+
+                    <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] snap-start group cursor-pointer" data-video-id="KiPPxmwu7mo">
+                        <div class="relative aspect-[16/9] bg-stone-900 overflow-hidden border border-stone-300/30 shadow-xs pointer-events-none">
+                            <img src="https://img.youtube.com/vi/KiPPxmwu7mo/maxresdefault.jpg" alt="Musical Showcase" class="w-full h-full object-cover group-hover:scale-101 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+                                <div class="w-12 h-12 bg-[#FAF6F0] rounded-none flex items-center justify-center text-[#181F22] shadow-md group-hover:scale-105 transition-transform"><i class="fa-solid fa-play ml-0.5"></i></div>
+                            </div>
+                        </div>
+                        <div class="pt-3 space-y-0.5 pointer-events-none">
+                            <div class="text-[9px] font-mono tracking-widest text-stone-400 uppercase font-bold">Classic Homecoming</div>
+                            <h4 class="font-serif text-base text-[#181F22]">Sister Moore's Homecoming</h4>
+                        </div>
+                    </div>
+
+
+                    <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] snap-start group cursor-pointer" data-video-id="XLM6B5DJeqs">
+                        <div class="relative aspect-[16/9] bg-stone-900 overflow-hidden border border-stone-300/30 shadow-xs pointer-events-none">
+                            <img src="https://img.youtube.com/vi/XLM6B5DJeqs/maxresdefault.jpg" alt="Musical Showcase" class="w-full h-full object-cover group-hover:scale-101 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+                                <div class="w-12 h-12 bg-[#FAF6F0] rounded-none flex items-center justify-center text-[#181F22] shadow-md group-hover:scale-105 transition-transform"><i class="fa-solid fa-play ml-0.5"></i></div>
+                            </div>
+                        </div>
+                        <div class="pt-3 space-y-0.5 pointer-events-none">
+                            <div class="text-[9px] font-mono tracking-widest text-stone-400 uppercase font-bold">Classic Homecoming</div>
+                            <h4 class="font-serif text-base text-[#181F22]">Elder Roth's Homecoming</h4>
+                        </div>
+                    </div>
+
+                </div>
+
+                <button class="hidden md:flex absolute -right-6 top-1/2 -translate-y-1/2 z-30 w-12 h-12 bg-[#FAF6F0] border border-stone-300 text-stone-800 items-center justify-center opacity-0 group-hover/section:opacity-100 transition-opacity duration-300 shadow-sm hover:bg-stone-100 cursor-pointer" onclick="scrollSectionRight(this)" aria-label="Scroll right">
+                    <i class="fa-solid fa-chevron-right text-xs"></i>
+                </button>
+            </div>
+        </section>
+
+        <section class="space-y-4 px-4 sm:px-6 lg:px-12 relative group/section">
+            <div class="flex items-center justify-between border-b border-stone-300/60 pb-2">
+                <h3 class="font-serif text-lg sm:text-xl text-[#181F22]">Theatre & Stage</h3>
+                <span class="text-[10px] font-mono text-stone-400 uppercase tracking-wider hidden sm:inline">Drag or use arrows to explore</span>
+            </div>
+            
+            <div class="relative w-full">
+                <button class="hidden md:flex absolute -left-6 top-1/2 -translate-y-1/2 z-30 w-12 h-12 bg-[#FAF6F0] border border-stone-300 text-stone-800 items-center justify-center opacity-0 group-hover/section:opacity-100 transition-opacity duration-300 shadow-sm hover:bg-stone-100 cursor-pointer" onclick="scrollSectionLeft(this)" aria-label="Scroll left">
+                    <i class="fa-solid fa-chevron-left text-xs"></i>
+                </button>
+
+                <div class="scroll-track flex gap-6 overflow-x-auto no-scrollbar snap-x snap-mandatory pt-2 scroll-smooth select-none">
+                    
+                    <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] snap-start group cursor-pointer" data-video-id="YjGyt48VXkA">
+                        <div class="relative aspect-[16/9] bg-stone-900 overflow-hidden border border-stone-300/30 shadow-xs pointer-events-none">
+                            <img src="https://img.youtube.com/vi/YjGyt48VXkA/maxresdefault.jpg" alt="Airport Homecoming" class="w-full h-full object-cover group-hover:scale-101 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+                                <div class="w-12 h-12 bg-[#FAF6F0] rounded-none flex items-center justify-center text-[#181F22] shadow-md group-hover:scale-105 transition-transform"><i class="fa-solid fa-play ml-0.5"></i></div>
+                            </div>
+                        </div>
+                        <div class="pt-3 space-y-0.5 pointer-events-none">
+                            <div class="text-[9px] font-mono tracking-widest text-[#A27165] uppercase font-bold">Featured Musical</div>
+                            <h4 class="font-serif text-base text-[#181F22]">Hadestown | Alta High School</h4>
+                        </div>
+                    </div>
+
+                    <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] snap-start group cursor-pointer" data-video-id="tlff8RG3GZY">
+                        <div class="relative aspect-[16/9] bg-stone-900 overflow-hidden border border-stone-300/30 shadow-xs pointer-events-none">
+                            <img src="https://img.youtube.com/vi/tlff8RG3GZY/maxresdefault.jpg" alt="Homecoming surprise" class="w-full h-full object-cover group-hover:scale-101 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+                                <div class="w-12 h-12 bg-[#FAF6F0] rounded-none flex items-center justify-center text-[#181F22] shadow-md group-hover:scale-105 transition-transform"><i class="fa-solid fa-play ml-0.5"></i></div>
+                            </div>
+                        </div>
+                        <div class="pt-3 space-y-0.5 pointer-events-none">
+                            <div class="text-[9px] font-mono tracking-widest text-[#A27165] uppercase font-bold">Featured Play</div>
+                            <h4 class="font-serif text-base text-[#181F22]">The Play That Goes Wrong | Alta High School</h4>
+                        </div>
+                    </div>
+
+                    <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] snap-start group cursor-pointer" data-video-id="Pxqy4mztGc4">
+                        <div class="relative aspect-[16/9] bg-stone-900 overflow-hidden border border-stone-300/30 shadow-xs pointer-events-none">
+                            <img src="https://img.youtube.com/vi/Pxqy4mztGc4/maxresdefault.jpg" alt="Homecoming surprise" class="w-full h-full object-cover group-hover:scale-101 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+                                <div class="w-12 h-12 bg-[#FAF6F0] rounded-none flex items-center justify-center text-[#181F22] shadow-md group-hover:scale-105 transition-transform"><i class="fa-solid fa-play ml-0.5"></i></div>
+                            </div>
+                        </div>
+                        <div class="pt-3 space-y-0.5 pointer-events-none">
+                            <div class="text-[9px] font-mono tracking-widest text-stone-400 uppercase font-bold">Light Show</div>
+                            <h4 class="font-serif text-base text-[#181F22]">Smart & Richardson Christmas Light Show</h4>
+                        </div>
+                    </div>
+
+                    <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] snap-start group cursor-pointer" data-video-id="5nr6Zp3Q87k">
+                        <div class="relative aspect-[16/9] bg-stone-900 overflow-hidden border border-stone-300/30 shadow-xs pointer-events-none">
+                            <img src="https://img.youtube.com/vi/5nr6Zp3Q87k/maxresdefault.jpg" alt="Homecoming surprise" class="w-full h-full object-cover group-hover:scale-101 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+                                <div class="w-12 h-12 bg-[#FAF6F0] rounded-none flex items-center justify-center text-[#181F22] shadow-md group-hover:scale-105 transition-transform"><i class="fa-solid fa-play ml-0.5"></i></div>
+                            </div>
+                        </div>
+                        <div class="pt-3 space-y-0.5 pointer-events-none">
+                            <div class="text-[9px] font-mono tracking-widest text-stone-400 uppercase font-bold">Classic Show</div>
+                            <h4 class="font-serif text-base text-[#181F22]">Shakespeare 2025 | Alta High School</h4>
+                        </div>
+                    </div>
+
+                    <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] snap-start group cursor-pointer" data-video-id="Y-18i0XrANQ">
+                        <div class="relative aspect-[16/9] bg-stone-900 overflow-hidden border border-stone-300/30 shadow-xs pointer-events-none">
+                            <img src="https://img.youtube.com/vi/Y-18i0XrANQ/maxresdefault.jpg" alt="Homecoming surprise" class="w-full h-full object-cover group-hover:scale-101 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+                                <div class="w-12 h-12 bg-[#FAF6F0] rounded-none flex items-center justify-center text-[#181F22] shadow-md group-hover:scale-105 transition-transform"><i class="fa-solid fa-play ml-0.5"></i></div>
+                            </div>
+                        </div>
+                        <div class="pt-3 space-y-0.5 pointer-events-none">
+                            <div class="text-[9px] font-mono tracking-widest text-stone-400 uppercase font-bold">Classic Show</div>
+                            <h4 class="font-serif text-base text-[#181F22]">Metamorphoses | Alta High School</h4>
+                        </div>
+                    </div>
+
+                </div>
+
+                <button class="hidden md:flex absolute -right-6 top-1/2 -translate-y-1/2 z-30 w-12 h-12 bg-[#FAF6F0] border border-stone-300 text-stone-800 items-center justify-center opacity-0 group-hover/section:opacity-100 transition-opacity duration-300 shadow-sm hover:bg-stone-100 cursor-pointer" onclick="scrollSectionRight(this)" aria-label="Scroll right">
+                    <i class="fa-solid fa-chevron-right text-xs"></i>
+                </button>
+            </div>
+        </section>
+
+    </main>
+
+    <section class="py-12 bg-[#F0F1F3] border-t border-stone-300/50 z-10 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+            <div class="space-y-1">
+                <h4 class="font-serif text-base text-[#181F22] flex items-center gap-2"><i class="fa-solid fa-video text-xs text-[#A27165]"></i> Multi-Angle</h4>
+                <p class="text-xs text-stone-500 font-light">We run synchronized multi-cam configurations across theater programs to protect visual sightlines and never miss a reaction.</p>
+            </div>
+            <div class="space-y-1">
+                <h4 class="font-serif text-base text-[#181F22] flex items-center gap-2"><i class="fa-solid fa-wand-magic-sparkles text-xs text-[#A27165]"></i> Color Grading</h4>
+                <p class="text-xs text-stone-500 font-light">Footage undergoes comprehensive primary and secondary look matching to extract cinematic depth, warm balance, and realistic tones.</p>
+            </div>
+            <div class="space-y-1">
+                <h4 class="font-serif text-base text-[#181F22] flex items-center gap-2"><i class="fa-solid fa-microphone-lines text-xs text-[#A27165]"></i> High-Fidelity Audio</h4>
+                <p class="text-xs text-stone-500 font-light">Redundant field mixers, discrete lapels, and ambient captures preserve vows, musical phrasing, and cheers crystal clear.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 text-center max-w-4xl mx-auto px-4 z-10 relative">
+        <div class="space-y-5 bg-white border border-stone-300/80 p-8 sm:p-12 shadow-md relative overflow-hidden">
+            <p class="text-[9px] font-mono tracking-[0.3em] text-[#A27165] uppercase font-bold">PRESERVE YOUR MILESTONE</p>
+            <h2 class="text-xl sm:text-2xl font-serif text-stone-900 max-w-xl mx-auto">Let's lock down multi-cam coverage for your upcoming event.</h2>
+            <p class="text-stone-500 text-xs max-w-md mx-auto leading-relaxed">
+                Connect with your videographer directly to verify date availabilities, frame asset options, and request tailored structural package pricing.
+            </p>
+            <div class="pt-2">
+                <a href="/booking/" class="inline-flex items-center justify-center px-8 py-3.5 text-[10px] font-bold tracking-[0.25em] text-white bg-[#181F22] hover:bg-[#242D30] transition duration-300 uppercase">
+                    Check Date Availability
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-[#181F22] text-stone-300/70 text-sm relative z-10 border-t border-[#242D30] pt-16 pb-12 sm:pt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12 pb-12 sm:pb-16 border-b border-white/10">
+                <div class="space-y-4 order-1 md:order-2">
+                    <p class="text-[10px] font-bold tracking-[0.2em] text-white uppercase">Social Networks</p>
+                    <div class="grid grid-cols-1 gap-2.5">
+                        <a href="https://www.instagram.com/zerolimit_productions/" target="_blank" rel="noopener" class="flex items-center justify-between p-3 bg-white/5 hover:bg-white/10 text-stone-300 hover:text-white border border-white/5 hover:border-white/10 transition duration-200 group shadow-xs">
+                            <span class="flex items-center gap-2.5 text-xs font-light">
+                                <i class="fa-brands fa-instagram text-sm w-4 text-center text-stone-400 group-hover:text-white transition-colors"></i> Instagram
+                            </span>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-[9px] opacity-40 group-hover:opacity-100 transition-opacity"></i>
+                        </a>
+                        <a href="https://www.youtube.com/@ZeroLimitProductions" target="_blank" rel="noopener" class="flex items-center justify-between p-3 bg-white/5 hover:bg-white/10 text-stone-300 hover:text-white border border-white/5 hover:border-white/10 transition duration-200 group shadow-xs">
+                            <span class="flex items-center gap-2.5 text-xs font-light">
+                                <i class="fa-brands fa-youtube text-sm w-4 text-center text-stone-400 group-hover:text-white transition-colors"></i> YouTube Channel
+                            </span>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-[9px] opacity-40 group-hover:opacity-100 transition-opacity"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/drew-mckay1/" target="_blank" rel="noopener" class="flex items-center justify-between p-3 bg-white/5 hover:bg-white/10 text-stone-300 hover:text-white border border-white/5 hover:border-white/10 transition duration-200 group shadow-xs">
+                            <span class="flex items-center gap-2.5 text-xs font-light">
+                                <i class="fa-brands fa-linkedin-in text-sm w-4 text-center text-stone-400 group-hover:text-white transition-colors"></i> LinkedIn Profile
+                            </span>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-[9px] opacity-40 group-hover:opacity-100 transition-opacity"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="space-y-4 order-2 md:order-3">
+                    <p class="text-[10px] font-bold tracking-[0.2em] text-white uppercase">Direct Contact</p>
+                    <div class="space-y-3">
+                        <a href="tel:8018827258" class="group flex items-center gap-3.5 p-3.5 bg-white/5 border border-white/10 hover:border-[#A27165]/40 hover:bg-white/10 transition-all duration-300 shadow-xs hover:shadow-md">
+                            <div class="w-8 h-8 rounded-none bg-white/10 text-white flex items-center justify-center text-xs group-hover:bg-white group-hover:text-[#181F22] transition-all duration-300">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div class="flex flex-col">
+                                <span class="text-[9px] font-mono tracking-wider text-stone-400 uppercase">Call / Text Direct</span>
+                                <span class="text-xs font-bold tracking-wide text-white font-mono">(801) 882-7258</span>
+                            </div>
+                        </a>
+                        <a href="mailto:drew@zerolimitproductions.com" class="group flex items-center gap-3.5 p-3.5 bg-white/5 border border-white/10 hover:border-[#A27165]/40 hover:bg-white/10 transition-all duration-300 shadow-xs hover:shadow-md">
+                            <div class="w-8 h-8 rounded-none bg-white/10 text-white flex items-center justify-center text-xs group-hover:bg-white group-hover:text-[#181F22] transition-all duration-300">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div class="flex flex-col overflow-hidden">
+                                <span class="text-[9px] font-mono tracking-wider text-stone-400 uppercase">Email</span>
+                                <span class="text-xs font-bold tracking-wide text-white font-mono truncate">drew@zerolimitproductions.com</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="space-y-4 order-3 md:order-1">
+                    <p class="text-[10px] font-bold tracking-[0.2em] text-white uppercase">Directory</p>
+                    <ul class="space-y-2.5 text-xs font-light">
+                        <li><a href="/" class="hover:text-white transition-colors duration-200 flex items-center gap-1.5"><span class="w-1 h-1 bg-[#A27165] rounded-full opacity-50"></span> Return Home</a></li>
+                        <li><a href="/event-portfolio/" class="hover:text-white transition-colors duration-200 flex items-center gap-1.5"><span class="w-1 h-1 bg-[#A27165] rounded-full opacity-50"></span> Milestones Portfolio</a></li>
+                        <li><a href="/commercial-portfolio/" class="hover:text-white transition-colors duration-200 flex items-center gap-1.5"><span class="w-1 h-1 bg-[#A27165] rounded-full opacity-50"></span> Business Portfolio</a></li>
+                        <li><a href="/about/" class="hover:text-white transition-colors duration-200 flex items-center gap-1.5"><span class="w-1 h-1 bg-[#A27165] rounded-full opacity-50"></span> About Our Crew</a></li>
+                    </ul>
+                </div>
+
+                <div class="space-y-4 order-4 md:order-4">
+                    <!-- ALSO PLACED LOGO HERE FOR CONSISTENCY -->
+                    <p class="font-bold text-white tracking-[0.25em] text-xs uppercase flex items-center gap-2">
+                        <img src="/images/zlplogo.png" alt="" class="w-4 h-4 object-contain brightness-0 invert">
+                        <span>ZERO LIMIT<span class="text-stone-400 font-light"> PRODUCTIONS</span></span>
+                    </p>
+                    <p class="text-xs text-stone-300/60 font-light leading-relaxed max-w-xs">
+                        High-end multi-cam video production, and timeless cinematic storytelling across commercial landscapes and individual legacy milestones.
+                    </p>
+                </div>
+            </div>
+
+            <div class="pt-12 flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
+                <div class="text-[9px] text-stone-500 font-mono tracking-widest uppercase">
+                    <p>&copy; 2026 ZERO LIMIT PRODUCTIONS. ALL RIGHTS RESERVED.</p>
+                </div>
+                <div class="text-[9px] text-stone-500 font-mono tracking-widest uppercase flex items-center gap-4 justify-center sm:justify-start">
+                    <span>Utah, USA</span>
+                    <span class="text-stone-700">|</span>
+                    <span>VIDEO PRODUCTION</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="video-modal" class="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300">
+        <button onclick="closeVideoModal()" class="absolute top-6 right-6 text-white text-2xl hover:text-stone-300 focus:outline-none cursor-pointer" aria-label="Close Player"><i class="fa-solid fa-xmark"></i></button>
+        <div class="w-full max-w-4xl aspect-[16/9] bg-stone-950 border border-white/10 shadow-2xl relative">
+            <iframe id="modal-iframe" class="w-full h-full" src="" title="YouTube Video Player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <!-- ORIGINAL LOGIC ENGINE -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Mobile Menu Drawer Toggles
+            const toggleBtn = document.getElementById('mobile-menu-toggle');
+            const menuCard = document.getElementById('mobile-navigation-card');
+            const ctaBtn = document.getElementById('mobile-menu-cta');
+            const mobilePortfolioToggle = document.getElementById('mobile-portfolio-toggle');
+            const mobilePortfolioSub = document.getElementById('mobile-portfolio-sub');
+            const mobilePortfolioArrow = document.getElementById('mobile-portfolio-arrow');
+
+            function openMenu() {
+                menuCard.classList.remove('opacity-0', 'pointer-events-none', '-translate-y-2');
+                menuCard.classList.add('opacity-100', 'pointer-events-auto', 'translate-y-0');
+                toggleBtn.classList.add('is-active');
+            }
+
+            function closeMenu() {
+                menuCard.classList.remove('opacity-100', 'pointer-events-auto', 'translate-y-0');
+                menuCard.classList.add('opacity-0', 'pointer-events-none', '-translate-y-2');
+                toggleBtn.classList.remove('is-active');
+            }
+
+            toggleBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                if (menuCard.classList.contains('opacity-100')) { closeMenu(); } else { openMenu(); }
+            });
+
+            ctaBtn.addEventListener('click', closeMenu);
+
+            mobilePortfolioToggle.addEventListener('click', (e) => {
+                e.preventDefault();
+                const isOpen = mobilePortfolioSub.style.maxHeight && mobilePortfolioSub.style.maxHeight !== "0px";
+                if (isOpen) {
+                    mobilePortfolioSub.style.maxHeight = "0px";
+                    mobilePortfolioArrow.classList.remove('rotate-180');
+                } else {
+                    mobilePortfolioSub.style.maxHeight = mobilePortfolioSub.scrollHeight + "px";
+                    mobilePortfolioArrow.classList.add('rotate-180');
+                }
+            });
+
+            document.addEventListener('click', (e) => {
+                if (!menuCard.contains(e.target) && !toggleBtn.contains(e.target)) { closeMenu(); }
+            });
+
+            // Drag-to-Scroll Momentum Physics Engine
+            const tracks = document.querySelectorAll('.scroll-track');
+            
+            tracks.forEach(track => {
+                let isDown = false;
+                let startX;
+                let scrollLeft;
+                let isDragging = false;
+                let velocity = 0;
+                let lastX = 0;
+                let lastTime = 0;
+
+                track.addEventListener('mousedown', (e) => {
+                    isDown = true;
+                    isDragging = false;
+                    startX = e.pageX - track.offsetLeft;
+                    scrollLeft = track.scrollLeft;
+                    lastX = e.pageX;
+                    lastTime = performance.now();
+                    velocity = 0;
+
+                    track.style.scrollSnapType = 'none';
+                    track.style.scrollBehavior = 'auto';
+                });
+
+                track.addEventListener('mouseleave', () => {
+                    if (!isDown) return;
+                    isDown = false;
+                    startMomentum();
+                });
+
+                track.addEventListener('mouseup', () => {
+                    if (!isDown) return;
+                    isDown = false;
+                    startMomentum();
+                });
+
+                track.addEventListener('mousemove', (e) => {
+                    if (!isDown) return;
+                    
+                    const now = performance.now();
+                    const elapsed = now - lastTime;
+                    if (elapsed > 0) {
+                        velocity = (e.pageX - lastX) / elapsed;
+                    }
+                    lastX = e.pageX;
+                    lastTime = now;
+
+                    const x = e.pageX - track.offsetLeft;
+                    const delta = (x - startX);
+                    
+                    if (Math.abs(delta) > 5) {
+                        isDragging = true;
+                        e.preventDefault();
+                        track.scrollLeft = scrollLeft - delta;
+                    }
+                });
+
+                function startMomentum() {
+                    track.style.scrollSnapType = 'x mandatory';
+                    track.style.scrollBehavior = 'smooth';
+
+                    const momentumFactor = 160;
+                    const projectedScrollLeft = track.scrollLeft - (velocity * momentumFactor);
+
+                    const trackRect = track.getBoundingClientRect();
+                    const cards = track.querySelectorAll('.video-card');
+                    let closestCard = null;
+                    let minDistance = Infinity;
+
+                    cards.forEach(card => {
+                        const cardRect = card.getBoundingClientRect();
+                        const cardAbsoluteScrollLeft = track.scrollLeft + (cardRect.left - trackRect.left);
+                        const distance = Math.abs(cardAbsoluteScrollLeft - projectedScrollLeft);
+                        if (distance < minDistance) {
+                            minDistance = distance;
+                            closestCard = card;
+                        }
+                    });
+
+                    if (closestCard) {
+                        const targetElement = closestCard.closest('.snap-start');
+                        const cardRect = targetElement.getBoundingClientRect();
+                        const finalTarget = track.scrollLeft + (cardRect.left - trackRect.left);
+                        track.scrollTo({ left: finalTarget, behavior: 'smooth' });
+                    }
+
+                    setTimeout(() => {
+                        isDragging = false;
+                    }, 50);
+                }
+
+                track.addEventListener('click', (e) => {
+                    if (isDragging) {
+                        e.preventDefault();
+                        return;
+                    }
+                    const targetCard = e.target.closest('.video-card');
+                    if (targetCard) {
+                        const videoId = targetCard.getAttribute('data-video-id');
+                        if (videoId) openVideoModal(videoId);
+                    }
+                });
+            });
+        });
+
+        // Carousel Button Layout Calculations
+        function getScrollStep(track) {
+            const firstCard = track.querySelector('.snap-start');
+            if (!firstCard) return 300;
+            return firstCard.offsetWidth + 24; 
+        }
+
+        function scrollSectionLeft(btn) {
+            const track = btn.parentElement.querySelector('.scroll-track');
+            track.style.scrollBehavior = 'smooth';
+            track.scrollBy({ left: -getScrollStep(track), behavior: 'smooth' });
+        }
+
+        function scrollSectionRight(btn) {
+            const track = btn.parentElement.querySelector('.scroll-track');
+            track.style.scrollBehavior = 'smooth';
+            track.scrollBy({ left: getScrollStep(track), behavior: 'smooth' });
+        }
+
+        // YouTube Modal Lightbox Control Engine
+        function openVideoModal(youtubeId) {
+            const modal = document.getElementById('video-modal');
+            const iframe = document.getElementById('modal-iframe');
+            iframe.src = `https://www.youtube.com/embed/${youtubeId}?autoplay=1&rel=0`;
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            document.body.style.overflow = 'hidden'; 
+        }
+
+        function closeVideoModal() {
+            const modal = document.getElementById('video-modal');
+            const iframe = document.getElementById('modal-iframe');
+            modal.classList.add('opacity-0', 'pointer-events-none');
+            iframe.src = ""; 
+            document.body.style.overflow = ''; 
+        }
+
+        
+    </script>
+
+</body>
+</html>
