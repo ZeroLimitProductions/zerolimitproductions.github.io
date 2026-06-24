@@ -83,9 +83,15 @@
         }
         #mobile-menu-toggle.is-active .nav-icon-close { opacity: 1; transform: scale(1) rotate(0deg); }
 
-        /* Smooth grabbing cursor for drag-to-scroll tracks */
+        /* Horizontal scroll tracks — desktop grab cursor; mobile axis fix */
         .scroll-track {
             cursor: grab;
+            /* MOBILE FIX: tells the browser "horizontal touch = pan this element,
+               vertical touch = pass up to the page scroll". Eliminates the axis
+               conflict that caused page-scroll to lock/stutter over the tracks. */
+            touch-action: pan-x;
+            /* Stops scroll-chaining when the track reaches its left/right bounds. */
+            overscroll-behavior-x: contain;
         }
         .scroll-track:active {
             cursor: grabbing;
@@ -217,7 +223,7 @@
                     <i class="fa-solid fa-chevron-left text-xs"></i>
                 </button>
 
-                <div class="scroll-track flex gap-6 overflow-x-auto no-scrollbar snap-x snap-mandatory pt-2 scroll-smooth select-none">
+                <div class="scroll-track flex gap-6 overflow-x-auto no-scrollbar snap-x snap-mandatory pt-2 select-none">
 
                     <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] snap-start group cursor-pointer" data-video-id="FxmGNxQ45jE">
                         <div class="relative aspect-[16/9] bg-stone-900 overflow-hidden border border-stone-300/30 shadow-xs pointer-events-none">
@@ -304,7 +310,7 @@
                     <i class="fa-solid fa-chevron-left text-xs"></i>
                 </button>
 
-                <div class="scroll-track flex gap-6 overflow-x-auto no-scrollbar snap-x snap-mandatory pt-2 scroll-smooth select-none">
+                <div class="scroll-track flex gap-6 overflow-x-auto no-scrollbar snap-x snap-mandatory pt-2 select-none">
                     
                     <div class="video-card min-w-[290px] sm:min-w-[420px] max-w-[420px] snap-start group cursor-pointer" data-video-id="ioQUe5l7XnQ">
                         <div class="relative aspect-[16/9] bg-stone-900 overflow-hidden border border-stone-300/30 shadow-xs pointer-events-none">
@@ -378,7 +384,7 @@
                     <i class="fa-solid fa-chevron-left text-xs"></i>
                 </button>
 
-                <div class="scroll-track flex gap-6 overflow-x-auto no-scrollbar snap-x snap-mandatory pt-2 scroll-smooth select-none">
+                <div class="scroll-track flex gap-6 overflow-x-auto no-scrollbar snap-x snap-mandatory pt-2 select-none">
                     
                     <!-- Showcase Item 1 -->
                     <div class="min-w-[290px] sm:min-w-[420px] max-w-[420px] snap-start group relative">
@@ -712,111 +718,156 @@
                 if (!menuCard.contains(e.target) && !toggleBtn.contains(e.target)) { closeMenu(); }
             });
 
-            // Desktop Drag-to-Scroll Configuration with Smooth Native Projection Physics
-            const tracks = document.querySelectorAll('.scroll-track');
-            
-            tracks.forEach(track => {
-                let isDown = false;
-                let startX;
-                let scrollLeft;
-                let isDragging = false;
-                let velocity = 0;
-                let lastX = 0;
-                let lastTime = 0;
+            // ── Desktop Drag-to-Scroll ─────────────────────────────────────────────────
+            // MOBILE:  no JS listeners here. touch-action:pan-x (CSS) lets the browser
+            //          handle horizontal track scroll natively while vertical page-scroll
+            //          passes through. Zero axis conflict.
+            // DESKTOP: mouse drag with velocity momentum + CSS snap on release.
+            //          document-level move/up listeners so drag works outside the track.
+            (function () {
+                // Skip mouse-drag setup entirely on primary-touch (coarse) devices.
+                // On hybrids (Surface, iPad + BT mouse) this still activates correctly.
+                if (window.matchMedia('(hover: none) and (pointer: coarse)').matches) return;
 
-                track.addEventListener('mousedown', (e) => {
-                    if (e.target.closest('.carousel-container')) return; 
-                    isDown = true;
-                    isDragging = false;
-                    startX = e.pageX - track.offsetLeft;
-                    scrollLeft = track.scrollLeft;
-                    lastX = e.pageX;
-                    lastTime = performance.now();
-                    velocity = 0;
+                const tracks = document.querySelectorAll('.scroll-track');
 
-                    track.style.scrollSnapType = 'none';
-                    track.style.scrollBehavior = 'auto';
-                });
+                tracks.forEach(function (track) {
+                    let active  = false;   // mouse button is held
+                    let didDrag = false;   // cursor moved enough to count as a drag
+                    let startX  = 0;       // pageX at mousedown
+                    let startSL = 0;       // scrollLeft at mousedown
+                    let velX    = 0;       // px/ms at last mousemove (+ = mouse moved right)
+                    let prevX   = 0;
+                    let prevT   = 0;
+                    let rafId   = null;
 
-                track.addEventListener('mouseleave', () => {
-                    if (!isDown) return;
-                    isDown = false;
-                    startMomentum();
-                });
-
-                track.addEventListener('mouseup', (e) => {
-                    if (!isDown) return;
-                    isDown = false;
-                    startMomentum();
-                });
-
-                track.addEventListener('mousemove', (e) => {
-                    if (!isDown) return;
-                    
-                    const now = performance.now();
-                    const elapsed = now - lastTime;
-                    if (elapsed > 0) {
-                        velocity = (e.pageX - lastX) / elapsed;
+                    // ── helpers ──────────────────────────────────────────────────
+                    function disableSnap() {
+                        track.style.scrollSnapType = 'none';
+                        track.style.scrollBehavior = 'auto';
                     }
-                    lastX = e.pageX;
-                    lastTime = now;
 
-                    const x = e.pageX - track.offsetLeft;
-                    const delta = (x - startX);
-                    
-                    if (Math.abs(delta) > 5) {
-                        isDragging = true;
-                        e.preventDefault();
-                        track.scrollLeft = scrollLeft - delta;
+                    function snapToNearest() {
+                        // Re-enable snap then scroll to the closest snap target so the
+                        // browser doesn't fight a pending programmatic scrollTo.
+                        track.style.scrollSnapType = 'x mandatory';
+                        track.style.scrollBehavior = 'smooth';
+
+                        const snapItems = Array.from(track.querySelectorAll('.snap-start'));
+                        if (!snapItems.length) { track.style.scrollBehavior = ''; return; }
+
+                        const trackRect     = track.getBoundingClientRect();
+                        let nearestTarget   = track.scrollLeft;
+                        let nearestDist     = Infinity;
+
+                        snapItems.forEach(function (item) {
+                            // How far is this item's left edge from the track's left edge RIGHT NOW?
+                            const offsetFromLeft = item.getBoundingClientRect().left - trackRect.left;
+                            const dist = Math.abs(offsetFromLeft);
+                            if (dist < nearestDist) {
+                                nearestDist   = dist;
+                                // The scrollLeft that aligns this item with the track's left edge.
+                                nearestTarget = track.scrollLeft + offsetFromLeft;
+                            }
+                        });
+
+                        track.scrollTo({ left: nearestTarget, behavior: 'smooth' });
+                        setTimeout(function () { track.style.scrollBehavior = ''; }, 600);
                     }
-                });
 
-                function startMomentum() {
-                    track.style.scrollSnapType = 'x mandatory';
-                    track.style.scrollBehavior = 'smooth';
+                    // ── drag lifecycle ────────────────────────────────────────────
+                    function beginDrag(pageX) {
+                        if (rafId) { cancelAnimationFrame(rafId); rafId = null; }
+                        active  = true;
+                        didDrag = false;
+                        startX  = pageX;
+                        startSL = track.scrollLeft;
+                        velX    = 0;
+                        prevX   = pageX;
+                        prevT   = performance.now();
+                        disableSnap();
+                        track.style.cursor = 'grabbing';
+                    }
 
-                    const momentumFactor = 160; 
-                    const projectedScrollLeft = track.scrollLeft - (velocity * momentumFactor);
+                    function onDragMove(pageX) {
+                        if (!active) return;
+                        const now = performance.now();
+                        const dt  = now - prevT;
+                        if (dt > 0) velX = (pageX - prevX) / dt;
+                        prevX = pageX;
+                        prevT = now;
 
-                    const trackRect = track.getBoundingClientRect();
-                    const cards = track.querySelectorAll('.video-card, .carousel-container');
-                    let closestCard = null;
-                    let minDistance = Infinity;
+                        // startX - pageX: positive when mouse moved LEFT → scrollLeft increases
+                        const delta = startX - pageX;
+                        track.scrollLeft = startSL + delta;
+                        if (Math.abs(delta) > 4) didDrag = true;
+                    }
 
-                    cards.forEach(card => {
-                        const cardRect = card.getBoundingClientRect();
-                        const cardAbsoluteScrollLeft = track.scrollLeft + (cardRect.left - trackRect.left);
-                        const distance = Math.abs(cardAbsoluteScrollLeft - projectedScrollLeft);
-                        if (distance < minDistance) {
-                            minDistance = distance;
-                            closestCard = card;
+                    function endDrag() {
+                        if (!active) return;
+                        active = false;
+                        track.style.cursor = '';
+                        applyMomentum();
+                    }
+
+                    // ── momentum + snap ───────────────────────────────────────────
+                    function applyMomentum() {
+                        // velX > 0 means the mouse moved RIGHT → scrollLeft was decreasing.
+                        // Flip sign so positive v = scrollLeft increasing (content going left).
+                        let v = -velX;
+
+                        const MAX_VEL   = 6;     // px/ms cap — prevents overshooting on fast flicks
+                        const FRICTION  = 0.90;  // velocity decay per ~16 ms rAF tick
+                        const THRESHOLD = 0.05;  // px/ms — below this we snap and stop
+
+                        v = Math.max(-MAX_VEL, Math.min(MAX_VEL, v));
+
+                        function tick() {
+                            if (Math.abs(v) < THRESHOLD) {
+                                snapToNearest();
+                                return;
+                            }
+                            const maxSL = track.scrollWidth - track.clientWidth;
+                            track.scrollLeft = Math.max(0, Math.min(maxSL, track.scrollLeft + v * 16));
+                            v *= FRICTION;
+                            rafId = requestAnimationFrame(tick);
                         }
+
+                        if (Math.abs(v) > THRESHOLD) {
+                            rafId = requestAnimationFrame(tick);
+                        } else {
+                            snapToNearest();
+                        }
+                    }
+
+                    // ── event binding ─────────────────────────────────────────────
+                    track.addEventListener('mousedown', function (e) {
+                        if (e.button !== 0) return;
+                        if (e.target.closest('.carousel-container')) return;
+                        e.preventDefault(); // block text/image selection drag
+                        beginDrag(e.pageX);
                     });
 
-                    if (closestCard) {
-                        const targetElement = closestCard.closest('.snap-start');
-                        const cardRect = targetElement.getBoundingClientRect();
-                        const finalTarget = track.scrollLeft + (cardRect.left - trackRect.left);
-                        track.scrollTo({ left: finalTarget, behavior: 'smooth' });
-                    }
+                    // document-level listeners: drag stays tracked if cursor leaves the track
+                    document.addEventListener('mousemove', function (e) { onDragMove(e.pageX); });
+                    document.addEventListener('mouseup',   function ()   { if (active) endDrag(); });
 
-                    setTimeout(() => {
-                        isDragging = false;
-                    }, 50);
-                }
-
-                track.addEventListener('click', (e) => {
-                    if (isDragging) {
-                        e.preventDefault();
-                        return;
-                    }
-                    const targetCard = e.target.closest('.video-card');
-                    if (targetCard) {
-                        const videoId = targetCard.getAttribute('data-video-id');
-                        if (videoId) openVideoModal(videoId);
-                    }
+                    // Click guard: suppress video-open when the user actually dragged
+                    track.addEventListener('click', function (e) {
+                        if (didDrag) {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            didDrag = false; // reset for next interaction
+                            return;
+                        }
+                        const card = e.target.closest('.video-card');
+                        if (card) {
+                            const videoId = card.getAttribute('data-video-id');
+                            if (videoId) openVideoModal(videoId);
+                        }
+                    });
                 });
-            });
+            }());
 
             // Automated Real Estate Carousel Logic Engine (5s Auto-rotation)
             const realEstateCarousels = document.querySelectorAll('.carousel-container');
