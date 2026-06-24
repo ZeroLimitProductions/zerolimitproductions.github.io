@@ -79,10 +79,9 @@
         }
         #mobile-menu-toggle.is-active .nav-icon-close { opacity: 1; transform: scale(1) rotate(0deg); }
 
-        /* Upgraded grab styles with axis protection */
+        /* Smooth grabbing cursor for drag-to-scroll tracks */
         .scroll-track {
             cursor: grab;
-            touch-action: pan-y; /* Crucial: isolates vertical page pan from horizontal track gestures */
         }
         .scroll-track:active {
             cursor: grabbing;
@@ -157,7 +156,7 @@
                     <button id="mobile-portfolio-toggle" class="text-[#181F22] flex items-center justify-between w-full uppercase tracking-[0.25em] font-bold text-left focus:outline-none cursor-pointer">
                         Portfolio <i id="mobile-portfolio-arrow" class="fa-solid fa-chevron-down text-[10px] rotate-180 transition-transform duration-300"></i>
                     </button>
-                    <div id="mobile-portfolio-sub" class="transition-all duration-300 flex flex-col space-y-4 pl-3 border-l border-stone-200 ml-0.5">
+                    <div id="mobile-portfolio-sub" class="transition-all duration-300 flex flex-col space-y-4 pl-3 border-l border-stone-200 ml-0.5" style="max-height: 0px; overflow: hidden;">
                         <a href="/event-portfolio/" class="text-[#181F22] text-[11px] font-bold tracking-[0.2em] uppercase flex items-center justify-between mt-3.5">Milestones & Events <span class="w-1 h-1 rounded-full bg-[#A27165]"></span></a>
                         <a href="/commercial-portfolio/" class="text-stone-500 hover:text-[#181F22] text-[11px] font-bold tracking-[0.2em] uppercase">Business & Commercial</a>
                     </div>
@@ -382,8 +381,8 @@
 
                 </div>
 
-                <button class="hidden md:flex absolute -right-6 top-1/2 -translate-y-1/2 z-30 w-12 h-12 bg-[#FAF6F0] border border-stone-300 text-stone-800 items-center justify-center opacity-0 group-hover/section:opacity-100 transition-opacity duration-300 shadow-sm hover:bg-stone-100 cursor-pointer" onclick="scrollSectionLeft(this)" aria-label="Scroll left">
-                    <i class="fa-solid fa-chevron-left text-xs"></i>
+                <button class="hidden md:flex absolute -right-6 top-1/2 -translate-y-1/2 z-30 w-12 h-12 bg-[#FAF6F0] border border-stone-300 text-stone-800 items-center justify-center opacity-0 group-hover/section:opacity-100 transition-opacity duration-300 shadow-sm hover:bg-stone-100 cursor-pointer" onclick="scrollSectionRight(this)" aria-label="Scroll right">
+                    <i class="fa-solid fa-chevron-right text-xs"></i>
                 </button>
             </div>
         </section>
@@ -480,7 +479,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
             <div class="space-y-1">
                 <h4 class="font-serif text-base text-[#181F22] flex items-center gap-2"><i class="fa-solid fa-video text-xs text-[#A27165]"></i> Multi-Angle</h4>
-                <p class="text-xs text-stone-500 font-light">We run synchronized multi-cam configurations across theater programs to protect visual sightlines and never miss a reaction.</p>
+                <p class="text-xs text-stone-500 font-light"> We run synchronized multi-cam configurations across theater programs to protect visual sightlines and never miss a reaction.</p>
             </div>
             <div class="space-y-1">
                 <h4 class="font-serif text-base text-[#181F22] flex items-center gap-2"><i class="fa-solid fa-wand-magic-sparkles text-xs text-[#A27165]"></i> Color Grading</h4>
@@ -645,7 +644,7 @@
                 if (!menuCard.contains(e.target) && !toggleBtn.contains(e.target)) { closeMenu(); }
             });
 
-            // Drag-to-Scroll Momentum Physics Engine (Upgraded to PointerEvents & Wheel Isolation)
+            // Unified Pointer-to-Scroll Drag Engine
             const tracks = document.querySelectorAll('.scroll-track');
             
             tracks.forEach(track => {
@@ -656,10 +655,14 @@
                 let velocity = 0;
                 let lastX = 0;
                 let lastTime = 0;
+                let snapReenableTimeout = null;
 
-                // Upgraded to unified PointerEvents (Mice + Touch + Stylus)
                 track.addEventListener('pointerdown', (e) => {
-                    if (e.pointerType === 'mouse' && e.button !== 0) return;
+                    // CRITICAL EXCLUSION: If interaction comes from a touchscreen or trackpad gesture,
+                    // exit early and rely completely on native browser scrolling.
+                    // This allows native diagonal multi-directional swiping and native momentum/snapping.
+                    if (e.pointerType !== 'mouse') return;
+
                     isDown = true;
                     isDragging = false;
                     startX = e.pageX - track.offsetLeft;
@@ -668,17 +671,21 @@
                     lastTime = performance.now();
                     velocity = 0;
 
+                    // Clear pending snap toggles from previous release cycles
+                    if (snapReenableTimeout) clearTimeout(snapReenableTimeout);
+
+                    // Drop constraints during mouse drag for ultra-crisp responsive feedback
                     track.style.scrollSnapType = 'none';
                     track.style.scrollBehavior = 'auto';
                 });
 
-                track.addEventListener('pointerleave', () => {
+                track.addEventListener('pointerleave', (e) => {
                     if (!isDown) return;
                     isDown = false;
                     startMomentum();
                 });
 
-                track.addEventListener('pointerup', () => {
+                track.addEventListener('pointerup', (e) => {
                     if (!isDown) return;
                     isDown = false;
                     startMomentum();
@@ -698,70 +705,19 @@
                     const x = e.pageX - track.offsetLeft;
                     const delta = (x - startX);
                     
-                    if (Math.abs(delta) > 5) {
+                    // Trigger tracking instantly upon minimal movement offset
+                    if (Math.abs(delta) > 3) {
                         isDragging = true;
-                        if (e.cancelable) e.preventDefault();
+                        e.preventDefault();
                         track.scrollLeft = scrollLeft - delta;
                     }
                 });
 
-                // Trackpad / Wheel Gesture Isolation Engine
-                let wheelTimeout = null;
-                let isWheelEngaged = false;
-
-                track.addEventListener('wheel', (e) => {
-                    const absX = Math.abs(e.deltaX);
-                    const absY = Math.abs(e.deltaY);
-
-                    // If a horizontal scroll gesture is dominant, engage lock
-                    if (!isWheelEngaged && absX > absY && absX > 2) {
-                        isWheelEngaged = true;
-                    }
-
-                    if (isWheelEngaged) {
-                        if (e.cancelable) e.preventDefault(); // Protect track and prevent vertical page-hop
-                        
-                        track.style.scrollSnapType = 'none';
-                        track.style.scrollBehavior = 'auto';
-                        track.scrollLeft += e.deltaX;
-
-                        clearTimeout(wheelTimeout);
-                        wheelTimeout = setTimeout(() => {
-                            isWheelEngaged = false;
-                            track.style.scrollSnapType = 'x mandatory';
-                            track.style.scrollBehavior = 'smooth';
-                            
-                            // Re-snap cleanly to the nearest card on finish
-                            const trackRect = track.getBoundingClientRect();
-                            const cards = track.querySelectorAll('.video-card');
-                            let closestCard = null;
-                            let minDistance = Infinity;
-
-                            cards.forEach(card => {
-                                const cardRect = card.getBoundingClientRect();
-                                const cardAbsoluteScrollLeft = track.scrollLeft + (cardRect.left - trackRect.left);
-                                const distance = Math.abs(cardAbsoluteScrollLeft - track.scrollLeft);
-                                if (distance < minDistance) {
-                                    minDistance = distance;
-                                    closestCard = card;
-                                }
-                            });
-
-                            if (closestCard) {
-                                const targetElement = closestCard.closest('.snap-start');
-                                const cardRect = targetElement.getBoundingClientRect();
-                                const finalTarget = track.scrollLeft + (cardRect.left - trackRect.left);
-                                track.scrollTo({ left: finalTarget, behavior: 'smooth' });
-                            }
-                        }, 150);
-                    }
-                }, { passive: false });
-
                 function startMomentum() {
-                    track.style.scrollSnapType = 'x mandatory';
+                    // Turn on smooth behavior contextually for the settle animation
                     track.style.scrollBehavior = 'smooth';
 
-                    const momentumFactor = 160;
+                    const momentumFactor = 150;
                     const projectedScrollLeft = track.scrollLeft - (velocity * momentumFactor);
 
                     const trackRect = track.getBoundingClientRect();
@@ -786,6 +742,12 @@
                         track.scrollTo({ left: finalTarget, behavior: 'smooth' });
                     }
 
+                    // Re-enable strict CSS snap parameters safely ONLY after the animation sequence finishes settling.
+                    // This stops the browser's snap engine from violently jerking against the sliding timeline animation path.
+                    snapReenableTimeout = setTimeout(() => {
+                        track.style.scrollSnapType = 'x mandatory';
+                    }, 500);
+
                     setTimeout(() => {
                         isDragging = false;
                     }, 50);
@@ -794,6 +756,7 @@
                 track.addEventListener('click', (e) => {
                     if (isDragging) {
                         e.preventDefault();
+                        e.stopPropagation();
                         return;
                     }
                     const targetCard = e.target.closest('.video-card');
@@ -801,7 +764,7 @@
                         const videoId = targetCard.getAttribute('data-video-id');
                         if (videoId) openVideoModal(videoId);
                     }
-                });
+                }, true); // Capture phase integration safeguards unintended video player loads
             });
         });
 
