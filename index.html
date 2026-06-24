@@ -466,6 +466,275 @@
         </div>
     </section>
 
+<!-- TESTIMONIAL MARQUEE SECTION (LIGHT MODE) -->
+    <style>
+        @keyframes infinite-scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-infinite-scroll {
+            animation: infinite-scroll 75s linear infinite;
+            width: max-content;
+            will-change: transform; /* Hardware acceleration to prevent lag */
+        }
+    </style>
+
+    <section class="py-8 sm:py-10 bg-white border-y border-stone-300/60 overflow-hidden relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 mb-10 text-center sm:text-left">
+            <h2 class="text-[10px] font-mono tracking-[0.3em] text-[#A27165] uppercase">Client Love</h2>
+            <p class="text-2xl sm:text-3xl font-serif tracking-tight text-[#181F22] mt-2">What People Are Saying</p>
+        </div>
+        
+        <!-- Marquee Container -->
+        <div class="relative flex overflow-x-hidden group">
+            <!-- Left/Right Fade Gradients for smooth entering/exiting -->
+            <div class="absolute top-0 bottom-0 left-0 w-16 sm:w-32 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
+            <div class="absolute top-0 bottom-0 right-0 w-16 sm:w-32 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
+
+            <!-- Scrolling Track (Pauses on hover for readability) -->
+            <div class="flex animate-infinite-scroll group-hover:[animation-play-state:paused] gap-6 px-3 py-2">
+                
+                <!-- === ORIGINAL SET OF REVIEWS === -->
+                
+                <!-- Review 1: Kelly Ballard -->
+                <div class="w-[300px] sm:w-[350px] flex-shrink-0 bg-[#FAF6F0] border border-stone-200 p-6 sm:p-8 rounded-none flex flex-col justify-between shadow-sm transition duration-300 hover:shadow-md hover:bg-stone-50">
+                    <div>
+                        <div class="flex items-center justify-between mb-5">
+                            <div class="flex space-x-1 text-[#A27165] text-[10px]">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <i class="fa-brands fa-google text-stone-300 text-sm"></i>
+                        </div>
+                        <p class="text-stone-600 text-xs font-light leading-relaxed mb-6">"Drew was absolutely INCREDIBLE when my missionary came home. He was so attentive at the airport and captured the best moments. It was done so quick and we will absolutely be using him again."</p>
+                    </div>
+                    <div class="flex items-center justify-between mt-auto pt-4 border-t border-stone-200">
+                        <span class="text-[11px] font-bold tracking-widest text-stone-800 uppercase">Kelly Ballard</span>
+                        <a href="https://www.instagram.com/p/DK4Zs62OKB7/" target="_blank" rel="noopener" class="text-[9px] text-[#A27165] hover:text-[#181F22] transition-colors tracking-wider uppercase flex items-center gap-1.5">View <i class="fa-solid fa-arrow-up-right-from-square text-[8px]"></i></a>
+                    </div>
+                </div>
+
+                <!-- Review 2: Ethan Updike -->
+                <div class="w-[300px] sm:w-[350px] flex-shrink-0 bg-[#FAF6F0] border border-stone-200 p-6 sm:p-8 rounded-none flex flex-col justify-between shadow-sm transition duration-300 hover:shadow-md hover:bg-stone-50">
+                    <div>
+                        <div class="flex items-center justify-between mb-5">
+                            <div class="flex space-x-1 text-[#A27165] text-[10px]">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <i class="fa-brands fa-google text-stone-300 text-sm"></i>
+                        </div>
+                        <p class="text-stone-600 text-xs font-light leading-relaxed mb-6">"Drew made an awesome video for my wife and I and it turned out great! Totally recommend him to anyone who wants a videographer for special events."</p>
+                    </div>
+                    <div class="flex items-center justify-between mt-auto pt-4 border-t border-stone-200">
+                        <span class="text-[11px] font-bold tracking-widest text-stone-800 uppercase">Ethan Updike</span>
+                        <a href="https://share.google/Uo5c2tgbgAlIF3CWx" target="_blank" rel="noopener" class="text-[9px] text-[#A27165] hover:text-[#181F22] transition-colors tracking-wider uppercase flex items-center gap-1.5">View <i class="fa-solid fa-arrow-up-right-from-square text-[8px]"></i></a>
+                    </div>
+                </div>
+
+                <!-- Review 3: Lydia Tucker -->
+                <div class="w-[300px] sm:w-[350px] flex-shrink-0 bg-[#FAF6F0] border border-stone-200 p-6 sm:p-8 rounded-none flex flex-col justify-between shadow-sm transition duration-300 hover:shadow-md hover:bg-stone-50">
+                    <div>
+                        <div class="flex items-center justify-between mb-5">
+                            <div class="flex space-x-1 text-[#A27165] text-[10px]">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <i class="fa-brands fa-google text-stone-300 text-sm"></i>
+                        </div>
+                        <p class="text-stone-600 text-xs font-light leading-relaxed mb-6">"Zero Limit productions did a beautiful job on both my first look and my wedding videos! The music, angles, transitions, and drone shots all came together so well to depict all of the special moments."</p>
+                    </div>
+                    <div class="flex items-center justify-between mt-auto pt-4 border-t border-stone-200">
+                        <span class="text-[11px] font-bold tracking-widest text-stone-800 uppercase">Lydia Tucker</span>
+                        <a href="https://share.google/1pSzPsZsDu0iJciId" target="_blank" rel="noopener" class="text-[9px] text-[#A27165] hover:text-[#181F22] transition-colors tracking-wider uppercase flex items-center gap-1.5">View <i class="fa-solid fa-arrow-up-right-from-square text-[8px]"></i></a>
+                    </div>
+                </div>
+
+                <!-- Review 4: Tiffany Huish -->
+                <div class="w-[300px] sm:w-[350px] flex-shrink-0 bg-[#FAF6F0] border border-stone-200 p-6 sm:p-8 rounded-none flex flex-col justify-between shadow-sm transition duration-300 hover:shadow-md hover:bg-stone-50">
+                    <div>
+                        <div class="flex items-center justify-between mb-5">
+                            <div class="flex space-x-1 text-[#A27165] text-[10px]">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <i class="fa-brands fa-google text-stone-300 text-sm"></i>
+                        </div>
+                        <p class="text-stone-600 text-xs font-light leading-relaxed mb-6">"Drew is so talented!! He made an awesome homecoming video for our missionary - even braved a snowstorm to get to the airport. He was so punctual in putting all the footage together."</p>
+                    </div>
+                    <div class="flex items-center justify-between mt-auto pt-4 border-t border-stone-200">
+                        <span class="text-[11px] font-bold tracking-widest text-stone-800 uppercase">Tiffany Huish</span>
+                        <a href="https://share.google/oyyequCw1LLvtDxXL" target="_blank" rel="noopener" class="text-[9px] text-[#A27165] hover:text-[#181F22] transition-colors tracking-wider uppercase flex items-center gap-1.5">View <i class="fa-solid fa-arrow-up-right-from-square text-[8px]"></i></a>
+                    </div>
+                </div>
+
+                <!-- Review 5: Lisa Palmer -->
+                <div class="w-[300px] sm:w-[350px] flex-shrink-0 bg-[#FAF6F0] border border-stone-200 p-6 sm:p-8 rounded-none flex flex-col justify-between shadow-sm transition duration-300 hover:shadow-md hover:bg-stone-50">
+                    <div>
+                        <div class="flex items-center justify-between mb-5">
+                            <div class="flex space-x-1 text-[#A27165] text-[10px]">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <i class="fa-brands fa-google text-stone-300 text-sm"></i>
+                        </div>
+                        <p class="text-stone-600 text-xs font-light leading-relaxed mb-6">"Drew did such a wonderful job perfectly capturing each graduate... He was easy to work with, had great communication, and his video was inspiring! We will definitely be using his services again!"</p>
+                    </div>
+                    <div class="flex items-center justify-between mt-auto pt-4 border-t border-stone-200">
+                        <span class="text-[11px] font-bold tracking-widest text-stone-800 uppercase">Lisa Palmer</span>
+                        <a href="https://share.google/xOxULzDMtcdDDh7Ab" target="_blank" rel="noopener" class="text-[9px] text-[#A27165] hover:text-[#181F22] transition-colors tracking-wider uppercase flex items-center gap-1.5">View <i class="fa-solid fa-arrow-up-right-from-square text-[8px]"></i></a>
+                    </div>
+                </div>
+
+                <!-- Review 6: Chrissy Sperry -->
+                <div class="w-[300px] sm:w-[350px] flex-shrink-0 bg-[#FAF6F0] border border-stone-200 p-6 sm:p-8 rounded-none flex flex-col justify-between shadow-sm transition duration-300 hover:shadow-md hover:bg-stone-50">
+                    <div>
+                        <div class="flex items-center justify-between mb-5">
+                            <div class="flex space-x-1 text-[#A27165] text-[10px]">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <i class="fa-brands fa-google text-stone-300 text-sm"></i>
+                        </div>
+                        <p class="text-stone-600 text-xs font-light leading-relaxed mb-6">"Drew was great!! He was patient, accommodating, professional and turned out a great video quickly. We are super happy to have this memory forever!!"</p>
+                    </div>
+                    <div class="flex items-center justify-between mt-auto pt-4 border-t border-stone-200">
+                        <span class="text-[11px] font-bold tracking-widest text-stone-800 uppercase">Chrissy Sperry</span>
+                        <a href="https://share.google/lXZCEwocXaTLxdg8n" target="_blank" rel="noopener" class="text-[9px] text-[#A27165] hover:text-[#181F22] transition-colors tracking-wider uppercase flex items-center gap-1.5">View <i class="fa-solid fa-arrow-up-right-from-square text-[8px]"></i></a>
+                    </div>
+                </div>
+
+                <!-- Review 7: Crystal Theriault -->
+                <div class="w-[300px] sm:w-[350px] flex-shrink-0 bg-[#FAF6F0] border border-stone-200 p-6 sm:p-8 rounded-none flex flex-col justify-between shadow-sm transition duration-300 hover:shadow-md hover:bg-stone-50">
+                    <div>
+                        <div class="flex items-center justify-between mb-5">
+                            <div class="flex space-x-1 text-[#A27165] text-[10px]">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <i class="fa-brands fa-google text-stone-300 text-sm"></i>
+                        </div>
+                        <p class="text-stone-600 text-xs font-light leading-relaxed mb-6">"Drew was amazing from start to finish. He produced a high-quality video our family will treasure. As a videographer, he was a pro at being in the background... catching all the important footage."</p>
+                    </div>
+                    <div class="flex items-center justify-between mt-auto pt-4 border-t border-stone-200">
+                        <span class="text-[11px] font-bold tracking-widest text-stone-800 uppercase">Crystal Theriault</span>
+                        <a href="https://share.google/m9ymMdaa3kG27Zn0K" target="_blank" rel="noopener" class="text-[9px] text-[#A27165] hover:text-[#181F22] transition-colors tracking-wider uppercase flex items-center gap-1.5">View <i class="fa-solid fa-arrow-up-right-from-square text-[8px]"></i></a>
+                    </div>
+                </div>
+
+
+                <!-- === DUPLICATED SET OF REVIEWS FOR SEAMLESS INFINITE LOOP === -->
+                <!-- Make sure these remain an exact copy of the cards above! -->
+
+                <div class="w-[300px] sm:w-[350px] flex-shrink-0 bg-[#FAF6F0] border border-stone-200 p-6 sm:p-8 rounded-none flex flex-col justify-between shadow-sm transition duration-300 hover:shadow-md hover:bg-stone-50">
+                    <div>
+                        <div class="flex items-center justify-between mb-5">
+                            <div class="flex space-x-1 text-[#A27165] text-[10px]">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <i class="fa-brands fa-google text-stone-300 text-sm"></i>
+                        </div>
+                        <p class="text-stone-600 text-xs font-light leading-relaxed mb-6">"Drew was absolutely INCREDIBLE when my missionary came home. He was so attentive at the airport and captured the best moments. It was done so quick and we will absolutely be using him again."</p>
+                    </div>
+                    <div class="flex items-center justify-between mt-auto pt-4 border-t border-stone-200">
+                        <span class="text-[11px] font-bold tracking-widest text-stone-800 uppercase">Kelly Ballard</span>
+                        <a href="https://www.instagram.com/p/DK4Zs62OKB7/" target="_blank" rel="noopener" class="text-[9px] text-[#A27165] hover:text-[#181F22] transition-colors tracking-wider uppercase flex items-center gap-1.5">View <i class="fa-solid fa-arrow-up-right-from-square text-[8px]"></i></a>
+                    </div>
+                </div>
+
+                <div class="w-[300px] sm:w-[350px] flex-shrink-0 bg-[#FAF6F0] border border-stone-200 p-6 sm:p-8 rounded-none flex flex-col justify-between shadow-sm transition duration-300 hover:shadow-md hover:bg-stone-50">
+                    <div>
+                        <div class="flex items-center justify-between mb-5">
+                            <div class="flex space-x-1 text-[#A27165] text-[10px]">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <i class="fa-brands fa-google text-stone-300 text-sm"></i>
+                        </div>
+                        <p class="text-stone-600 text-xs font-light leading-relaxed mb-6">"Drew made an awesome video for my wife and I and it turned out great! Totally recommend him to anyone who wants a videographer for special events."</p>
+                    </div>
+                    <div class="flex items-center justify-between mt-auto pt-4 border-t border-stone-200">
+                        <span class="text-[11px] font-bold tracking-widest text-stone-800 uppercase">Ethan Updike</span>
+                        <a href="https://share.google/Uo5c2tgbgAlIF3CWx" target="_blank" rel="noopener" class="text-[9px] text-[#A27165] hover:text-[#181F22] transition-colors tracking-wider uppercase flex items-center gap-1.5">View <i class="fa-solid fa-arrow-up-right-from-square text-[8px]"></i></a>
+                    </div>
+                </div>
+
+                <div class="w-[300px] sm:w-[350px] flex-shrink-0 bg-[#FAF6F0] border border-stone-200 p-6 sm:p-8 rounded-none flex flex-col justify-between shadow-sm transition duration-300 hover:shadow-md hover:bg-stone-50">
+                    <div>
+                        <div class="flex items-center justify-between mb-5">
+                            <div class="flex space-x-1 text-[#A27165] text-[10px]">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <i class="fa-brands fa-google text-stone-300 text-sm"></i>
+                        </div>
+                        <p class="text-stone-600 text-xs font-light leading-relaxed mb-6">"Zero Limit productions did a beautiful job on both my first look and my wedding videos! The music, angles, transitions, and drone shots all came together so well to depict all of the special moments."</p>
+                    </div>
+                    <div class="flex items-center justify-between mt-auto pt-4 border-t border-stone-200">
+                        <span class="text-[11px] font-bold tracking-widest text-stone-800 uppercase">Lydia Tucker</span>
+                        <a href="https://share.google/1pSzPsZsDu0iJciId" target="_blank" rel="noopener" class="text-[9px] text-[#A27165] hover:text-[#181F22] transition-colors tracking-wider uppercase flex items-center gap-1.5">View <i class="fa-solid fa-arrow-up-right-from-square text-[8px]"></i></a>
+                    </div>
+                </div>
+
+                <div class="w-[300px] sm:w-[350px] flex-shrink-0 bg-[#FAF6F0] border border-stone-200 p-6 sm:p-8 rounded-none flex flex-col justify-between shadow-sm transition duration-300 hover:shadow-md hover:bg-stone-50">
+                    <div>
+                        <div class="flex items-center justify-between mb-5">
+                            <div class="flex space-x-1 text-[#A27165] text-[10px]">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <i class="fa-brands fa-google text-stone-300 text-sm"></i>
+                        </div>
+                        <p class="text-stone-600 text-xs font-light leading-relaxed mb-6">"Drew is so talented!! He made an awesome homecoming video for our missionary - even braved a snowstorm to get to the airport. He was so punctual in putting all the footage together."</p>
+                    </div>
+                    <div class="flex items-center justify-between mt-auto pt-4 border-t border-stone-200">
+                        <span class="text-[11px] font-bold tracking-widest text-stone-800 uppercase">Tiffany Huish</span>
+                        <a href="https://share.google/oyyequCw1LLvtDxXL" target="_blank" rel="noopener" class="text-[9px] text-[#A27165] hover:text-[#181F22] transition-colors tracking-wider uppercase flex items-center gap-1.5">View <i class="fa-solid fa-arrow-up-right-from-square text-[8px]"></i></a>
+                    </div>
+                </div>
+
+                <div class="w-[300px] sm:w-[350px] flex-shrink-0 bg-[#FAF6F0] border border-stone-200 p-6 sm:p-8 rounded-none flex flex-col justify-between shadow-sm transition duration-300 hover:shadow-md hover:bg-stone-50">
+                    <div>
+                        <div class="flex items-center justify-between mb-5">
+                            <div class="flex space-x-1 text-[#A27165] text-[10px]">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <i class="fa-brands fa-google text-stone-300 text-sm"></i>
+                        </div>
+                        <p class="text-stone-600 text-xs font-light leading-relaxed mb-6">"Drew did such a wonderful job perfectly capturing each graduate... He was easy to work with, had great communication, and his video was inspiring! We will definitely be using his services again!"</p>
+                    </div>
+                    <div class="flex items-center justify-between mt-auto pt-4 border-t border-stone-200">
+                        <span class="text-[11px] font-bold tracking-widest text-stone-800 uppercase">Lisa Palmer</span>
+                        <a href="https://share.google/xOxULzDMtcdDDh7Ab" target="_blank" rel="noopener" class="text-[9px] text-[#A27165] hover:text-[#181F22] transition-colors tracking-wider uppercase flex items-center gap-1.5">View <i class="fa-solid fa-arrow-up-right-from-square text-[8px]"></i></a>
+                    </div>
+                </div>
+
+                <div class="w-[300px] sm:w-[350px] flex-shrink-0 bg-[#FAF6F0] border border-stone-200 p-6 sm:p-8 rounded-none flex flex-col justify-between shadow-sm transition duration-300 hover:shadow-md hover:bg-stone-50">
+                    <div>
+                        <div class="flex items-center justify-between mb-5">
+                            <div class="flex space-x-1 text-[#A27165] text-[10px]">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <i class="fa-brands fa-google text-stone-300 text-sm"></i>
+                        </div>
+                        <p class="text-stone-600 text-xs font-light leading-relaxed mb-6">"Drew was great!! He was patient, accommodating, professional and turned out a great video quickly. We are super happy to have this memory forever!!"</p>
+                    </div>
+                    <div class="flex items-center justify-between mt-auto pt-4 border-t border-stone-200">
+                        <span class="text-[11px] font-bold tracking-widest text-stone-800 uppercase">Chrissy Sperry</span>
+                        <a href="https://share.google/lXZCEwocXaTLxdg8n" target="_blank" rel="noopener" class="text-[9px] text-[#A27165] hover:text-[#181F22] transition-colors tracking-wider uppercase flex items-center gap-1.5">View <i class="fa-solid fa-arrow-up-right-from-square text-[8px]"></i></a>
+                    </div>
+                </div>
+
+                <div class="w-[300px] sm:w-[350px] flex-shrink-0 bg-[#FAF6F0] border border-stone-200 p-6 sm:p-8 rounded-none flex flex-col justify-between shadow-sm transition duration-300 hover:shadow-md hover:bg-stone-50">
+                    <div>
+                        <div class="flex items-center justify-between mb-5">
+                            <div class="flex space-x-1 text-[#A27165] text-[10px]">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <i class="fa-brands fa-google text-stone-300 text-sm"></i>
+                        </div>
+                        <p class="text-stone-600 text-xs font-light leading-relaxed mb-6">"Drew was amazing from start to finish. He produced a high-quality video our family will treasure. As a videographer, he was a pro at being in the background... catching all the important footage."</p>
+                    </div>
+                    <div class="flex items-center justify-between mt-auto pt-4 border-t border-stone-200">
+                        <span class="text-[11px] font-bold tracking-widest text-stone-800 uppercase">Crystal Theriault</span>
+                        <a href="https://share.google/m9ymMdaa3kG27Zn0K" target="_blank" rel="noopener" class="text-[9px] text-[#A27165] hover:text-[#181F22] transition-colors tracking-wider uppercase flex items-center gap-1.5">View <i class="fa-solid fa-arrow-up-right-from-square text-[8px]"></i></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
     <footer class="bg-[#181F22] text-stone-300/70 text-sm relative z-10 border-t border-[#242D30] pt-16 pb-12 sm:pt-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12 pb-12 sm:pb-16 border-b border-white/10">
