@@ -171,27 +171,56 @@
             </div>
             
             <nav class="hidden md:flex justify-center items-center space-x-10 text-xs font-bold tracking-[0.2em] uppercase h-full">
-                <a href="../" class="text-stone-500 hover:text-[#181F22] transition pb-1">Home</a>
+                <a href="../" class="text-stone-400 hover:text-[#181F22] transition pb-1">Home</a>
                 
-                <div class="relative group h-full flex items-center">
-                    <button class="text-[#181F22] border-b-2 border-[#A27165] pb-1 flex items-center gap-1.5 cursor-pointer tracking-[0.2em]">
-                        PORTFOLIO <i class="fa-solid fa-chevron-down text-[9px] rotate-180 transition-transform duration-300 group-hover:rotate-0"></i>
-                    </button>
-                    <div class="absolute top-[calc(100%-12px)] left-1/2 -translate-x-1/2 w-64 bg-[#FAF6F0] border border-stone-200 shadow-xl opacity-0 scale-95 pointer-events-none group-hover:opacity-100 group-hover:scale-100 group-hover:pointer-events-auto transition-all duration-200 ease-out py-3 z-50">
-                        <a href="../event-portfolio/" class="flex flex-col px-5 py-3 hover:bg-stone-100 transition">
-                            <span class="text-[#181F22] tracking-wider text-[11px] font-bold">Milestones & Events</span>
-                            <span class="text-stone-500 normal-case font-light text-[10px] mt-0.5">Weddings, Theater, Homecomings</span>
-                        </a>
-                        <div class="h-[1px] bg-stone-200 mx-4 my-1"></div>
-                        <a href="./" class="flex flex-col px-5 py-3 bg-stone-100 font-bold">
-                            <span class="text-[#181F22] tracking-wider text-[11px]">Business & Commercial</span>
-                            <span class="text-[#A27165] normal-case font-light text-[10px] mt-0.5">Currently Viewing</span>
-                        </a>
-                    </div>
+            <div id="portfolio-commercial-dropdown" class="relative group h-full flex items-center">
+                <button class="text-[#181F22] border-b-2 border-[#A27165] pb-1 flex items-center gap-1.5 cursor-pointer tracking-[0.2em]" aria-expanded="false" aria-haspopup="true">
+                    PORTFOLIO <i class="fa-solid fa-chevron-down text-[9px] rotate-180 transition-transform duration-300 group-hover:rotate-0 group-[.is-open]:rotate-0" aria-hidden="true"></i>
+                </button>
+                <div class="absolute top-[calc(100%-12px)] left-1/2 -translate-x-1/2 w-64 bg-[#FAF6F0] border border-stone-200 shadow-xl opacity-0 scale-95 pointer-events-none group-hover:opacity-100 group-hover:scale-100 group-hover:pointer-events-auto group-[.is-open]:opacity-100 group-[.is-open]:scale-100 group-[.is-open]:pointer-events-auto transition-all duration-200 ease-out py-3 z-50">
+                    <a href="../event-portfolio/" class="flex flex-col px-5 py-3 hover:bg-stone-100 transition">
+                        <span class="text-[#181F22] tracking-wider text-[11px] font-bold">Milestones & Events</span>
+                        <span class="text-stone-500 normal-case font-light text-[10px] mt-0.5">Weddings, Theater, Homecomings</span>
+                    </a>
+                    <div class="h-[1px] bg-stone-200 mx-4 my-1"></div>
+                    <a href="../commercial-portfolio/" class="flex flex-col px-5 py-3 bg-stone-100 font-bold">
+                        <span class="text-[#181F22] tracking-wider text-[11px]">Business & Commercial</span>
+                        <span class="text-[#A27165] normal-case font-light text-[10px] mt-0.5">Currently Viewing</span>
+                    </a>
                 </div>
+            </div>
 
-                <a href="../about/" class="text-stone-500 hover:text-[#181F22] transition pb-1">About</a>
-                <a href="../booking/" class="text-stone-500 hover:text-[#181F22] transition pb-1">Booking</a>
+            <script>
+            (function() {
+                const dropdown = document.getElementById('portfolio-commercial-dropdown');
+                if (!dropdown) return;
+                const button = dropdown.querySelector('button');
+
+                // Toggle menu on click/tap
+                button.addEventListener('click', function(event) {
+                    event.stopPropagation();
+                    const isOpen = dropdown.classList.toggle('is-open');
+                    button.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                });
+
+                // Close menu when clicking anywhere else on the screen
+                document.addEventListener('click', function(event) {
+                    if (!dropdown.contains(event.target)) {
+                        dropdown.classList.remove('is-open');
+                        button.setAttribute('aria-expanded', 'false');
+                    }
+                });
+
+                // Clean up state on desktop when mouse leaves the area
+                dropdown.addEventListener('mouseleave', function() {
+                    dropdown.classList.remove('is-open');
+                    button.setAttribute('aria-expanded', 'false');
+                });
+            })();
+            </script>
+
+                <a href="../about/" class="text-stone-400 hover:text-[#181F22] transition pb-1">About</a>
+                <a href="../booking/" class="text-stone-400 hover:text-[#181F22] transition pb-1">Booking</a>
             </nav>
 
             <div class="hidden md:flex justify-end">
@@ -219,7 +248,7 @@
     <div id="mobile-navigation-card" class="fixed top-20 right-0 w-72 z-50 bg-[#FAF6F0]/95 backdrop-blur-md border-l border-b border-stone-200 p-6 opacity-0 pointer-events-none -translate-y-2 transition-all duration-300 ease-out md:hidden shadow-2xl">
         <div class="flex flex-col space-y-6">
             <nav class="flex flex-col space-y-5 text-left text-xs font-bold tracking-[0.25em] uppercase">
-                <a href="../" class="text-stone-500 hover:text-[#181F22] transition">Home</a>
+                <a href="../" class="text-stone-400 hover:text-[#181F22] transition">Home</a>
                 <div class="flex flex-col">
                     <button id="mobile-portfolio-toggle" class="text-[#181F22] flex items-center justify-between w-full uppercase tracking-[0.25em] font-bold text-left focus:outline-none cursor-pointer">
                         Portfolio <i id="mobile-portfolio-arrow" class="fa-solid fa-chevron-down text-[10px] rotate-180 transition-transform duration-300"></i>
@@ -229,8 +258,8 @@
                         <a href="./" class="text-[#181F22] text-[11px] font-bold tracking-[0.2em] uppercase flex items-center justify-between">Business & Commercial <span class="w-1 h-1 rounded-full bg-[#A27165]"></span></a>
                     </div>
                 </div>
-                <a href="../about/" class="text-stone-500 hover:text-[#181F22] transition">About</a>
-                <a href="../booking/" class="text-stone-500 hover:text-[#181F22] transition">Booking</a>
+                <a href="../about/" class="text-stone-400 hover:text-[#181F22] transition">About</a>
+                <a href="../booking/" class="text-stone-400 hover:text-[#181F22] transition">Booking</a>
             </nav>
             <a href="../#contact" id="mobile-menu-cta" class="w-full inline-flex items-center justify-center py-3.5 text-[10px] font-bold tracking-[0.2em] text-white bg-[#181F22] uppercase shadow-md">Book A Project</a>
         </div>

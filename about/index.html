@@ -151,22 +151,51 @@
             <nav class="hidden md:flex justify-center items-center space-x-10 text-xs font-bold tracking-[0.2em] uppercase h-full" aria-label="Main Navigation">
                 <a href="../" class="text-stone-400 hover:text-[#181F22] transition pb-1">Home</a>
                 
-                <div class="relative group h-full flex items-center">
-                    <button class="text-stone-400 group-hover:text-[#181F22] transition pb-1 flex items-center gap-1.5 focus:outline-none cursor-pointer tracking-[0.2em]" aria-expanded="false" aria-haspopup="true">
-                        PORTFOLIO <i class="fa-solid fa-chevron-down text-[9px] transition-transform duration-300 group-hover:rotate-180" aria-hidden="true"></i>
-                    </button>
-                    <div class="absolute top-[calc(100%-12px)] left-1/2 -translate-x-1/2 w-64 bg-[#FAF6F0] border border-stone-200 shadow-xl opacity-0 scale-95 pointer-events-none group-hover:opacity-100 group-hover:scale-100 group-hover:pointer-events-auto transition-all duration-200 ease-out py-3 z-50">
-                        <a href="../event-portfolio/" class="flex flex-col px-5 py-3 hover:bg-stone-100/80 transition group/item">
-                            <span class="text-[#181F22] tracking-wider text-[11px] font-bold">Milestones & Events</span>
-                            <span class="text-stone-400 normal-case font-light text-[10px] mt-0.5">Weddings, Stage, Homecomings</span>
-                        </a>
-                        <div class="h-[1px] bg-stone-200/80 mx-4 my-1"></div>
-                        <a href="../commercial-portfolio/" class="flex flex-col px-5 py-3 hover:bg-stone-100/80 transition group/item">
-                            <span class="text-[#181F22] tracking-wider text-[11px] font-bold">Business & Commercial</span>
-                            <span class="text-stone-400 normal-case font-light text-[10px] mt-0.5">Commercials, Marketing, Reels</span>
-                        </a>
-                    </div>
+            <div id="portfolio-relative-dropdown" class="relative group h-full flex items-center">
+                <button class="text-stone-400 group-hover:text-[#181F22] group-[.is-open]:text-[#181F22] transition pb-1 flex items-center gap-1.5 focus:outline-none cursor-pointer tracking-[0.2em]" aria-expanded="false" aria-haspopup="true">
+                    PORTFOLIO <i class="fa-solid fa-chevron-down text-[9px] transition-transform duration-300 group-hover:rotate-180 group-[.is-open]:rotate-180" aria-hidden="true"></i>
+                </button>
+                <div class="absolute top-[calc(100%-12px)] left-1/2 -translate-x-1/2 w-64 bg-[#FAF6F0] border border-stone-200 shadow-xl opacity-0 scale-95 pointer-events-none group-hover:opacity-100 group-hover:scale-100 group-hover:pointer-events-auto group-[.is-open]:opacity-100 group-[.is-open]:scale-100 group-[.is-open]:pointer-events-auto transition-all duration-200 ease-out py-3 z-50">
+                    <a href="../event-portfolio/" class="flex flex-col px-5 py-3 hover:bg-stone-100/80 transition group/item">
+                        <span class="text-[#181F22] tracking-wider text-[11px] font-bold">Milestones & Events</span>
+                        <span class="text-stone-400 normal-case font-light text-[10px] mt-0.5">Weddings, Stage, Homecomings</span>
+                    </a>
+                    <div class="h-[1px] bg-stone-200/80 mx-4 my-1"></div>
+                    <a href="../commercial-portfolio/" class="flex flex-col px-5 py-3 hover:bg-stone-100/80 transition group/item">
+                        <span class="text-[#181F22] tracking-wider text-[11px] font-bold">Business & Commercial</span>
+                        <span class="text-stone-400 normal-case font-light text-[10px] mt-0.5">Commercials, Marketing, Reels</span>
+                    </a>
                 </div>
+            </div>
+
+            <script>
+            (function() {
+                const dropdown = document.getElementById('portfolio-relative-dropdown');
+                if (!dropdown) return;
+                const button = dropdown.querySelector('button');
+
+                // Toggle menu on click/tap
+                button.addEventListener('click', function(event) {
+                    event.stopPropagation();
+                    const isOpen = dropdown.classList.toggle('is-open');
+                    button.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                });
+
+                // Close menu when clicking anywhere else on the screen
+                document.addEventListener('click', function(event) {
+                    if (!dropdown.contains(event.target)) {
+                        dropdown.classList.remove('is-open');
+                        button.setAttribute('aria-expanded', 'false');
+                    }
+                });
+
+                // Clean up state on desktop when mouse leaves the area
+                dropdown.addEventListener('mouseleave', function() {
+                    dropdown.classList.remove('is-open');
+                    button.setAttribute('aria-expanded', 'false');
+                });
+            })();
+            </script>
 
                 <a href="../about/" class="text-[#181F22] border-b-2 border-[#A27165] pb-1">About</a>
                 <a href="../booking/" class="text-stone-400 hover:text-[#181F22] transition pb-1">Booking</a>
