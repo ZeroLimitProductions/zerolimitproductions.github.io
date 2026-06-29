@@ -360,83 +360,102 @@
 
             </div>
 
-            <div class="lg:col-span-7 scroll-mt-84 lg:scroll-mt-20" id="booking-form-anchor">
-                <div class="bg-white rounded-none border border-stone-300 p-6 sm:p-12 relative shadow-2xl">
-                    
-                    <div class="absolute top-0 left-[-8px] w-4 h-[1px] bg-[#181F22] pointer-events-none z-20"></div>
-                    <div class="absolute top-[-8px] left-0 w-[1px] h-4 bg-[#181F22] pointer-events-none z-20"></div>
-                    <div class="absolute top-0 right-[-8px] w-4 h-[1px] bg-[#181F22] pointer-events-none z-20"></div>
-                    <div class="absolute top-[-8px] right-0 w-[1px] h-4 bg-[#181F22] pointer-events-none z-20"></div>
-                    <div class="absolute bottom-0 left-[-8px] w-4 h-[1px] bg-[#181F22] pointer-events-none z-20"></div>
-                    <div class="absolute bottom-[-8px] left-0 w-[1px] h-4 bg-[#181F22] pointer-events-none z-20"></div>
-                    <div class="absolute bottom-0 right-[-8px] w-4 h-[1px] bg-[#181F22] pointer-events-none z-20"></div>
-                    <div class="absolute bottom-[-8px] right-0 w-[1px] h-4 bg-[#181F22] pointer-events-none z-20"></div>
+<div class="lg:col-span-7 scroll-mt-84 lg:scroll-mt-20" id="booking-form-anchor">
+    <div class="bg-white rounded-none border border-stone-300 p-6 sm:p-12 relative shadow-2xl">
+        
+        <div class="absolute top-0 left-[-8px] w-4 h-[1px] bg-[#181F22] pointer-events-none z-20"></div>
+        <div class="absolute top-[-8px] left-0 w-[1px] h-4 bg-[#181F22] pointer-events-none z-20"></div>
+        <div class="absolute top-0 right-[-8px] w-4 h-[1px] bg-[#181F22] pointer-events-none z-20"></div>
+        <div class="absolute top-[-8px] right-0 w-[1px] h-4 bg-[#181F22] pointer-events-none z-20"></div>
+        <div class="absolute bottom-0 left-[-8px] w-4 h-[1px] bg-[#181F22] pointer-events-none z-20"></div>
+        <div class="absolute bottom-[-8px] left-0 w-[1px] h-4 bg-[#181F22] pointer-events-none z-20"></div>
+        <div class="absolute bottom-0 right-[-8px] w-4 h-[1px] bg-[#181F22] pointer-events-none z-20"></div>
+        <div class="absolute bottom-[-8px] right-0 w-[1px] h-4 bg-[#181F22] pointer-events-none z-20"></div>
 
-                    <div class="text-left mb-8 space-y-2">
-                        <h3 class="text-xl sm:text-3xl font-serif text-stone-900">Start Your Project</h3>
-                        <p class="text-stone-400 font-mono text-[8px] sm:text-[9px] uppercase tracking-[0.25em]">Drop your details here and I will follow up with you shortly.</p>
-                    </div>
+        <div class="text-left mb-8 space-y-2">
+            <h3 class="text-xl sm:text-3xl font-serif text-stone-900">Start Your Project</h3>
+            <p class="text-stone-400 font-mono text-[8px] sm:text-[9px] uppercase tracking-[0.25em]">Drop your details here and I will follow up with you shortly.</p>
+        </div>
 
-                    <div id="form-status" class="hidden transition-all duration-300" role="alert" aria-live="polite"></div>
+        <div id="form-status" class="hidden transition-all duration-300" role="alert" aria-live="polite"></div>
 
-                    <form id="booking-form" class="space-y-5 sm:space-y-6" autocomplete="on">
-                        <input type="hidden" name="access_key" value="51139d1c-0124-48fe-b489-3af11a8de0e9">
-                        <input type="checkbox" name="botcheck" class="hidden" style="display: none;" tabIndex="-1" autoComplete="off">
+        <form id="booking-form" class="space-y-5 sm:space-y-6" autocomplete="on">
+            <input type="hidden" name="access_key" value="51139d1c-0124-48fe-b489-3af11a8de0e9">
+            <input type="checkbox" name="botcheck" class="hidden" style="display: none;" tabIndex="-1" autoComplete="off">
 
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
-                            <div class="space-y-2 min-w-0">
-                                <label for="name" class="text-[9px] font-bold tracking-widest text-stone-700 uppercase block">Your Name</label>
-                                <input type="text" id="name" name="name" required autocomplete="name" class="w-full bg-[#FAF6F0] border border-stone-300 focus:border-[#181F22] rounded-none px-4 py-3 text-sm text-stone-900 focus:outline-none transition shadow-xs">
-                            </div>
-                            <div class="space-y-2 min-w-0">
-                                <label for="email" class="text-[9px] font-bold tracking-widest text-stone-700 uppercase block">Email Address</label>
-                                <input type="email" id="email" name="email" required autocomplete="email" class="w-full bg-[#FAF6F0] border border-stone-300 focus:border-[#181F22] rounded-none px-4 py-3 text-sm text-stone-900 focus:outline-none transition shadow-xs">
-                            </div>
-                        </div>
-
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
-                            <div class="space-y-2 min-w-0">
-                                <label for="phone" class="text-[9px] font-bold tracking-widest text-stone-700 uppercase block">Phone Number</label>
-                                <input type="tel" id="phone" name="phone" required autocomplete="tel" placeholder="(555) 555-5555" class="w-full bg-[#FAF6F0] border border-stone-300 focus:border-[#181F22] rounded-none px-4 py-3 text-sm text-stone-900 focus:outline-none transition shadow-xs">
-                            </div>
-                            
-                            <!-- EXPLICIT COUPLING ISOLATION CAGE FOR THE DATE COMPONENT (MATCHED FROM HOME PAGE) -->
-                            <div class="space-y-2 min-w-0 w-full overflow-hidden">
-                                <label for="date" class="text-[9px] font-bold tracking-widest text-stone-700 uppercase block">Estimated Event Date</label>
-                                <div class="w-full min-w-0 max-w-full block overflow-hidden">
-                                    <input type="date" id="date" name="date" class="w-full max-w-full min-w-0 block bg-[#FAF6F0] border border-stone-300 focus:border-[#181F22] rounded-none px-4 py-3 text-sm text-stone-900 focus:outline-none transition shadow-xs">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="space-y-2">
-                            <label for="event-type" class="text-[9px] font-bold tracking-widest text-stone-700 uppercase block">What type of video are we making?</label>
-                            <div class="relative w-full">
-                                <select id="event-type" name="event-type" class="w-full bg-[#FAF6F0] border border-stone-300 focus:border-[#181F22] rounded-none px-4 py-3 text-sm text-stone-900 focus:outline-none transition appearance-none pr-10 shadow-xs">
-                                    <option value="Milestones & Events Track">Milestones & Events (Wedding, Stage, Homecoming)</option>
-                                    <option value="Business & Commercial Track">Business & Commercial (Commercials, Marketing, Reels)</option>
-                                    <option value="Other Concept Track">Something else completely!</option>
-                                </select>
-                                <div class="absolute right-4 top-1/2 -translate-y-1/2 text-stone-500 text-xs pointer-events-none">
-                                    <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="space-y-2">
-                            <label for="message" class="text-[9px] font-bold tracking-widest text-stone-700 uppercase block">Tell me your ideas!</label>
-                            <textarea id="message" name="message" rows="5" placeholder="Share anything you have in mind—the setting, special moments you want caught, or specific business goals you are trying to reach..." class="w-full bg-[#FAF6F0] border border-stone-300 focus:border-[#181F22] rounded-none px-4 py-3 text-sm focus:outline-none transition placeholder:text-stone-400 text-stone-900 shadow-xs"></textarea>
-                        </div>
-
-                        <button type="submit" id="submit-btn" class="w-full inline-flex items-center justify-center px-6 py-4 text-[10px] font-bold tracking-[0.25em] uppercase text-white bg-[#181F22] hover:bg-[#242D30] rounded-none transition duration-300 shadow-md hover:shadow-xl relative group disabled:opacity-50 disabled:cursor-not-allowed">
-                            <span id="btn-text" class="relative z-10">LET'S MAKE THIS HAPPEN</span>
-                        </button>
-                    </form>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
+                <div class="space-y-2 min-w-0">
+                    <label for="name" class="text-[9px] font-bold tracking-widest text-stone-700 uppercase block">Your Name</label>
+                    <input type="text" id="name" name="name" required autocomplete="name" class="w-full bg-[#FAF6F0] border border-stone-300 focus:border-[#181F22] rounded-none px-4 py-3 text-sm text-stone-900 focus:outline-none transition shadow-xs">
+                </div>
+                <div class="space-y-2 min-w-0">
+                    <label for="email" class="text-[9px] font-bold tracking-widest text-stone-700 uppercase block">Email Address</label>
+                    <input type="email" id="email" name="email" required autocomplete="email" class="w-full bg-[#FAF6F0] border border-stone-300 focus:border-[#181F22] rounded-none px-4 py-3 text-sm text-stone-900 focus:outline-none transition shadow-xs">
                 </div>
             </div>
 
-        </div>
-    </section>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
+                <div class="space-y-2 min-w-0">
+                    <label for="phone" class="text-[9px] font-bold tracking-widest text-stone-700 uppercase block">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" required autocomplete="tel" placeholder="(555) 555-5555" class="w-full bg-[#FAF6F0] border border-stone-300 focus:border-[#181F22] rounded-none px-4 py-3 text-sm text-stone-900 focus:outline-none transition shadow-xs">
+                </div>
+                
+                <div class="space-y-2 min-w-0 w-full overflow-hidden">
+                    <label for="date" class="text-[9px] font-bold tracking-widest text-stone-700 uppercase block">Estimated Event Date</label>
+                    <div class="w-full min-w-0 max-w-full block overflow-hidden">
+                        <input type="date" id="date" name="date" class="w-full max-w-full min-w-0 block bg-[#FAF6F0] border border-stone-300 focus:border-[#181F22] rounded-none px-4 py-3 text-sm text-stone-900 focus:outline-none transition shadow-xs">
+                    </div>
+                </div>
+            </div>
+
+            <div class="space-y-2">
+                <label for="event-type" class="text-[9px] font-bold tracking-widest text-stone-700 uppercase block">What type of video are we making?</label>
+                <div class="relative w-full">
+                    <select id="event-type" name="event-type" class="w-full bg-[#FAF6F0] border border-stone-300 focus:border-[#181F22] rounded-none px-4 py-3 text-sm text-stone-900 focus:outline-none transition appearance-none pr-10 shadow-xs">
+                        <option value="Milestones & Events Track">Milestones & Events (Wedding, Stage, Homecoming)</option>
+                        <option value="Business & Commercial Track">Business & Commercial (Commercials, Marketing, Reels)</option>
+                        <option value="Other Concept Track">Something else completely!</option>
+                    </select>
+                    <div class="absolute right-4 top-1/2 -translate-y-1/2 text-stone-500 text-xs pointer-events-none">
+                        <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="space-y-2">
+                <label for="message" class="text-[9px] font-bold tracking-widest text-stone-700 uppercase block">Tell me your ideas!</label>
+                <textarea id="message" name="message" rows="5" placeholder="Share details about your event, location, and timeline..." class="w-full bg-[#FAF6F0] border border-stone-300 focus:border-[#181F22] rounded-none px-4 py-3 text-sm focus:outline-none transition placeholder:text-stone-400 text-stone-900 shadow-xs"></textarea>
+            </div>
+
+            <button type="submit" id="submit-btn" class="w-full inline-flex items-center justify-center px-6 py-4 text-[10px] font-bold tracking-[0.25em] uppercase text-white bg-[#181F22] hover:bg-[#242D30] rounded-none transition duration-300 shadow-md hover:shadow-xl relative group disabled:opacity-50 disabled:cursor-not-allowed">
+                <span id="btn-text" class="relative z-10">LET'S MAKE THIS HAPPEN</span>
+            </button>
+        </form>
+    </div>
+</div>
+</div>
+</section> 
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const eventTypeSelect = document.getElementById('event-type');
+        const messageTextarea = document.getElementById('message');
+
+        // Text prompt dictionary corresponding to selection values
+        const placeholders = {
+            'Milestones & Events Track': "Share details about your event, location, and timeline...",
+            'Business & Commercial Track': "Tell us about your business goals, target audience, preferred platforms (e.g., website, Instagram Reels), and the general vibe you want to project...",
+            'Other Concept Track': "Tell us about your unique concept! Give us a breakdown of your vision, timeline, and how we can help bring it to life..."
+        };
+
+        // Event listener to swap placeholders seamlessly
+        eventTypeSelect.addEventListener('change', function () {
+            const selectedTrack = eventTypeSelect.value;
+            messageTextarea.placeholder = placeholders[selectedTrack] || "Share anything you have in mind—the setting, special moments you want caught, or specific business goals you are trying to reach...";
+        });
+    });
+</script>
 
     <footer class="bg-[#181F22] text-stone-300/70 text-sm relative z-10 border-t border-[#242D30] pt-16 pb-12 sm:pt-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
