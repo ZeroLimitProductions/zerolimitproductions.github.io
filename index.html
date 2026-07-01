@@ -287,8 +287,12 @@
 
     <section class="relative h-[80vh] sm:h-[85vh] flex items-center justify-center overflow-hidden bg-[#181F22] text-white">
         <div class="absolute inset-0 z-0">
-            <video autoplay loop muted playsinline class="w-full h-full object-cover opacity-30 mix-blend-luminosity">
-                <source src="videos/Hero-Looping.mp4" type="video/mp4">
+            <video autoplay loop muted playsinline poster="images/hero-poster-fallback.png" class="w-full h-full object-cover opacity-30 mix-blend-luminosity">
+                <!-- Choice 1: Modern, hyper-efficient format (The file you just compressed) -->
+                <source src="videos/Hero-Looping.webm" type="video/webm">
+
+                <!-- Choice 2: Universal fallback format (Your optimized 10.6MB file) -->
+                <source src="videos/Hero-Looping2.mp4" type="video/mp4">
             </video>
             <div class="absolute inset-0 bg-gradient-to-t from-[#181F22] via-transparent to-[#181F22]/50"></div>
         </div>
