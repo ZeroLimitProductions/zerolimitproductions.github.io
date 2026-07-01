@@ -162,6 +162,19 @@
             opacity: 1;
             transform: scale(1) rotate(0deg);
         }
+
+        @keyframes quickFade {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 0.3; /* Matches your design's target opacity */
+        }
+    }
+
+    .animate-fade-in {
+        animation: quickFade 0.6s ease-out forwards;
+    }
     </style>
 </head>
 <body class="bg-[#FAF6F0] text-stone-800 font-sans antialiased selection:bg-[#181F22] selection:text-white relative min-h-screen overflow-x-hidden">
@@ -287,14 +300,13 @@
 
     <section class="relative h-[80vh] sm:h-[85vh] flex items-center justify-center overflow-hidden bg-[#181F22] text-white">
         <div class="absolute inset-0 z-0">
-            <video autoplay loop muted playsinline poster="images/hero-poster-fallback.png" class="w-full h-full object-cover opacity-30 mix-blend-luminosity">
-                <!-- Choice 1: Ultra-efficient HEVC (Great for Safari / Apple Ecosystem) -->
+            <video autoplay loop muted playsinline poster="images/hero-poster-fallback.png" 
+                class="w-full h-full object-cover mix-blend-luminosity animate-fade-in">
+                
                 <source src="videos/Hero-Looping-H265.mp4" type="video/mp4; codecs=hevc">
 
-                <!-- Choice 2: Ultra-efficient WebM (Great for Chrome / Firefox / Android) -->
                 <source src="videos/Hero-Looping.webm" type="video/webm">
 
-                <!-- Choice 3: Universal Fallback H.264 (For anything else that fails) -->
                 <source src="videos/Hero-Looping-H264.mp4" type="video/mp4">
                 
                 Your browser does not support the video tag.
